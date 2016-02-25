@@ -33,7 +33,7 @@
           <Group type="102" alignment="0" attributes="0">
               <Component id="jLabel1" min="-2" pref="122" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jPanel1" max="32767" attributes="0"/>
+              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -42,7 +42,7 @@
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/GUI_proyecto_masivo/metrocali11.jpg"/>
+          <Image iconType="3" name="/recursos/metrocali11.jpg"/>
         </Property>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
@@ -66,11 +66,6 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace max="32767" attributes="0"/>
-                  <Component id="boton_registrar_usuarios" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
-              </Group>
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
@@ -89,11 +84,11 @@
                           </Group>
                           <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="ComboBox_registro_rol" alignment="0" pref="194" max="32767" attributes="0"/>
                               <Component id="campo_registro_nombre" alignment="0" max="32767" attributes="0"/>
                               <Component id="campo_registro_direccion" alignment="0" pref="194" max="32767" attributes="0"/>
                               <Component id="campo_registro_telefono" alignment="0" min="-2" pref="119" max="-2" attributes="0"/>
                               <Component id="campo_registro_cedula" alignment="0" max="32767" attributes="0"/>
+                              <Component id="campo_cargo" alignment="0" pref="194" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -101,7 +96,7 @@
               </Group>
               <Group type="102" alignment="1" attributes="0">
                   <Component id="boton_volver" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="77" max="32767" attributes="0"/>
+                  <EmptySpace pref="100" max="32767" attributes="0"/>
                   <Component id="jLabel14" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="104" max="-2" attributes="0"/>
               </Group>
@@ -131,8 +126,8 @@
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="ComboBox_registro_rol" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel13" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="campo_cargo" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -144,9 +139,7 @@
                       <Component id="jLabel16" alignment="1" min="-2" max="-2" attributes="0"/>
                       <Component id="campo_registro_telefono" alignment="1" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                  <Component id="boton_registrar_usuarios" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="30" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -174,17 +167,6 @@
         <Component class="javax.swing.JLabel" name="jLabel10">
           <Properties>
             <Property name="text" type="java.lang.String" value="Cedula de Ciudadan&#xed;a:"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JComboBox" name="ComboBox_registro_rol">
-          <Properties>
-            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="3">
-                <StringItem index="0" value="Director de Estaci&#xf3;n"/>
-                <StringItem index="1" value="Conductor"/>
-                <StringItem index="2" value="Servicio al Cliente"/>
-              </StringArray>
-            </Property>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel13">
@@ -219,14 +201,6 @@
             <Property name="text" type="java.lang.String" value=" Tel&#xe9;fono:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="boton_registrar_usuarios">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Modificar"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="boton_registrar_usuariosActionPerformed"/>
-          </Events>
-        </Component>
         <Component class="javax.swing.JLabel" name="jLabel14">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -239,6 +213,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Buscar"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buscar_empleado_modificarActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="boton_volver">
           <Properties>
@@ -246,6 +223,14 @@
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="boton_volverActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JTextField" name="campo_cargo">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="campo_cargoActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>

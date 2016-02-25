@@ -8,6 +8,7 @@ package GUI.ESTACIONES;
 import logica.Estacion;
 import controlador.ControladorEstacion;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 /**
  *
  * @author natha
@@ -170,17 +171,27 @@ public class Modificar_estacion extends javax.swing.JFrame {
         
         est = controlador.consultarEstacion(nombre);
         
-        nombre_estacion.setText(est.getNombreEstacion());
-        combo_directorEstacion.addItem(est.getEmpleado());
-        ubicacion_estacion.setText(est.getUbicacion());     
+        if(est == null){
+            JOptionPane.showMessageDialog(null, "no existe la estacion " + nombre);
+        }else{
+            nombre_estacion.setText(est.getNombreEstacion());
+            combo_directorEstacion.addItem(est.getEmpleado());
+            ubicacion_estacion.setText(est.getUbicacion()); 
+        }
+                   
         
         lista = controlador.listarEncargados();
         
-        int n = lista.size();
+        if (lista.isEmpty()){
+            JOptionPane.showMessageDialog(null, "No hay encargados de estacion disponibles");
+        }else{
+            int n = lista.size();
         
-        for (int i = 0; i < n; i++){
-            combo_directorEstacion.addItem(lista.get(i));
+            for (int i = 0; i < n; i++){
+                combo_directorEstacion.addItem(lista.get(i));
+            }
         }
+        
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void registrar_estacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrar_estacionActionPerformed

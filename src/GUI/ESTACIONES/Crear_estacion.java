@@ -7,6 +7,7 @@ package GUI.ESTACIONES;
 
 import controlador.ControladorEstacion;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 import logica.Estacion;
 
 /**
@@ -174,11 +175,16 @@ public class Crear_estacion extends javax.swing.JFrame {
         
         lista = controlador.listarEncargados();
         
-        int n = lista.size();
+        if(lista.isEmpty()){
+            JOptionPane.showMessageDialog(null, "No hay encargados de estacion disponibles");
+        }else{
+            int n = lista.size();
         
-        for (int i = 0; i < n; i++){
-            combo_directorEstacion.addItem(lista.get(i));
+            for (int i = 0; i < n; i++){
+                combo_directorEstacion.addItem(lista.get(i));
+            }
         }
+        
         
     }//GEN-LAST:event_jButton1ActionPerformed
 

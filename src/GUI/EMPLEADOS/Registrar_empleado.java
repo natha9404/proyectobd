@@ -5,15 +5,18 @@
  */
 package GUI.EMPLEADOS;
 
+import controlador.ControladorEmpleado;
 import java.awt.Toolkit;
 import javax.swing.JOptionPane;
+import logica.Empleado;
 
 /**
  *
  * @author natha
  */
 public class Registrar_empleado extends javax.swing.JFrame {
-
+    ControladorEmpleado controlador = new ControladorEmpleado();
+    Empleado est = new Empleado();
     /**
      * Creates new form registrar_empleado
      */
@@ -254,7 +257,15 @@ public class Registrar_empleado extends javax.swing.JFrame {
             String direccion = campo_registro_direccion.getText();
             String telefono = campo_registro_telefono.getText();
             
-
+                        
+            est.setCargo(cargo);
+            est.setCedula(cedula);
+            est.setNombre(nombre);
+            est.setDireccion(direccion);
+            est.setTelefono(telefono);
+            
+            controlador.crearEmpleado(est);
+            
             /**
              * Se realiza la conexion a la base de datos Y se hace el llamado a
              * registrar usuario con los campos llenos el cual devuelve un
@@ -281,7 +292,6 @@ public class Registrar_empleado extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Hay campos vacios, por favor completelos");
         }
         
-
     }//GEN-LAST:event_boton_registrar_usuariosActionPerformed
 
     private void boton_volverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_volverActionPerformed
