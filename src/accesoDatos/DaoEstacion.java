@@ -10,6 +10,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import logica.Estacion;
@@ -31,7 +32,7 @@ public class DaoEstacion {
     }
     
     public Estacion consultar (String nombre){
-        Estacion respuesta = null;
+        Estacion respuesta = new Estacion();
         
         try{
             conexion = fachada.getConnetion();
@@ -146,5 +147,51 @@ public class DaoEstacion {
         }
         
         return -1;
+    }
+    
+    public ArrayList encargados (){
+        ArrayList <String> lista = new ArrayList<>();
+        String query;
+        
+        query = "SELECT nombre FROM Empleado WHERE cargo = 'director de estacion' AND cedula_empleado NOT IN (SELECT cedula_empleado FROM Estacion);";
+       
+        try{
+            conexion = fachada.getConnetion();
+            st = conexion.createStatement();
+            
+            rs = st.executeQuery(query);
+            
+            while (rs.next()){
+                lista.add(rs.getString(1));
+            }
+        }catch(SQLException e){
+            System.out.println(e);
+        }
+        return lista;
+    }
+    
+    public String id_encargado (String nombre){
+        String id = "";
+        
+        String query;
+        
+        query = "SELECT cedula_empleado FROM Empleado WHERE cargo = 'director de estacion' AND nombre = '" + nombre +"';";
+        
+        try{
+            conexion = fachada.getConnetion();
+            st = conexion.createStatement();
+            
+            rs = st.executeQuery(query);
+                        
+            while(rs.next()){
+                id = rs.getString(1);
+            }
+            
+            return id;
+        }catch(SQLException e){
+            System.out.println(e);
+        }
+        
+        return id;
     }
 }

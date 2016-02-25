@@ -5,6 +5,9 @@
  */
 package GUI.ESTACIONES;
 
+import logica.Estacion;
+import controlador.ControladorEstacion;
+import java.util.ArrayList;
 /**
  *
  * @author natha
@@ -37,7 +40,6 @@ public class Modificar_estacion extends javax.swing.JFrame {
         ubicacion_estacion = new javax.swing.JTextField();
         combo_directorEstacion = new javax.swing.JComboBox();
         registrar_estacion = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         boton_volver = new javax.swing.JButton();
 
@@ -58,11 +60,19 @@ public class Modificar_estacion extends javax.swing.JFrame {
         jLabel4.setText("Director de Estación:");
 
         registrar_estacion.setText("Modificar Estación");
-        registrar_estacion.setEnabled(false);
-
-        jButton1.setText("Listar Directores");
+        registrar_estacion.setEnabled(true);
+        registrar_estacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                registrar_estacionActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Buscar Estación");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         boton_volver.setText("Volver");
         boton_volver.addActionListener(new java.awt.event.ActionListener() {
@@ -77,7 +87,7 @@ public class Modificar_estacion extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addComponent(boton_volver)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 74, Short.MAX_VALUE)
                 .addComponent(jLabel43)
                 .addGap(92, 92, 92))
             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -85,7 +95,6 @@ public class Modificar_estacion extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jButton2)
                     .addComponent(registrar_estacion)
-                    .addComponent(jButton1)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1)
@@ -112,19 +121,17 @@ public class Modificar_estacion extends javax.swing.JFrame {
                     .addComponent(nombre_estacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(ubicacion_estacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton1)
-                .addGap(18, 18, 18)
+                .addGap(30, 30, 30)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(combo_directorEstacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(combo_directorEstacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4))
                 .addGap(18, 18, 18)
                 .addComponent(registrar_estacion)
-                .addGap(23, 23, 23))
+                .addGap(49, 49, 49))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -139,7 +146,7 @@ public class Modificar_estacion extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -151,6 +158,52 @@ public class Modificar_estacion extends javax.swing.JFrame {
         ventana_estacion.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_boton_volverActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        
+        Estacion est;
+        ControladorEstacion controlador = new ControladorEstacion();
+        ArrayList<String> lista;
+        
+        String nombre = nombre_estacion.getText();
+        
+        est = controlador.consultarEstacion(nombre);
+        
+        nombre_estacion.setText(est.getNombreEstacion());
+        combo_directorEstacion.addItem(est.getEmpleado());
+        ubicacion_estacion.setText(est.getUbicacion());     
+        
+        lista = controlador.listarEncargados();
+        
+        int n = lista.size();
+        
+        for (int i = 0; i < n; i++){
+            combo_directorEstacion.addItem(lista.get(i));
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void registrar_estacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrar_estacionActionPerformed
+        // TODO add your handling code here:
+        
+        ControladorEstacion controlador = new ControladorEstacion();
+        Estacion est = new Estacion();
+        String empleado;
+        String id_empleado;
+        String nombre = nombre_estacion.getText();
+        String ubicacion = ubicacion_estacion.getText();
+        empleado = (String) combo_directorEstacion.getSelectedItem();
+        
+        id_empleado = controlador.encargado(empleado);
+        
+        System.out.println(id_empleado);
+        
+        est.setNombreEstacion(nombre);
+        est.setUbicacion(ubicacion);
+        est.setEmpleado(id_empleado);
+        
+        controlador.modificarEstacion(est);
+    }//GEN-LAST:event_registrar_estacionActionPerformed
 
     /**
      * @param args the command line arguments
@@ -167,7 +220,6 @@ public class Modificar_estacion extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton boton_volver;
     private javax.swing.JComboBox combo_directorEstacion;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

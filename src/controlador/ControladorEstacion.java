@@ -7,6 +7,7 @@
 package controlador;
 
 import accesoDatos.DaoEstacion;
+import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
 import logica.Estacion;
 
@@ -77,5 +78,20 @@ public class ControladorEstacion {
         modelo = daoEstacion.listar();
         
         return modelo;
+    }
+    
+    public ArrayList listarEncargados (){
+        ArrayList <String> encargado;
+        
+        encargado = daoEstacion.encargados();
+        
+        return encargado;
+    }
+    
+    public String encargado (String nombre){
+        String id;
+        System.out.println("controlador");
+        id = daoEstacion.id_encargado(nombre);
+        return id;
     }
 }
