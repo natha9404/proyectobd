@@ -5,6 +5,8 @@
  */
 package GUI.PASAJEROS;
 
+import logica.Pasajero;
+import controlador.ControladorPasajero;
 import java.awt.Toolkit;
 import javax.swing.JOptionPane;
 
@@ -37,13 +39,10 @@ public class Modificar_pasajero extends javax.swing.JFrame {
         jLabel38 = new javax.swing.JLabel();
         jLabel39 = new javax.swing.JLabel();
         campo_registro_cedula5 = new javax.swing.JTextField();
-        jLabel41 = new javax.swing.JLabel();
-        campo_registro_direccion5 = new javax.swing.JTextField();
         campo_registro_telefono5 = new javax.swing.JTextField();
         jLabel42 = new javax.swing.JLabel();
         boton_registrar_usuarios5 = new javax.swing.JToggleButton();
         jButton1 = new javax.swing.JButton();
-        boton_volver = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -78,15 +77,6 @@ public class Modificar_pasajero extends javax.swing.JFrame {
             }
         });
 
-        jLabel41.setText(" Dirección:");
-
-        campo_registro_direccion5.setEnabled(false);
-        campo_registro_direccion5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                campo_registro_direccion5ActionPerformed(evt);
-            }
-        });
-
         campo_registro_telefono5.setEnabled(false);
         campo_registro_telefono5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -109,11 +99,9 @@ public class Modificar_pasajero extends javax.swing.JFrame {
         });
 
         jButton1.setText("Buscar");
-
-        boton_volver.setText("Volver");
-        boton_volver.addActionListener(new java.awt.event.ActionListener() {
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                boton_volverActionPerformed(evt);
+                jButton1ActionPerformed(evt);
             }
         });
 
@@ -122,69 +110,55 @@ public class Modificar_pasajero extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addComponent(boton_volver)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(176, Short.MAX_VALUE)
                 .addComponent(jLabel43)
                 .addGap(135, 135, 135))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(79, 79, 79)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel42)
-                            .addComponent(jLabel41))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(campo_registro_direccion5, javax.swing.GroupLayout.DEFAULT_SIZE, 194, Short.MAX_VALUE)
-                            .addComponent(campo_registro_telefono5, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(79, 79, 79)
-                                .addComponent(jLabel38))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(33, 33, 33)
-                                .addComponent(jLabel39)))
+                                .addComponent(jLabel39))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(79, 79, 79)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel42)
+                                    .addComponent(jLabel38))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(campo_registro_nombre5, javax.swing.GroupLayout.DEFAULT_SIZE, 194, Short.MAX_VALUE)
-                            .addComponent(campo_registro_cedula5)))
+                            .addComponent(campo_registro_cedula5)
+                            .addComponent(campo_registro_telefono5, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(boton_registrar_usuarios5)
-                            .addComponent(jButton1))))
+                            .addComponent(jButton1)
+                            .addComponent(boton_registrar_usuarios5))))
                 .addGap(64, 64, 64))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(19, 19, 19)
-                        .addComponent(jLabel43))
-                    .addComponent(boton_volver))
+                .addGap(19, 19, 19)
+                .addComponent(jLabel43)
                 .addGap(17, 17, 17)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel39)
                     .addComponent(campo_registro_cedula5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel38)
                     .addComponent(campo_registro_nombre5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(campo_registro_direccion5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel41))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(campo_registro_telefono5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel42))
+                    .addComponent(jLabel42)
+                    .addComponent(campo_registro_telefono5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(boton_registrar_usuarios5)
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -222,10 +196,6 @@ public class Modificar_pasajero extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_campo_registro_cedula5KeyTyped
 
-    private void campo_registro_direccion5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campo_registro_direccion5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_campo_registro_direccion5ActionPerformed
-
     private void campo_registro_telefono5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campo_registro_telefono5ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_campo_registro_telefono5ActionPerformed
@@ -241,63 +211,110 @@ public class Modificar_pasajero extends javax.swing.JFrame {
 
     private void boton_registrar_usuarios5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_registrar_usuarios5ActionPerformed
         // TODO add your handling code here:
-
-        //Verificar campos vaicos
-        if ((campo_registro_nombre5.getText().trim().length() != 0) && (campo_registro_cedula5.getText().trim().length() != 0) && (campo_registro_direccion5.getText().trim().length() != 0) && (campo_registro_telefono5.getText().trim().length() != 0)) {
+if ((campo_registro_nombre5.getText().trim().length() != 0) && (campo_registro_cedula5.getText().trim().length() != 0) && (campo_registro_telefono5.getText().trim().length() != 0)) {
 
             /**
-            * Se guarda en las variables cada uno de los campos de la ventana.
-            */
+             * Se guarda en las variables cada uno de los campos de la ventana.
+             */
             String cedula = campo_registro_cedula5.getText();
             String nombre = campo_registro_nombre5.getText();
-            String direccion = campo_registro_direccion5.getText();
             String telefono = campo_registro_telefono5.getText();
 
             /**
-            * Se realiza la conexion a la base de datos Y se hace el llamado a
-            * registrar usuario con los campos llenos el cual devuelve un
-            * entero donde si es 1, es porque el usuario se registro
-            * correctamente de lo contrario el usuario ya existia y se le
-            * informa al usuario
-            */
-            // conexion_bd obj_conectarbd = new conexion_bd();
-            int n = 0;
-            //  n = obj_conectarbd.registrar_usuario(cedula, nombre, cargo, direccion, telefono);
+             * Se realiza la conexion a la base de datos Y se hace el llamado a
+             * registrar usuario con los campos llenos el cual devuelve un
+             * entero donde si es 1, es porque el usuario se registro
+             * correctamente de lo contrario el usuario ya existia y se le
+             * informa al usuario
+             */
+            ControladorPasajero controlador = new ControladorPasajero();
+            int n = controlador.modificar_pasajero(cedula, nombre, telefono);
+            
+            System.out.println(cedula+nombre+telefono);
+            
 
             if (n == 1) {
+                JOptionPane.showMessageDialog(null, "Se modifico el pasajero");
                 this.dispose();
+                
             } else {
 
                 campo_registro_cedula5.setText("");
                 campo_registro_nombre5.setText("");
-                campo_registro_direccion5.setText("");
                 campo_registro_telefono5.setText("");
 
             }
         } else {
             JOptionPane.showMessageDialog(this, "Hay campos vacios, por favor completelos");
         }
+
+    
     }//GEN-LAST:event_boton_registrar_usuarios5ActionPerformed
 
-    private void boton_volverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_volverActionPerformed
-        Ventana_pasajeros ventana_pasajeros= new Ventana_pasajeros();
-        ventana_pasajeros.toFront();
-        ventana_pasajeros.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_boton_volverActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        
+        Pasajero pas = new Pasajero();
+        ControladorPasajero controlador = new ControladorPasajero();
+        
+        try {
 
+            /**
+             * obj_consultar : objeto para acceder a la interfaz buscar_usuario
+             * datos : se realiza el llamado al metodo consultar_usuario el cual
+             * recibe un entero cedula, con dicha cedula realiza la busqueda en
+             * la base de datos y retorna en el ArrayList<String>
+             * cada uno de los datos del usuario solicitado, y se imprimen en
+             * los campos.
+             */
+            // Bd_pqr obj_consultarbd = new Bd_pqr();
+            System.out.println("Conecto el objeto");
+
+           if(campo_registro_cedula5.getText().trim().length() != 0){
+                pas = controlador.consultar_pasajero(Integer.parseInt(campo_registro_cedula5.getText()));
+            
+           
+            campo_registro_cedula5.setEditable(false);
+           
+            campo_registro_nombre5.setText(pas.getNombre());
+            campo_registro_telefono5.setText(pas.getTelefono());
+            
+            campo_registro_nombre5.setEnabled(true);
+            campo_registro_telefono5.setEnabled(true);
+            campo_registro_cedula5.setEnabled(true);
+            
+            
+            
+           }
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "El usuario que intenta consultar no existe");
+
+        }
+
+        /*if (rol_user.equals("Gerente")) {
+            campo_respuesta.setEditable(true);
+            
+        } else {
+
+        }*/
+        
+        
+        
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton boton_registrar_usuarios5;
-    private javax.swing.JButton boton_volver;
     private javax.swing.JTextField campo_registro_cedula5;
-    private javax.swing.JTextField campo_registro_direccion5;
     private javax.swing.JTextField campo_registro_nombre5;
     private javax.swing.JTextField campo_registro_telefono5;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel39;
-    private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel43;
     private javax.swing.JPanel jPanel1;
