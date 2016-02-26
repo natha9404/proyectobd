@@ -6,6 +6,8 @@
 package GUI.ESTACIONES;
 
 import GUI.INICIO.*;
+import javax.swing.table.DefaultTableModel;
+import controlador.ControladorEstacion;
 /**
  *
  * @author natha
@@ -182,6 +184,13 @@ public class Ventana_estacion extends javax.swing.JFrame {
         // TODO add your handling code here:
         //abre la ventana para consultar usuarios
         Listar_estaciones obj_listar_estaciones = new Listar_estaciones();
+        ControladorEstacion controlador = new ControladorEstacion ();
+        
+        DefaultTableModel modelo;
+        
+        modelo = controlador.listarEstaciones();
+        obj_listar_estaciones.imprimir(modelo);
+        
         obj_listar_estaciones.setVisible(true); 
     }//GEN-LAST:event_listar_pasajeroActionPerformed
 

@@ -7,13 +7,17 @@ package GUI.EMPLEADOS;
 
 import java.awt.Toolkit;
 import javax.swing.JOptionPane;
+import controlador.ControladorEmpleado;
+import logica.Empleado;
 
 /**
  *
  * @author natha
  */
 public class Modificar_empleado extends javax.swing.JFrame {
-
+    
+    ControladorEmpleado controlador = new ControladorEmpleado();
+    Empleado est = new Empleado ();
     /**
      * Creates new form modificar_empleado
      */
@@ -53,7 +57,7 @@ public class Modificar_empleado extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        campo_registro_nombre.setEnabled(false);
+        campo_registro_nombre.setEnabled(true);
         campo_registro_nombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 campo_registro_nombreActionPerformed(evt);
@@ -79,14 +83,14 @@ public class Modificar_empleado extends javax.swing.JFrame {
 
         jLabel13.setText(" Cargo:");
 
-        campo_registro_direccion.setEnabled(false);
+        campo_registro_direccion.setEnabled(true);
         campo_registro_direccion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 campo_registro_direccionActionPerformed(evt);
             }
         });
 
-        campo_registro_telefono.setEnabled(false);
+        campo_registro_telefono.setEnabled(true);
         campo_registro_telefono.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 campo_registro_telefonoActionPerformed(evt);
@@ -113,6 +117,11 @@ public class Modificar_empleado extends javax.swing.JFrame {
         jLabel14.setText("MODIFICAR EMPLEADOS");
 
         buscar_empleado_modificar.setText("Buscar");
+        buscar_empleado_modificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buscar_empleado_modificarActionPerformed(evt);
+            }
+        });
 
         boton_volver.setText("Volver");
         boton_volver.addActionListener(new java.awt.event.ActionListener() {
@@ -191,7 +200,7 @@ public class Modificar_empleado extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI_proyecto_masivo/metrocali11.jpg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/metrocali11.jpg"))); // NOI18N
         jLabel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -260,7 +269,14 @@ public class Modificar_empleado extends javax.swing.JFrame {
             String cargo = (String) ComboBox_registro_rol.getSelectedItem();
             String direccion = campo_registro_direccion.getText();
             String telefono = campo_registro_telefono.getText();
-
+            
+            est.setCargo(cargo);
+            est.setCedula(cedula);
+            est.setDireccion(direccion);
+            est.setNombre(nombre);
+            est.setTelefono(telefono);
+            
+            controlador.modificar(est);
             /**
              * Se realiza la conexion a la base de datos Y se hace el llamado a
              * registrar usuario con los campos llenos el cual devuelve un
@@ -295,6 +311,18 @@ public class Modificar_empleado extends javax.swing.JFrame {
         ventana_empleado.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_boton_volverActionPerformed
+
+    private void buscar_empleado_modificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscar_empleado_modificarActionPerformed
+        // TODO add your handling code here:
+        String cedula = campo_registro_cedula.getText();
+        
+        est = controlador.consultarEmpleado(cedula);
+        
+        campo_registro_cedula.setText(est.getCedula());
+        campo_registro_direccion.setText(est.getDireccion());
+        campo_registro_nombre.setText(est.getNombre());
+        campo_registro_telefono.setText(est.getTelefono());
+    }//GEN-LAST:event_buscar_empleado_modificarActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox ComboBox_registro_rol;

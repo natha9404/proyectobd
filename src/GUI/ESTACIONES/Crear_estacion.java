@@ -5,6 +5,11 @@
  */
 package GUI.ESTACIONES;
 
+import controlador.ControladorEstacion;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+import logica.Estacion;
+
 /**
  *
  * @author natha
@@ -60,9 +65,19 @@ public class Crear_estacion extends javax.swing.JFrame {
         jLabel4.setText("Director de Estación:");
 
         registrar_estacion.setText("Registrar Estación");
-        registrar_estacion.setEnabled(false);
+        registrar_estacion.setEnabled(true);
+        registrar_estacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                registrar_estacionActionPerformed(evt);
+            }
+        });
 
         jButton1.setText("Listar Directores");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         boton_volver.setText("Volver");
         boton_volver.addActionListener(new java.awt.event.ActionListener() {
@@ -151,6 +166,45 @@ public class Crear_estacion extends javax.swing.JFrame {
         ventana_estacion.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_boton_volverActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        ArrayList<String> lista;
+        
+        ControladorEstacion controlador = new ControladorEstacion();
+        
+        lista = controlador.listarEncargados();
+        
+        if(lista.isEmpty()){
+            JOptionPane.showMessageDialog(null, "No hay encargados de estacion disponibles");
+        }else{
+            int n = lista.size();
+        
+            for (int i = 0; i < n; i++){
+                combo_directorEstacion.addItem(lista.get(i));
+            }
+        }
+        
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void registrar_estacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrar_estacionActionPerformed
+        // TODO add your handling code here:
+        ControladorEstacion controlador = new ControladorEstacion();
+       
+        String empleado;
+        String id_empleado;
+        String nombre = nombre_estacion.getText();
+        String ubicacion = ubicacion_estacion.getText();
+        empleado = (String) combo_directorEstacion.getSelectedItem();
+        
+        id_empleado = controlador.encargado(empleado);
+        
+        System.out.println(id_empleado);
+        
+                
+        controlador.insertarEstacion(nombre, ubicacion, id_empleado);
+    }//GEN-LAST:event_registrar_estacionActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton boton_volver;

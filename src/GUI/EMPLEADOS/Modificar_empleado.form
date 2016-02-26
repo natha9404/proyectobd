@@ -142,7 +142,9 @@
       <SubComponents>
         <Component class="javax.swing.JTextField" name="campo_registro_nombre">
           <Properties>
-            <Property name="enabled" type="boolean" value="false"/>
+            <Property name="enabled" type="boolean" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="true" type="code"/>
+            </Property>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="campo_registro_nombreActionPerformed"/>
@@ -182,7 +184,9 @@
         </Component>
         <Component class="javax.swing.JTextField" name="campo_registro_direccion">
           <Properties>
-            <Property name="enabled" type="boolean" value="false"/>
+            <Property name="enabled" type="boolean" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="true" type="code"/>
+            </Property>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="campo_registro_direccionActionPerformed"/>
@@ -190,7 +194,9 @@
         </Component>
         <Component class="javax.swing.JTextField" name="campo_registro_telefono">
           <Properties>
-            <Property name="enabled" type="boolean" value="false"/>
+            <Property name="enabled" type="boolean" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="true" type="code"/>
+            </Property>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="campo_registro_telefonoActionPerformed"/>
@@ -227,6 +233,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Buscar"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buscar_empleado_modificarActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="boton_volver">
           <Properties>
@@ -241,7 +250,7 @@
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/GUI_proyecto_masivo/metrocali11.jpg"/>
+          <Image iconType="3" name="/recursos/metrocali11.jpg"/>
         </Property>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">

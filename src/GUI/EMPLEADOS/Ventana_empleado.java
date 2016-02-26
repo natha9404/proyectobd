@@ -5,7 +5,10 @@
  */
 package GUI.EMPLEADOS;
 
+
 import GUI.INICIO.*;
+import controlador.ControladorEmpleado;
+import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author natha
@@ -269,6 +272,15 @@ public class Ventana_empleado extends javax.swing.JFrame {
         //abre la ventana para consultar usuarios
        /* listar_empleados obj_buscar_user = new listar_empleados();
         obj_buscar_user.setVisible(true); */
+        Listar_empleados listar = new Listar_empleados();
+        ControladorEmpleado controlador = new ControladorEmpleado ();
+        
+        DefaultTableModel modelo;
+        
+        modelo = controlador.listar();
+        listar.imprimir(modelo);
+        
+        listar.setVisible(true); 
     }//GEN-LAST:event_listar_empleadosActionPerformed
 
     private void boton_buscarempleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_buscarempleadoActionPerformed
