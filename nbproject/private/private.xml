@@ -3,20 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< HEAD
-            <file>file:/Users/natha9404/Documents/Bases%20de%20Datos/PROYECTO/proyectobd-tarjetas-buses/src/accesoDatos/Daopqr.java</file>
-            <file>file:/Users/natha9404/Documents/Bases%20de%20Datos/PROYECTO/proyectobd-tarjetas-buses/src/GUI/PQR/Consulta_pqr.java</file>
-            <file>file:/Users/natha9404/Documents/Bases%20de%20Datos/PROYECTO/proyectobd-tarjetas-buses/src/GUI/PQR/Pqr_Ventana.java</file>
-            <file>file:/Users/natha9404/Documents/Bases%20de%20Datos/PROYECTO/proyectobd-tarjetas-buses/src/controlador/Controlador_pqr.java</file>
-            <file>file:/Users/natha9404/Documents/Bases%20de%20Datos/PROYECTO/proyectobd-tarjetas-buses/src/GUI/PQR/Ventana_pqr.java</file>
-=======
-            <file>file:/home/edison/Documentos/univalle/2015-II/BD/proyectobd/src/controlador/ControladorEstacion.java</file>
-            <file>file:/home/edison/Documentos/univalle/2015-II/BD/proyectobd/src/GUI/ESTACIONES/Crear_estacion.java</file>
-            <file>file:/home/edison/Documentos/univalle/2015-II/BD/proyectobd/src/logica/Estacion.java</file>
-            <file>file:/home/edison/Documentos/univalle/2015-II/BD/proyectobd/src/GUI/ESTACIONES/Ventana_estacion.java</file>
-            <file>file:/home/edison/Documentos/univalle/2015-II/BD/proyectobd/src/GUI/ESTACIONES/Listar_estaciones.java</file>
-            <file>file:/home/edison/Documentos/univalle/2015-II/BD/proyectobd/src/accesoDatos/DaoEstacion.java</file>
->>>>>>> origin/master
+            <file>file:/Users/natha9404/Documents/Bases%20de%20Datos/PROYECTO/proyectobd-tarjetas-buses/src/GUI/INICIO/I_inicio.java</file>
+            <file>file:/Users/natha9404/Documents/Bases%20de%20Datos/PROYECTO/proyectobd-tarjetas-buses/src/GUI/PASAJEROS/Ventana_pasajeros.java</file>
+            <file>file:/Users/natha9404/Documents/Bases%20de%20Datos/PROYECTO/proyectobd-tarjetas-buses/src/GUI/PASAJEROS/Modificar_pasajero.java</file>
+            <file>file:/Users/natha9404/Documents/Bases%20de%20Datos/PROYECTO/proyectobd-tarjetas-buses/src/GUI/PASAJEROS/Buscar_pasajero.java</file>
         </group>
     </open-files>
 </project-private>
