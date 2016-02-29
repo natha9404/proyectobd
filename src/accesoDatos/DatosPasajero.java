@@ -47,12 +47,12 @@ FachadaBD fachada;
         return -1;
     }//fin guardar
 
-    public Pasajero consultarPasajero(int cedula){
+    public Pasajero consultarPasajero(String cedula){
        
         Pasajero pas = new Pasajero();
         
         String sql_select;
-        sql_select="SELECT * FROM Pasajero";
+        sql_select="SELECT * FROM Pasajero WHERE cedula_pasajero='" + cedula +  "'";
          try{
             Connection conn= fachada.conectar();
             Statement sentencia = conn.createStatement();

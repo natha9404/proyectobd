@@ -55,4 +55,16 @@ public class ControladorRutas {
         return result;
     }
 
+    public Ruta consultar_ruta(String nombre_ruta) {
+        
+    
+        Ruta ruta = new Ruta();
+        System.out.println("Se va a consultar ruta");
+
+        ruta = daoRutas.consultarRuta(nombre_ruta);
+
+        return ruta;
+    
+    }
+
 }

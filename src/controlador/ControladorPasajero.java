@@ -41,7 +41,7 @@ public class ControladorPasajero {
 
     }
 
-    public Pasajero consultar_pasajero(int cedula) {
+    public Pasajero consultar_pasajero(String cedula) {
 
         Pasajero pasajero = new Pasajero();
 
