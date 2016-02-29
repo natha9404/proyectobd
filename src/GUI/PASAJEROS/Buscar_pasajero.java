@@ -235,7 +235,7 @@ public class Buscar_pasajero extends javax.swing.JFrame {
             System.out.println("Conecto el objeto");
 
             if (campo_registro_cedula5.getText().trim().length() != 0) {
-                pas = controlador.consultar_pasajero(Integer.parseInt(campo_registro_cedula5.getText()));
+                pas = controlador.consultar_pasajero(campo_registro_cedula5.getText());
 
                 campo_registro_cedula5.setEditable(false);
 
