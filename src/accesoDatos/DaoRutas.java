@@ -9,11 +9,8 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-<<<<<<< HEAD
 import javax.swing.JOptionPane;
-=======
 import java.util.ArrayList;
->>>>>>> origin/master
 import logica.Ruta;
 import logica.RutaEstacion;
 
@@ -105,7 +102,6 @@ public class DaoRutas {
         return ruta;
 
     }
-<<<<<<< HEAD
 
     public int modificarRuta(Ruta ruta, String ruta_anterior) {
     
@@ -135,8 +131,6 @@ public class DaoRutas {
     
     }
 
-=======
-    
     public ArrayList listar_estaciones(String nombre){
         String sql_select = "SELECT nombre_estacion FROM Estacion WHERE nombre_estacion NOT IN (SELECT nombre_estacion FROM Ruta_Estacion WHERE nombre_ruta = '" + nombre + "')";
         
@@ -212,5 +206,4 @@ public class DaoRutas {
             System.out.println(e);
         }
     }
->>>>>>> origin/master
 }
