@@ -5,8 +5,11 @@
  */
 package GUI.RUTA;
 
+import controlador.ControladorEstacion;
+import controlador.ControladorRutas;
 import java.awt.Image;
 import java.io.File;
+import java.util.ArrayList;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
@@ -19,12 +22,15 @@ import javax.swing.filechooser.FileNameExtensionFilter;
  */
 public class Ventana_insertar_rutas extends javax.swing.JFrame {
     private File fichero;
+    int imagen_num = 0;
+    ArrayList<String> estacion_añadir = new ArrayList<>();
     
     /**
      * Creates new form Ventana_rutas
      */
     public Ventana_insertar_rutas() {
         initComponents();
+        llenarEstaciones();
     }
 
     /**
@@ -86,6 +92,11 @@ public class Ventana_insertar_rutas extends javax.swing.JFrame {
         foto_ruta.setText("                                  FOTO");
 
         anadir_estacion.setText("Añadir");
+        anadir_estacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                anadir_estacionActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -94,7 +105,11 @@ public class Ventana_insertar_rutas extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(40, 40, 40)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(boton_registrar_ruta, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(boton_imagen_ruta)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(boton_registrar_ruta, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(6, 6, 6))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
@@ -103,7 +118,6 @@ public class Ventana_insertar_rutas extends javax.swing.JFrame {
                         .addGap(49, 49, 49)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(campo_nombre_ruta)
-                            .addComponent(boton_imagen_ruta)
                             .addComponent(foto_ruta, javax.swing.GroupLayout.DEFAULT_SIZE, 243, Short.MAX_VALUE)
                             .addComponent(texto_descipcion_ruta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
@@ -124,19 +138,21 @@ public class Ventana_insertar_rutas extends javax.swing.JFrame {
                     .addComponent(jLabel3)
                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(anadir_estacion))
-                .addGap(7, 7, 7)
-                .addComponent(texto_descipcion_ruta, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(145, 145, 145)
                         .addComponent(jLabel4)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(foto_ruta, javax.swing.GroupLayout.DEFAULT_SIZE, 167, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(boton_imagen_ruta)
-                .addGap(8, 8, 8)
-                .addComponent(boton_registrar_ruta)
-                .addContainerGap())
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(texto_descipcion_ruta, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(foto_ruta, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE)
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(boton_imagen_ruta)
+                            .addComponent(boton_registrar_ruta))
+                        .addGap(31, 31, 31))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -163,6 +179,33 @@ public class Ventana_insertar_rutas extends javax.swing.JFrame {
 
     private void boton_registrar_rutaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_registrar_rutaActionPerformed
         // TODO add your handling code here:
+        
+     
+        String nombre_ruta;
+        String descripcion;
+        String ruta_imagen;
+        
+        if((campo_nombre_ruta.getText().trim().length() !=0)&& (texto_descipcion_ruta.getText().trim().length()>=3)&& imagen_num>0)
+        {
+            nombre_ruta = campo_nombre_ruta.getText();
+            descripcion = texto_descipcion_ruta.getText();
+            System.out.println(fichero);
+            ruta_imagen = fichero.toString();
+            ControladorRutas controlador = new ControladorRutas();
+            int num = controlador.insertarRuta(nombre_ruta,descripcion,ruta_imagen);
+            
+            int num2 = controlador.insertarEstacionRuta(nombre_ruta,estacion_añadir);
+            
+            JOptionPane.showMessageDialog(null, "Ruta Añadida");
+            
+            
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Por favor ingrese todos los datos y su respectiva imagen");
+            
+        }
+       
+        
     }//GEN-LAST:event_boton_registrar_rutaActionPerformed
 
     private void boton_imagen_rutaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_imagen_rutaActionPerformed
@@ -187,12 +230,29 @@ public class Ventana_insertar_rutas extends javax.swing.JFrame {
                 foto_ruta.setText(null);
                 
                 foto_ruta.setIcon(icono);
+                
+                imagen_num = 1;
+                
             }catch(Exception e){
                 JOptionPane.showMessageDialog(null, "Error al abrir la imagen: " + e);
             }
         }
         
     }//GEN-LAST:event_boton_imagen_rutaActionPerformed
+
+    private void anadir_estacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_anadir_estacionActionPerformed
+        // TODO add your handling code here:
+       
+        
+        estacion_añadir.add(jComboBox1.getSelectedItem().toString());
+        int posicion = jComboBox1.getSelectedIndex();
+        System.out.println("posicion"+posicion);
+        texto_descipcion_ruta.append(jComboBox1.getSelectedItem().toString()+" ");
+        jComboBox1.removeItemAt(posicion);
+      
+        
+        
+    }//GEN-LAST:event_anadir_estacionActionPerformed
 
      /**
      * @param args the command line arguments
@@ -216,4 +276,21 @@ public class Ventana_insertar_rutas extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private java.awt.TextArea texto_descipcion_ruta;
     // End of variables declaration//GEN-END:variables
+
+    private void llenarEstaciones() {
+       
+        ArrayList<String> estaciones = new ArrayList<>();
+        ControladorEstacion controlador = new ControladorEstacion ();
+        estaciones = controlador.listaEstaciones();
+        
+        for(int i = 0; i<estaciones.size(); i++){
+            
+            jComboBox1.addItem(estaciones.get(i));
+            
+            
+        }
+        
+    
+    
+    }
 }
