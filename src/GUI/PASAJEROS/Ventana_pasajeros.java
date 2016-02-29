@@ -6,13 +6,14 @@
 package GUI.PASAJEROS;
 
 import GUI.INICIO.*;
-
+import controlador.ControladorPasajero;
+import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author natha
  */
 public class Ventana_pasajeros extends javax.swing.JFrame {
-
+    
     /**
      * Creates new form ventana_pasajeros
      */
@@ -183,6 +184,14 @@ public class Ventana_pasajeros extends javax.swing.JFrame {
         // TODO add your handling code here:
         //abre la ventana para consultar usuarios
         Listar_pasajeros obj_listar_pasajeros = new Listar_pasajeros();
+        ControladorPasajero controlador = new ControladorPasajero();
+        
+        DefaultTableModel modelo;
+        
+        modelo = controlador.listarPasajero();
+        
+        obj_listar_pasajeros.imprimir(modelo);
+        
         obj_listar_pasajeros.setVisible(true);
     }//GEN-LAST:event_listar_pasajeroActionPerformed
 
