@@ -113,8 +113,8 @@ public class DaoEmpleado {
         DefaultTableModel modelo = new DefaultTableModel();
         String sql_select;
         
-        String [] encabezado = {"ceduloa", "nombre", "telefono", "cargo"};
-        String [] datos = new String [4];
+        String [] encabezado = {"ceduloa", "nombre", "telefono", "direccion", "cargo"};
+        String [] datos = new String [5];
         
         modelo = new DefaultTableModel(null, encabezado);
         sql_select="SELECT * FROM  Empleado";
@@ -133,6 +133,7 @@ public class DaoEmpleado {
                 datos [1]=rs.getString(2);
                 datos [2]=rs.getString(3);
                 datos [3]=rs.getString(4);
+                datos [4]=rs.getString(5);
                 modelo.addRow(datos);
                                
             }
