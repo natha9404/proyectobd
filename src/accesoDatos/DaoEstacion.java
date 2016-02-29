@@ -178,7 +178,7 @@ public class DaoEstacion {
         ArrayList <String> lista = new ArrayList<>();
         String query;
         
-        query = "SELECT nombre FROM Empleado WHERE cargo = 'Director de Estacion' AND cedula_empleado NOT IN (SELECT cedula_empleado FROM Estacion);";
+        query = "SELECT nombre FROM Empleado WHERE cargo = 'Director de Estación' AND cedula_empleado NOT IN (SELECT cedula_empleado FROM Estacion);";
        
         try{
             conexion = fachada.getConnetion();
