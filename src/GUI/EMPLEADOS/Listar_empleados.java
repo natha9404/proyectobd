@@ -94,9 +94,7 @@ public class Listar_empleados extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void boton_volverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_volverActionPerformed
-        Ventana_empleado ventana_empleado= new Ventana_empleado();
-        ventana_empleado.toFront();
-        ventana_empleado.setVisible(true);
+       
         this.dispose();
     }//GEN-LAST:event_boton_volverActionPerformed
 

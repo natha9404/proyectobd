@@ -81,25 +81,25 @@ CREATE TABLE Pasajero (
 );
 
 
+--Modifique SQR
 
 CREATE SEQUENCE sqr_id
-START 001
+START 1001
 increment by 1;	
 
 CREATE TABLE SQR (
 	numero_ticket INTEGER DEFAULT nextval('sqr_id') NOT NULL,
-	motivo VARCHAR(20) NOT NULL,
-	descripcion TEXT NOT NULL,
-	estado VARCHAR(10) NOT NULL,
+	tipo_pqr VARCHAR(20) NOT NULL,
+	detalle TEXT NOT NULL,
+	nombre VARCHAR(100) NOT NULL,
+	tarjeta INTEGER NOT NULL,
+	nombre_estacion VARCHAR(50) NOT NULL,
 	fecha DATE NOT NULL,
-	nombre_estacion VARCHAR(20) NOT NULL,
-	cedula_empleado_director VARCHAR(20) NOT NULL,
-	medidas TEXT,
-	cedula_empleado_servicio_cliente VARCHAR(20) NOT NULL,
+	estado VARCHAR(10) NOT NULL,
+	respuesta TEXT,
 	PRIMARY KEY (numero_ticket),
 	FOREIGN KEY (nombre_estacion) REFERENCES Estacion(nombre_estacion),
-	FOREIGN KEY (cedula_empleado_director) REFERENCES Empleado(cedula_empleado),
-	FOREIGN KEY (cedula_empleado_servicio_cliente) REFERENCES Empleado(cedula_empleado)
+	FOREIGN KEY (tarjeta) REFERENCES Tarjeta(id_tarjeta)
 );
 
 

@@ -60,6 +60,31 @@ public class DaoEstacion {
         return null;
     }
     
+    public ArrayList<String> estaciones(){
+        
+        ArrayList<String> esta =  new ArrayList<>();
+        
+        
+         try{
+            conexion = fachada.getConnetion();
+            st = conexion.createStatement();
+            
+            rs = st.executeQuery("SELECT DISTINCT nombre_estacion FROM Estacion");
+        
+            while (rs.next()){
+                
+                String obj = rs.getString(1);
+               esta.add(obj);
+                
+            }
+        }catch(SQLException e){
+            System.out.println(e);
+            JOptionPane.showMessageDialog(null, "error al conectar a la base de datos");
+        }
+        
+        return esta;
+    }
+    
     public DefaultTableModel listar (){
         DefaultTableModel modelo;
         

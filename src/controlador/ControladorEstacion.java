@@ -94,4 +94,15 @@ public class ControladorEstacion {
         id = daoEstacion.id_encargado(nombre);
         return id;
     }
+
+    public ArrayList<String> listaEstaciones() {
+        
+        ArrayList<String> estaciones;
+        
+        estaciones = daoEstacion.estaciones();
+        
+        return estaciones;
+    
+    
+    }
 }
