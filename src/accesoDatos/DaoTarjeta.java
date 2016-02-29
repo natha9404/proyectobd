@@ -6,6 +6,7 @@
 package accesoDatos;
 
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.table.DefaultTableModel;
@@ -287,5 +288,28 @@ public class DaoTarjeta {
     
     public void cerrarConexionBD(){
         fachada.closeConection(fachada.getConnetion());
+    }
+    
+    public ArrayList estaciones_ticket (){
+        ArrayList<String> lista = new ArrayList<>();
+        String query;
+        
+        query = "SELECT DISTINCT nombre_ruta FROM Ruta_Estacion";
+        
+        try{
+            Connection conn= fachada.getConnetion();
+            System.out.println("consultando Tarjeta en la base de datos");
+            Statement sentencia = conn.createStatement();
+            ResultSet tabla = sentencia.executeQuery(query);
+            
+            while (tabla.next()){
+                lista.add(tabla.getString(1));
+                
+            }
+            return lista;
+        }catch(SQLException e){
+            System.out.println(e);
+        }
+        return lista;
     }
 }

@@ -8,6 +8,7 @@ package GUI.TARJETA;
 import javax.swing.JOptionPane;
 import controlador.ControladorTarjeta;
 import java.awt.Color;
+import java.util.ArrayList;
 import logica.Tarjeta;
 
 /**
@@ -42,6 +43,9 @@ public class Venta_tickets extends javax.swing.JFrame {
         boton_descontar_pasaje = new javax.swing.JButton();
         campo_nuevo_saldo = new javax.swing.JTextField();
         boton_volver = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        combo_Estaciones = new javax.swing.JComboBox();
+        boton_listarRutas = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -76,6 +80,22 @@ public class Venta_tickets extends javax.swing.JFrame {
             }
         });
 
+        jLabel2.setText("Rutas:");
+
+        combo_Estaciones.setModel(new javax.swing.DefaultComboBoxModel(new String[] { }));
+        combo_Estaciones.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                combo_EstacionesActionPerformed(evt);
+            }
+        });
+
+        boton_listarRutas.setText("Listar Rutas");
+        boton_listarRutas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boton_listarRutasActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -84,20 +104,28 @@ public class Venta_tickets extends javax.swing.JFrame {
                 .addComponent(boton_volver)
                 .addGap(68, 68, 68)
                 .addComponent(jLabel14)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(204, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(boton_descontar_pasaje, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel10)
-                            .addComponent(jLabel13))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(campo_id_tarjeta, javax.swing.GroupLayout.DEFAULT_SIZE, 209, Short.MAX_VALUE)
-                            .addComponent(campo_nuevo_saldo))))
-                .addGap(54, 54, 54))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(boton_descontar_pasaje, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel10)
+                                    .addComponent(jLabel13)
+                                    .addComponent(jLabel2))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(campo_id_tarjeta, javax.swing.GroupLayout.DEFAULT_SIZE, 209, Short.MAX_VALUE)
+                                        .addComponent(campo_nuevo_saldo))
+                                    .addComponent(combo_Estaciones, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(54, 54, 54))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(boton_listarRutas)
+                        .addGap(62, 62, 62))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -117,7 +145,13 @@ public class Venta_tickets extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10)
                     .addComponent(campo_nuevo_saldo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(48, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(boton_listarRutas)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(combo_Estaciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(39, 39, 39))
         );
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/metrocali11.jpg"))); // NOI18N
@@ -135,7 +169,8 @@ public class Venta_tickets extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -171,6 +206,22 @@ public class Venta_tickets extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_boton_volverActionPerformed
 
+    private void combo_EstacionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combo_EstacionesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_combo_EstacionesActionPerformed
+
+    private void boton_listarRutasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_listarRutasActionPerformed
+        // TODO add your handling code here:
+        ArrayList<String> estaciones = new ArrayList<>();
+        estaciones = controladorTarjeta.estaciones_ticket();
+        
+        int n = estaciones.size();
+        
+        for (int i =0; i<n; i++){
+            combo_Estaciones.addItem(estaciones.get(i));
+        }
+    }//GEN-LAST:event_boton_listarRutasActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -178,13 +229,16 @@ public class Venta_tickets extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton boton_descontar_pasaje;
+    private javax.swing.JButton boton_listarRutas;
     private javax.swing.JButton boton_volver;
     private javax.swing.JTextField campo_id_tarjeta;
     private javax.swing.JTextField campo_nuevo_saldo;
+    private javax.swing.JComboBox combo_Estaciones;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

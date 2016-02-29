@@ -6,6 +6,7 @@
 package controlador;
 
 import accesoDatos.DaoTarjeta;
+import java.util.ArrayList;
 import java.util.Vector;
 import javax.swing.table.DefaultTableModel;
 import logica.Tarjeta;
@@ -114,5 +115,12 @@ public class ControladorTarjeta {
     
     public void cerrarConexionBD(){
         daoTarjeta.cerrarConexionBD();
+    }
+    
+    public ArrayList estaciones_ticket (){
+        ArrayList<String> lista = new ArrayList<>();
+        
+        lista = daoTarjeta.estaciones_ticket();
+        return lista;
     }
 }
