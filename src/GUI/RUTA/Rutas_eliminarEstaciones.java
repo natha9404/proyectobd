@@ -14,12 +14,12 @@ import logica.Ruta;
  *
  * @author edison
  */
-public class Rutas_adicionarEstaciones extends javax.swing.JFrame {
-     ArrayList<String> estacion_añadir = new ArrayList<>();
+public class Rutas_eliminarEstaciones extends javax.swing.JFrame {
+    ArrayList<String> estacion_añadir = new ArrayList<>();
     /**
-     * Creates new form Rutas_adicionarEstaciones
+     * Creates new form Rutas_eliminarEstaciones
      */
-    public Rutas_adicionarEstaciones() {
+    public Rutas_eliminarEstaciones() {
         initComponents();
     }
 
@@ -73,14 +73,14 @@ public class Rutas_adicionarEstaciones extends javax.swing.JFrame {
             }
         });
 
-        anadir_estacion.setText("Añadir");
+        anadir_estacion.setText("Eliminar");
         anadir_estacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 anadir_estacionActionPerformed(evt);
             }
         });
 
-        boton_registrar_ruta.setText("Registrar");
+        boton_registrar_ruta.setText("Eliminar");
         boton_registrar_ruta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 boton_registrar_rutaActionPerformed(evt);
@@ -116,7 +116,7 @@ public class Rutas_adicionarEstaciones extends javax.swing.JFrame {
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(anadir_estacion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
-                .addContainerGap(41, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -164,20 +164,6 @@ public class Rutas_adicionarEstaciones extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void anadir_estacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_anadir_estacionActionPerformed
-        // TODO add your handling code here:
-
-        estacion_añadir.add(combo_Estaciones.getSelectedItem().toString());
-        int posicion = combo_Estaciones.getSelectedIndex();
-        System.out.println("posicion"+posicion);
-        texto_descipcion_ruta.append(combo_Estaciones.getSelectedItem().toString()+" ");
-        combo_Estaciones.removeItemAt(posicion);
-    }//GEN-LAST:event_anadir_estacionActionPerformed
-
-    private void combo_EstacionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combo_EstacionesActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_combo_EstacionesActionPerformed
-
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         String nombre_ruta;
@@ -200,7 +186,7 @@ public class Rutas_adicionarEstaciones extends javax.swing.JFrame {
             System.out.println("Conecto el objeto");
 
             if (campo_consultar_nombre_ruta.getText().trim().length() != 0) {
-                lista = controlador.consultar_estaciones(nombre_ruta);
+                lista = controlador.estaciones_eliminar(nombre_ruta);
 
                 int n = lista.size();
 
@@ -218,6 +204,20 @@ public class Rutas_adicionarEstaciones extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void combo_EstacionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combo_EstacionesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_combo_EstacionesActionPerformed
+
+    private void anadir_estacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_anadir_estacionActionPerformed
+        // TODO add your handling code here:
+
+        estacion_añadir.add(combo_Estaciones.getSelectedItem().toString());
+        int posicion = combo_Estaciones.getSelectedIndex();
+        System.out.println("posicion"+posicion);
+        texto_descipcion_ruta.append(combo_Estaciones.getSelectedItem().toString()+" ");
+        combo_Estaciones.removeItemAt(posicion);
+    }//GEN-LAST:event_anadir_estacionActionPerformed
+
     private void boton_registrar_rutaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_registrar_rutaActionPerformed
         // TODO add your handling code here:
 
@@ -229,10 +229,10 @@ public class Rutas_adicionarEstaciones extends javax.swing.JFrame {
         {
             nombre_ruta = campo_consultar_nombre_ruta.getText();
             descripcion = texto_descipcion_ruta.getText();
-            
+
             ControladorRutas controlador = new ControladorRutas();
-            
-            int num2 = controlador.insertarEstacionRuta(nombre_ruta,estacion_añadir);
+
+            controlador.eliminar_estaciones(nombre_ruta,estacion_añadir);
 
             JOptionPane.showMessageDialog(null, "Ruta Añadida");
 
@@ -241,7 +241,6 @@ public class Rutas_adicionarEstaciones extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Por favor ingrese todos los datos y su respectiva imagen");
 
         }
-
     }//GEN-LAST:event_boton_registrar_rutaActionPerformed
 
     /**
@@ -261,20 +260,20 @@ public class Rutas_adicionarEstaciones extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Rutas_adicionarEstaciones.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Rutas_eliminarEstaciones.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Rutas_adicionarEstaciones.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Rutas_eliminarEstaciones.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Rutas_adicionarEstaciones.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Rutas_eliminarEstaciones.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Rutas_adicionarEstaciones.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Rutas_eliminarEstaciones.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Rutas_adicionarEstaciones().setVisible(true);
+                new Rutas_eliminarEstaciones().setVisible(true);
             }
         });
     }
