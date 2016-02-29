@@ -9,7 +9,11 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+<<<<<<< HEAD
 import javax.swing.JOptionPane;
+=======
+import java.util.ArrayList;
+>>>>>>> origin/master
 import logica.Ruta;
 import logica.RutaEstacion;
 
@@ -101,6 +105,7 @@ public class DaoRutas {
         return ruta;
 
     }
+<<<<<<< HEAD
 
     public int modificarRuta(Ruta ruta, String ruta_anterior) {
     
@@ -130,4 +135,82 @@ public class DaoRutas {
     
     }
 
+=======
+    
+    public ArrayList listar_estaciones(String nombre){
+        String sql_select = "SELECT nombre_estacion FROM Estacion WHERE nombre_estacion NOT IN (SELECT nombre_estacion FROM Ruta_Estacion WHERE nombre_ruta = '" + nombre + "')";
+        
+        ArrayList<String> lista = new ArrayList<>();
+        
+        try {
+            Connection conn = fachada.conectar();
+            Statement sentencia = conn.createStatement();
+            ResultSet tabla = sentencia.executeQuery(sql_select);
+            System.out.println("se conecto");
+            //
+            while (tabla.next()) {
+                lista.add(tabla.getString(1));
+                
+            }
+            
+            conn.close();
+            System.out.println("Conexion cerrada");
+            return lista;
+            
+        } catch (SQLException e) {
+            System.out.println(e);
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        return lista;
+    }
+    
+    public ArrayList estaciones_eliminar(String nombre){
+        String sql_select = "SELECT nombre_estacion FROM Ruta_Estacion WHERE nombre_ruta = '" + nombre + "'";
+        
+        ArrayList<String> lista = new ArrayList<>();
+        
+        try {
+            Connection conn = fachada.conectar();
+            Statement sentencia = conn.createStatement();
+            ResultSet tabla = sentencia.executeQuery(sql_select);
+            System.out.println("se conecto");
+            //
+            while (tabla.next()) {
+                lista.add(tabla.getString(1));
+                
+            }
+            
+            conn.close();
+            System.out.println("Conexion cerrada");
+            return lista;
+            
+        } catch (SQLException e) {
+            System.out.println(e);
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        return lista;
+    }
+    
+    public void eliminar_estaciones (String nombre, String estacion){
+        String sql = "DELETE FROM Ruta_Estacion WHERE nombre_estacion = '" + estacion + "' AND nombre_ruta = '" + nombre +"'";
+        try {
+            Connection conn = fachada.conectar();
+            Statement sentencia = conn.createStatement();
+            ResultSet tabla = sentencia.executeQuery(sql);
+            System.out.println("se conecto");
+            //
+                      
+            conn.close();
+            System.out.println("Conexion cerrada");
+           
+            
+        } catch (SQLException e) {
+            System.out.println(e);
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+>>>>>>> origin/master
 }

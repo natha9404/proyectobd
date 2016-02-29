@@ -82,5 +82,28 @@ public class ControladorRutas {
         return result;
 
     }
+    
+    public ArrayList consultar_estaciones(String nombre){
+        ArrayList<String> lista = new ArrayList<>();
+        
+        lista = daoRutas.listar_estaciones(nombre);
+        
+        return lista;
+    }
+    
+    public ArrayList estaciones_eliminar(String nombre){
+        ArrayList <String> lista = new ArrayList<>();
+        
+        lista = daoRutas.estaciones_eliminar(nombre);
+        return lista;
+    }
+    
+    public void eliminar_estaciones (String nombre, ArrayList<String> estaciones){
+        int n = estaciones.size();
+        
+        for (int i=0; i<n; i++){
+            daoRutas.eliminar_estaciones(nombre, estaciones.get(i));
+        }
+    }
 
 }

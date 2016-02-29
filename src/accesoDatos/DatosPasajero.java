@@ -12,6 +12,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -101,8 +102,14 @@ FachadaBD fachada;
         return -1;
     }
     
-    public ArrayList<Pasajero> listarPasajero(){
-        ArrayList<Pasajero> listadoPasajeros = new ArrayList<>();
+    public DefaultTableModel listarPasajero(){
+        //ArrayList<Pasajero> listadoPasajeros = new ArrayList<>();
+        DefaultTableModel modelo;
+        
+        String [] encabezado = {"cedula", "nombre", "telefono", "tarjeta"};
+        String [] datos = new String [4];
+        modelo = new DefaultTableModel(null, encabezado);
+        
         String sql_select;
         
         sql_select="SELECT * FROM  Pasajero";
@@ -114,23 +121,30 @@ FachadaBD fachada;
             ResultSet tabla = sentencia.executeQuery(sql_select);
             
             while(tabla.next()){
-                System.out.println(tabla);
-                Pasajero pas = new Pasajero();
-                pas.setCedula(tabla.getString("cedula_pasajero"));
-                pas.setNombre(tabla.getString("nombre"));
-                pas.setTelefono(tabla.getString("telefono"));
-               // pas.getTarjeta().setId_tarjeta(Integer.parseInt(tabla.getString("id_tarjeta")));
-                listadoPasajeros.add(pas);
+                
+                datos [0]=tabla.getString(1);
+                datos [1]=tabla.getString(2);
+                datos [2]=tabla.getString(3);
+                datos [3]=tabla.getString(4);
+                modelo.addRow(datos);
+                
+//                System.out.println(tabla);
+//                Pasajero pas = new Pasajero();
+//                pas.setCedula(tabla.getString("cedula_pasajero"));
+//                pas.setNombre(tabla.getString("nombre"));
+//                pas.setTelefono(tabla.getString("telefono"));
+//               // pas.getTarjeta().setId_tarjeta(Integer.parseInt(tabla.getString("id_tarjeta")));
+//                listadoPasajeros.add(pas);
                                
             }
             System.out.println("ok");
-            return listadoPasajeros;
+            return modelo;
             
         } catch (Exception e) {
             System.out.println(e);
             JOptionPane.showMessageDialog(null, "Error al conectar a la BD: DatosPasajero L.123");
             
-            return listadoPasajeros;
+            return modelo;
         }
     }
 

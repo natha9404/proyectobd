@@ -3,6 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/Users/natha9404/Documents/Bases%20de%20Datos/PROYECTO/proyectobd-tarjetas-buses/src/accesoDatos/Daopqr.java</file>
             <file>file:/Users/natha9404/Documents/Bases%20de%20Datos/PROYECTO/proyectobd-tarjetas-buses/src/controlador/ControladorRutas.java</file>
             <file>file:/Users/natha9404/Documents/Bases%20de%20Datos/PROYECTO/proyectobd-tarjetas-buses/src/logica/Ruta.java</file>
@@ -18,6 +19,16 @@
             <file>file:/Users/natha9404/Documents/Bases%20de%20Datos/PROYECTO/proyectobd-tarjetas-buses/src/logica/Pasajero.java</file>
             <file>file:/Users/natha9404/Documents/Bases%20de%20Datos/PROYECTO/proyectobd-tarjetas-buses/src/GUI/RUTA/Ventana_insertar_rutas.java</file>
             <file>file:/Users/natha9404/Documents/Bases%20de%20Datos/PROYECTO/proyectobd-tarjetas-buses/src/GUI/PASAJEROS/Registrar_pasajero.java</file>
+=======
+            <file>file:/home/edison/Documentos/univalle/2015-II/BD/proyectobd/src/GUI/PASAJEROS/Listar_pasajeros.java</file>
+            <file>file:/home/edison/Documentos/univalle/2015-II/BD/proyectobd/src/GUI/PASAJEROS/Ventana_pasajeros.java</file>
+            <file>file:/home/edison/Documentos/univalle/2015-II/BD/proyectobd/src/GUI/ESTACIONES/Ventana_estacion.java</file>
+            <file>file:/home/edison/Documentos/univalle/2015-II/BD/proyectobd/src/GUI/TARJETA/Venta_tickets.java</file>
+            <file>file:/home/edison/Documentos/univalle/2015-II/BD/proyectobd/src/GUI/ESTACIONES/Listar_estaciones.java</file>
+            <file>file:/home/edison/Documentos/univalle/2015-II/BD/proyectobd/src/accesoDatos/DatosPasajero.java</file>
+            <file>file:/home/edison/Documentos/univalle/2015-II/BD/proyectobd/src/controlador/ControladorPasajero.java</file>
+            <file>file:/home/edison/Documentos/univalle/2015-II/BD/proyectobd/src/accesoDatos/DaoEstacion.java</file>
+>>>>>>> origin/master
         </group>
     </open-files>
 </project-private>

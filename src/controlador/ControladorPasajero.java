@@ -6,6 +6,7 @@
 package controlador;
 
 import accesoDatos.DatosPasajero;
+import javax.swing.table.DefaultTableModel;
 import logica.Pasajero;
 
 /**
@@ -68,6 +69,14 @@ public class ControladorPasajero {
 
         return result;
 
+    }
+    
+    public DefaultTableModel listarPasajero(){
+        DefaultTableModel modelo = new DefaultTableModel();
+        
+        modelo = daoPasajero.listarPasajero();
+        
+        return modelo;
     }
 
 }
