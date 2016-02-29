@@ -56,15 +56,31 @@ public class ControladorRutas {
     }
 
     public Ruta consultar_ruta(String nombre_ruta) {
-        
-    
+
         Ruta ruta = new Ruta();
         System.out.println("Se va a consultar ruta");
 
         ruta = daoRutas.consultarRuta(nombre_ruta);
 
         return ruta;
-    
+
+    }
+
+    public int modificarRuta(String nombre_ruta,String descripcion, String ruta_imagen, String ruta_anterior) {
+
+        Ruta ruta = new Ruta();
+        ruta.setNombre(nombre_ruta);
+        ruta.setDescripcion(descripcion);
+        ruta.setImagen(ruta_imagen);
+
+        System.out.println("Se va  a modificar ruta en controlador");
+
+        int result = daoRutas.modificarRuta(ruta,ruta_anterior);
+
+        System.out.println("Se inserto ruta en controlador");
+
+        return result;
+
     }
 
 }

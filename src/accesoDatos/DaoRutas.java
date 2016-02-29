@@ -9,6 +9,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import javax.swing.JOptionPane;
 import logica.Ruta;
 import logica.RutaEstacion;
 
@@ -91,12 +92,42 @@ public class DaoRutas {
 
         } catch (SQLException e) {
             System.out.println(e);
+            JOptionPane.showMessageDialog(null, "Empleado no existe");
         } catch (Exception e) {
             System.out.println(e);
+            JOptionPane.showMessageDialog(null, "Empleado no existe");
         }
 
         return ruta;
 
+    }
+
+    public int modificarRuta(Ruta ruta, String ruta_anterior) {
+    
+        String sql_modificar;
+        int numFilas=0;
+        
+        System.out.println(ruta+"modificar");
+        
+        sql_modificar= "UPDATE Ruta SET descripcion='"+ruta.getDescripcion()+"' , imagen='"+ruta.getImagen()+"' WHERE nombre_ruta='"+ruta_anterior+"'";
+        
+        try{
+            Connection conn= fachada.getConnetion();
+            Statement sentencia = conn.createStatement();
+
+            numFilas = sentencia.executeUpdate(sql_modificar);            
+            System.out.println("up " + numFilas);
+            return numFilas;
+            
+        }
+        catch(SQLException e){
+            System.out.println(e); 
+            }
+        catch(Exception e){ 
+            System.out.println(e);
+        }
+        return -1;
+    
     }
 
 }
