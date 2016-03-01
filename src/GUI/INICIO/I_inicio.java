@@ -250,6 +250,7 @@ public class I_inicio extends javax.swing.JFrame {
         Ventana_tarjetas obj = new Ventana_tarjetas();
         obj.setVisible(true);
         this.setVisible(false); 
+        obj.rol(rol);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -257,6 +258,7 @@ public class I_inicio extends javax.swing.JFrame {
         Ventana_pasajeros obj = new Ventana_pasajeros();
         obj.setVisible(true);
         this.setVisible(false);
+        obj.rol(rol);
     }//GEN-LAST:event_jButton1ActionPerformed
 
 
@@ -265,6 +267,7 @@ public class I_inicio extends javax.swing.JFrame {
         Venta_Buses obj = new Venta_Buses();
         obj.setVisible(true);
         this.setVisible(false); 
+        obj.rol(rol);
     }//GEN-LAST:event_jButton3ActionPerformed
 
 
@@ -277,6 +280,7 @@ public class I_inicio extends javax.swing.JFrame {
         Ventana_empleado obj = new Ventana_empleado();
         obj.setVisible(true);
         this.setVisible(false); 
+        obj.rol(rol);
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
@@ -284,6 +288,7 @@ public class I_inicio extends javax.swing.JFrame {
         Ventana_estacion obj = new Ventana_estacion();
         obj.setVisible(true);
         this.setVisible(false); 
+        obj.rol(rol);
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
@@ -291,6 +296,7 @@ public class I_inicio extends javax.swing.JFrame {
         Ventana_pqr obj = new Ventana_pqr();
         obj.setVisible(true);
         this.setVisible(false);
+        obj.rol(rol);
         
         
     }//GEN-LAST:event_jButton8ActionPerformed

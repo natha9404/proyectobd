@@ -225,4 +225,8 @@ public class Ventana_pasajeros extends javax.swing.JFrame {
     private javax.swing.JButton registrar_pasajero;
     private javax.swing.JButton volver_principal;
     // End of variables declaration//GEN-END:variables
+
+    public void rol(String rol) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
