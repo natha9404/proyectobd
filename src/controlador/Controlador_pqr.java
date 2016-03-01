@@ -6,6 +6,8 @@
 package controlador;
 
 import accesoDatos.Daopqr;
+import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
 import logica.Pqr;
 
 /**
@@ -90,6 +92,26 @@ public class Controlador_pqr {
         return result;      
         
     
+    
+    }
+
+    public DefaultTableModel listarPqr(int tarjeta) {
+        
+        DefaultTableModel modelo = new DefaultTableModel();
+        
+        modelo = daoPqr.listarPqr(tarjeta);
+        
+        return modelo;
+      }
+
+    public ArrayList<ArrayList> listarPqr_pdf(int tarjeta) {
+       
+        ArrayList<ArrayList> pqr = new ArrayList<>();
+        
+        pqr = daoPqr.listarPqr_pdf(tarjeta);
+        
+       
+        return pqr;
     
     }
 

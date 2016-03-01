@@ -3,21 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< HEAD
-            <file>file:/home/edison/Documentos/univalle/2015-II/BD/proyectobd/src/GUI/RUTA/Ventana_modificar_rutas.java</file>
-            <file>file:/home/edison/Documentos/univalle/2015-II/BD/proyectobd/src/GUI/RUTA/Ventana_consultar_ruta.java</file>
-            <file>file:/home/edison/Documentos/univalle/2015-II/BD/proyectobd/src/accesoDatos/FachadaBD.java</file>
-=======
-            <file>file:/Users/natha9404/Documents/Bases%20de%20Datos/PROYECTO/proyectobd-tarjetas-buses/src/accesoDatos/FachadaBD.java</file>
-            <file>file:/Users/natha9404/Documents/Bases%20de%20Datos/PROYECTO/proyectobd-tarjetas-buses/src/GUI/BUS/Consulta_bus.java</file>
-            <file>file:/Users/natha9404/Documents/Bases%20de%20Datos/PROYECTO/proyectobd-tarjetas-buses/src/GUI/EMPLEADOS/Ventana_empleado.java</file>
-            <file>file:/Users/natha9404/Documents/Bases%20de%20Datos/PROYECTO/proyectobd-tarjetas-buses/src/GUI/TURNO/AsignarTurno.java</file>
-            <file>file:/Users/natha9404/Documents/Bases%20de%20Datos/PROYECTO/proyectobd-tarjetas-buses/src/controlador/ControladorTurno.java</file>
-            <file>file:/Users/natha9404/Documents/Bases%20de%20Datos/PROYECTO/proyectobd-tarjetas-buses/src/logica/Empleado.java</file>
-            <file>file:/Users/natha9404/Documents/Bases%20de%20Datos/PROYECTO/proyectobd-tarjetas-buses/src/controlador/ControladorEmpleado.java</file>
-            <file>file:/Users/natha9404/Documents/Bases%20de%20Datos/PROYECTO/proyectobd-tarjetas-buses/src/accesoDatos/DaoTurno.java</file>
-            <file>file:/Users/natha9404/Documents/Bases%20de%20Datos/PROYECTO/proyectobd-tarjetas-buses/src/logica/Turno.java</file>
->>>>>>> a7ff33b8d2f79a84fa8b2b83ab46d87d92b9dea5
+            <file>file:/Users/natha9404/Documents/Bases%20de%20Datos/PROYECTO/proyectobd-tarjetas-buses/src/GUI/REPORTES/Reporte_pqr.java</file>
+            <file>file:/Users/natha9404/Documents/Bases%20de%20Datos/PROYECTO/proyectobd-tarjetas-buses/src/logica/Generar_pdf.java</file>
+            <file>file:/Users/natha9404/Documents/Bases%20de%20Datos/PROYECTO/proyectobd-tarjetas-buses/src/GUI/PASAJEROS/Ventana_pasajeros.java</file>
+            <file>file:/Users/natha9404/Documents/Bases%20de%20Datos/PROYECTO/proyectobd-tarjetas-buses/src/GUI/PASAJEROS/Listar_pasajeros.java</file>
+            <file>file:/Users/natha9404/Documents/Bases%20de%20Datos/PROYECTO/proyectobd-tarjetas-buses/src/controlador/ControladorPasajero.java</file>
+            <file>file:/Users/natha9404/Documents/Bases%20de%20Datos/PROYECTO/proyectobd-tarjetas-buses/src/GUI/PQR/Pqr_Ventana.java</file>
+            <file>file:/Users/natha9404/Documents/Bases%20de%20Datos/PROYECTO/proyectobd-tarjetas-buses/src/logica/Pasajero.java</file>
+            <file>file:/Users/natha9404/Documents/Bases%20de%20Datos/PROYECTO/proyectobd-tarjetas-buses/src/accesoDatos/DatosPasajero.java</file>
         </group>
     </open-files>
 </project-private>
