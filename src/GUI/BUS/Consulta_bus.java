@@ -297,10 +297,13 @@ public class Consulta_bus extends javax.swing.JFrame {
         placa= campo_placa_bus.getText();
         //limpiarComponentes();
 
+        System.out.println("placa principal"+placa);
+        
         Bus b;
 
         b=controladorBus.consultarBus(placa);
         listar_rutas();
+        System.out.println("tipo"+b.getTipo() + "ruta" + b.getNombre_ruta());
         
 
         campo_tipo_bus.setSelectedItem(b.getTipo());
@@ -380,6 +383,5 @@ public class Consulta_bus extends javax.swing.JFrame {
                 boton_consultar_bus.setEnabled(true);
             }
         }
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+        }
 }

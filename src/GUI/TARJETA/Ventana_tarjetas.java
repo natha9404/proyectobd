@@ -245,6 +245,7 @@ public class Ventana_tarjetas extends javax.swing.JFrame {
         I_inicio obj_ventana_principal = new I_inicio();
         obj_ventana_principal.setVisible(true);
         obj_ventana_principal.rol(rol_user);
+        this.dispose();
     }//GEN-LAST:event_volver_principalActionPerformed
     
     /*public static void main(String args[]) {

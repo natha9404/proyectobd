@@ -46,9 +46,12 @@ public class DaoBus {
     }
     
     public Bus consultarBus(String placa){
+        
+        System.out.println("SE ENTRO AL DAO BUS "+ placa);
+        
         Bus b= new Bus();
         String sql_select;
-        sql_select="SELECT numero_bus,tipo,nombre_ruta FROM  Bus WHERE numero_bus='" + placa +  "'";
+        sql_select="SELECT numero_bus,tipo,nombre_ruta FROM  Bus WHERE numero_bus='" + placa + "';";
          try{
             Connection conn= fachada.getConnetion();
             System.out.println("consultando Bus en la base de datos");
@@ -63,13 +66,13 @@ public class DaoBus {
                 
                 b.setNombre_ruta(tabla.getString(3));
               
-                System.out.println("ok");
+                System.out.println("ok SE GUARDO"+tabla.getString(1)+tabla.getString(2)+tabla.getString(3));
             }
            
             return b;
          }
-         catch(SQLException e){ System.out.println(e); }
-         catch(Exception e){ System.out.println(e); }
+         catch(SQLException e){ System.out.println(e+"ERROR"); }
+         catch(Exception e){ System.out.println(e+"ERROR"); }
         return null;
     }
     

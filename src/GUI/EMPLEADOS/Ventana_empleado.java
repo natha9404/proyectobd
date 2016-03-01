@@ -334,7 +334,7 @@ public class Ventana_empleado extends javax.swing.JFrame {
     public void rol(String rol) {
         rol_user = rol;
         
-        if(rol_user.equals("Director Estación")){
+        if(rol_user.equals("Director de Estación")){
             boton_modificarusuario1.setEnabled(true);
             boton_adduser1.setEnabled(true);
             boton_buscarempleado.setEnabled(true);

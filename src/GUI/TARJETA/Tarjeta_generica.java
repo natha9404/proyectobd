@@ -25,13 +25,14 @@ public class Tarjeta_generica extends javax.swing.JFrame {
      */
     public Tarjeta_generica() {
 
-        listarEstaciones();
+    
 
       initComponents();
          this.setLocationRelativeTo(null);
          this.setDefaultCloseOperation(this.DO_NOTHING_ON_CLOSE);
          setResizable(false);
         controladorTarjeta=new ControladorTarjeta();
+            listarEstaciones();
     }
 
     /**

@@ -146,7 +146,6 @@ public class Venta_Buses extends javax.swing.JFrame {
         anadir_bus.toFront();
         anadir_bus.setVisible(true);
         anadir_bus.setTitle("Añadir Buses");
-        this.dispose();
     }//GEN-LAST:event_boton_add_busActionPerformed
 
     private void volver_principalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volver_principalActionPerformed
@@ -154,7 +153,7 @@ public class Venta_Buses extends javax.swing.JFrame {
         // se devuelve a la ventana anterior
         I_inicio obj_ventana_principal = new I_inicio();
         obj_ventana_principal.setVisible(true);
-        //obj_ventana_principal.rol(rol_user);
+        obj_ventana_principal.rol(rol_user);
         this.dispose();
     }//GEN-LAST:event_volver_principalActionPerformed
 
@@ -163,7 +162,6 @@ public class Venta_Buses extends javax.swing.JFrame {
         consulta_bus.toFront();
         consulta_bus.setVisible(true);
         consulta_bus.setTitle("Consultar Buses");
-        this.dispose();
     }//GEN-LAST:event_boton_consultar_busActionPerformed
 
     /**
@@ -193,7 +191,7 @@ public class Venta_Buses extends javax.swing.JFrame {
     public void rol(String rol) {
         rol_user = rol;
         
-        if (rol_user.equals("Director Estación")){
+        if (rol_user.equals("Director de Estación")){
             boton_add_bus.setEnabled(true);
             boton_consultar_bus.setEnabled(true);
             
@@ -205,6 +203,5 @@ public class Venta_Buses extends javax.swing.JFrame {
             }
         }
         
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+         }
 }

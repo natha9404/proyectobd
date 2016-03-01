@@ -40,11 +40,10 @@ public class ControladorBus {
     }//end
     
     public Bus consultarBus(String placa){
-        Vector v= new Vector();
 
         Bus b = new Bus();
         
-         System.out.println("Se va a consultar un Bus");
+         System.out.println("Se va a consultar un Bus controlador"+placa);
 
         b= daoBus.consultarBus(placa);
       

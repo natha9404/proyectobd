@@ -81,21 +81,20 @@ public class VentanaTurno extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(62, 62, 62)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel2)
-                .addGap(69, 69, 69))
-            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(45, 45, 45)
-                        .addComponent(recargar_tarjeta, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(61, 61, 61)
-                        .addComponent(tarjeta_generica, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(recargar_tarjeta, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(61, 61, 61)
+                                .addComponent(tarjeta_generica, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(108, 108, 108)
-                        .addComponent(volver_principal)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel1)
+                            .addComponent(volver_principal))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -106,9 +105,9 @@ public class VentanaTurno extends javax.swing.JFrame {
                     .addComponent(tarjeta_generica, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(recargar_tarjeta, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(volver_principal)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -136,16 +135,14 @@ public class VentanaTurno extends javax.swing.JFrame {
         CrearTurno crear= new CrearTurno();
         crear.toFront();
         crear.setVisible(true);
-        crear.setTitle("Registrar tarjeta");
-        this.dispose();
+        crear.setTitle("Crear Turno");
     }//GEN-LAST:event_tarjeta_genericaActionPerformed
 
     private void recargar_tarjetaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_recargar_tarjetaActionPerformed
         AsignarTurno asignar= new AsignarTurno();
         asignar.toFront();
         asignar.setVisible(true);
-        asignar.setTitle("Recargar tarjeta");
-        this.dispose();
+        asignar.setTitle("Asignar Turno");
     }//GEN-LAST:event_recargar_tarjetaActionPerformed
 
     private void volver_principalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volver_principalActionPerformed
@@ -175,8 +172,26 @@ public class VentanaTurno extends javax.swing.JFrame {
 
     public void rol(String rol) {
         rol_user = rol;
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+        
+        if(rol_user.equals("Director de Estación")){
+            
+            recargar_tarjeta.setEnabled(true);
+            tarjeta_generica.setEnabled(true);
+            
+        }
+        else if(rol_user.equals("Conductor")){
+            
+            tarjeta_generica.setEnabled(true);
+            
+        }
+        else{
+            
+        }
+        
+        
+        
+        
+       }
 
     
 }
