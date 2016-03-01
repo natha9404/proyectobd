@@ -233,6 +233,6 @@ public class Ventana_pasajeros extends javax.swing.JFrame {
     public void rol(String rol) {
 
         rol_user = rol;
-
+        
     }
 }

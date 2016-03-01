@@ -331,7 +331,6 @@ public class I_inicio extends javax.swing.JFrame {
                 if (rol.equals("Director de Estación")){
                     
                     jButton1.setEnabled(true);
-                    jButton1.setEnabled(true);
                     jButton3.setEnabled(true);
                     jButton4.setEnabled(true);
                     jButton5.setEnabled(true);
