@@ -19,6 +19,9 @@ public class Ventana_tarjetas extends javax.swing.JFrame {
      */
     public Ventana_tarjetas() {
         initComponents();
+         this.setLocationRelativeTo(null);
+         this.setDefaultCloseOperation(this.DO_NOTHING_ON_CLOSE);
+         setResizable(false);
     }
 
     /**

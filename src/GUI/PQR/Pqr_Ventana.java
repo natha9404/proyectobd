@@ -64,6 +64,7 @@ public class Pqr_Ventana extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         campo_fecha = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
+        boton_volver = new javax.swing.JButton();
 
         jTextField1.setText("jTextField1");
 
@@ -153,6 +154,13 @@ public class Pqr_Ventana extends javax.swing.JFrame {
             }
         });
 
+        boton_volver.setText("Volver");
+        boton_volver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boton_volverActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
@@ -203,14 +211,17 @@ public class Pqr_Ventana extends javax.swing.JFrame {
                         .addGap(28, 28, 28)
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
-                            .addComponent(jLabel4))))
+                            .addComponent(jLabel4)))
+                    .addComponent(boton_volver))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(boton_volver)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(campo_pqr_tarjeta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel10))
@@ -260,7 +271,7 @@ public class Pqr_Ventana extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 558, Short.MAX_VALUE)
+            .addGap(0, 581, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -360,6 +371,11 @@ if ((texto_pqr.getText().trim().length() != 0) && (campo_pqr_nombre.getText().tr
         
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void boton_volverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_volverActionPerformed
+
+        this.dispose();
+    }//GEN-LAST:event_boton_volverActionPerformed
+
     
    
     
@@ -367,6 +383,7 @@ if ((texto_pqr.getText().trim().length() != 0) && (campo_pqr_nombre.getText().tr
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox ComboBox_tipopqr;
+    private javax.swing.JButton boton_volver;
     private javax.swing.JTextField campo_fecha;
     private javax.swing.JTextField campo_pqr_nombre;
     private javax.swing.JTextField campo_pqr_tarjeta;
