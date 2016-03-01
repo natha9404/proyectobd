@@ -123,7 +123,7 @@
         <Component class="javax.swing.JButton" name="registrar_pasajero2">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/recursos/add_user.png"/>
+              <Image iconType="3" name="/recursos/agregar_estacion.png"/>
             </Property>
           </Properties>
           <Events>
@@ -133,7 +133,7 @@
         <Component class="javax.swing.JButton" name="modificar_pasajero">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/recursos/modificar_usuario.png"/>
+              <Image iconType="3" name="/recursos/editar_estacion.png"/>
             </Property>
           </Properties>
           <Events>
@@ -153,7 +153,7 @@
         <Component class="javax.swing.JButton" name="consultar_pasajero">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/recursos/buscar_usuario.png"/>
+              <Image iconType="3" name="/recursos/buscar_estacion.png"/>
             </Property>
           </Properties>
           <Events>
