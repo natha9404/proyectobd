@@ -203,27 +203,37 @@ public class Ventana_Rutas extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void crear_rutaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crear_rutaActionPerformed
-        AsignarTurno asignar= new AsignarTurno();
+        Ventana_insertar_rutas asignar= new Ventana_insertar_rutas();
         asignar.toFront();
         asignar.setVisible(true);
-        asignar.setTitle("Recargar tarjeta");
+        asignar.setTitle("Crear Ruta");
         this.dispose();
     }//GEN-LAST:event_crear_rutaActionPerformed
 
     private void anadir_estacionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_anadir_estacionesActionPerformed
-        CrearTurno crear= new CrearTurno();
+        Rutas_eliminarEstaciones crear= new Rutas_eliminarEstaciones();
         crear.toFront();
         crear.setVisible(true);
-        crear.setTitle("Registrar tarjeta");
+        crear.setTitle("Añadir Estaciones");
         this.dispose();
     }//GEN-LAST:event_anadir_estacionesActionPerformed
 
     private void modificar_ruta1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modificar_ruta1ActionPerformed
         // TODO add your handling code here:
+        Ventana_modificar_rutas crear = new Ventana_modificar_rutas();
+        crear.toFront();
+        crear.setVisible(true);
+        crear.setTitle("Modificar Ruta");
+        this.dispose();
     }//GEN-LAST:event_modificar_ruta1ActionPerformed
 
     private void anadir_estaciones1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_anadir_estaciones1ActionPerformed
         // TODO add your handling code here:
+         Rutas_adicionarEstaciones crear= new Rutas_adicionarEstaciones();
+        crear.toFront();
+        crear.setVisible(true);
+        crear.setTitle("Añadir Estaciones");
+        this.dispose();
     }//GEN-LAST:event_anadir_estaciones1ActionPerformed
 
     private void volver_principalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volver_principalActionPerformed

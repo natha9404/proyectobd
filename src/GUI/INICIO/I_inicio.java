@@ -313,6 +313,10 @@ public class I_inicio extends javax.swing.JFrame {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
+        Ventana_Rutas obj = new Ventana_Rutas();
+        obj.setVisible(true);
+        this.setVisible(false); 
+        obj.rol(rol);
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
