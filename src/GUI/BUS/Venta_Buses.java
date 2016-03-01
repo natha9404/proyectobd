@@ -12,7 +12,8 @@ import GUI.INICIO.*;
  * @author natha
  */
 public class Venta_Buses extends javax.swing.JFrame {
-
+    String rol_user;
+    Consulta_bus consultar = new Consulta_bus();
     /**
      * Creates new form Venta_Buses
      */
@@ -185,6 +186,20 @@ public class Venta_Buses extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     public void rol(String rol) {
+        rol_user = rol;
+        
+        if (rol_user.equals("Director Estación")){
+            boton_add_bus.setEnabled(true);
+            boton_consultar_bus.setEnabled(true);
+            
+            consultar.rol(rol_user);
+        }else{
+            if(rol_user.equals("Conductor")){
+                boton_consultar_bus.setEnabled(true);
+                consultar.rol(rol_user);
+            }
+        }
+        
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

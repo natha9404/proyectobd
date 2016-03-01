@@ -22,6 +22,7 @@ public class Consulta_bus extends javax.swing.JFrame {
     ControladorBus controladorBus;
     DefaultTableModel modelo;
     ArrayList<String> rutas = new ArrayList();
+    String rol_user;
     /**
      * Creates new form Consulta_bus
      */
@@ -314,6 +315,7 @@ public class Consulta_bus extends javax.swing.JFrame {
         Venta_Buses ventana_buses= new Venta_Buses();
         ventana_buses.toFront();
         ventana_buses.setVisible(true);
+        ventana_buses.rol(rol_user);
         this.dispose();
     }//GEN-LAST:event_boton_volverActionPerformed
 
@@ -366,4 +368,18 @@ public class Consulta_bus extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tabla_buses;
     // End of variables declaration//GEN-END:variables
+
+    void rol(String rol) {
+        rol_user = rol;
+        if(rol_user.equals("Director Estación")){
+            boton_consultar_bus.setEnabled(true);
+            boton_eliminar_bus.setEnabled(true);
+            boton_modificar_bus.setEnabled(true);
+        }else{
+            if(rol_user.equals("Conductor")){
+                boton_consultar_bus.setEnabled(true);
+            }
+        }
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
