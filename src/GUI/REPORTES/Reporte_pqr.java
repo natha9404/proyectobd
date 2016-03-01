@@ -6,10 +6,14 @@
 package GUI.REPORTES;
 
 import controlador.Controlador_pqr;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import jdk.nashorn.internal.runtime.arrays.ArrayLikeIterator;
+import logica.Generar_pdf;
 
 /**
  *
@@ -194,6 +198,14 @@ public class Reporte_pqr extends javax.swing.JFrame {
         pqr =   controlador.listarPqr_pdf(Integer.parseInt(campo_cedula.getText()));
         
         tabla_pqr.setModel(modelo);
+        
+            Generar_pdf pdf = new Generar_pdf();
+            
+            try {
+                pdf.ConvertirPDF_Pqr(pqr.get(0), pqr.get(1), pqr.get(2), pqr.get(3), pqr.get(4));
+            } catch (FileNotFoundException ex) {
+                Logger.getLogger(Reporte_pqr.class.getName()).log(Level.SEVERE, null, ex);
+            }
         
         
         
