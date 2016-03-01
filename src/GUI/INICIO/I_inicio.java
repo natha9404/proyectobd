@@ -270,7 +270,7 @@ public class I_inicio extends javax.swing.JFrame {
                     .addComponent(jLabel9)
                     .addComponent(jLabel8)
                     .addComponent(jLabel10))
-                 .addContainerGap(60, Short.MAX_VALUE))
+                 
 
         );
 
