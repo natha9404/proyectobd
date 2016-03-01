@@ -47,14 +47,14 @@ public class Ventana_estacion extends javax.swing.JFrame {
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        registrar_pasajero2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/add_user.png"))); // NOI18N
+        registrar_pasajero2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/agregar_estacion.png"))); // NOI18N
         registrar_pasajero2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 registrar_pasajero2ActionPerformed(evt);
             }
         });
 
-        modificar_pasajero.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/modificar_usuario.png"))); // NOI18N
+        modificar_pasajero.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/editar_estacion.png"))); // NOI18N
         modificar_pasajero.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 modificar_pasajeroActionPerformed(evt);
@@ -68,7 +68,7 @@ public class Ventana_estacion extends javax.swing.JFrame {
             }
         });
 
-        consultar_pasajero.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/buscar_usuario.png"))); // NOI18N
+        consultar_pasajero.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/buscar_estacion.png"))); // NOI18N
         consultar_pasajero.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 consultar_pasajeroActionPerformed(evt);
