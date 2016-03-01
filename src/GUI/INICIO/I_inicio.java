@@ -12,6 +12,7 @@ import GUI.PASAJEROS.*;
 import GUI.PQR.*;
 import GUI.RUTA.*;
 import GUI.TARJETA.*;
+import GUI.TURNO.*;
 
 
 /**
@@ -346,6 +347,11 @@ public class I_inicio extends javax.swing.JFrame {
 
     private void boton_turnosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_turnosActionPerformed
         // TODO add your handling code here:
+        VentanaTurno tur = new VentanaTurno();
+        tur.setVisible(true);
+        this.setVisible(false);
+        tur.rol(rol);
+        
     }//GEN-LAST:event_boton_turnosActionPerformed
 
 
@@ -404,10 +410,10 @@ public class I_inicio extends javax.swing.JFrame {
                    jButton2.setEnabled(true);
                    jButton8.setEnabled(true);
                     
+                }else if(rol.equals("user")){
+                    jButton4.setEnabled(true);
                 }
                 }
-                
-        
-        
+             
         }
 }
