@@ -234,5 +234,13 @@ public class Ventana_pasajeros extends javax.swing.JFrame {
 
         rol_user = rol;
         
+        if(rol_user.equals("Director de Estación")){
+            
+            registrar_pasajero.setEnabled(false);
+            modificar_pasajero.setEnabled(false);
+        }
+        
+        
+        
     }
 }

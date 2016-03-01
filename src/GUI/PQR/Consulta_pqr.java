@@ -28,20 +28,20 @@ public class Consulta_pqr extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         setResizable(false);
         this.setDefaultCloseOperation(this.DO_NOTHING_ON_CLOSE);
-        
-       
+
     }
 
     ArrayList<String> datos = new ArrayList<>();
-    String rol_user="Gerente";
+    String rol_user;
 
     public void rol(String rol) {
 
         //De acuerdo al rol del usuario se habilitan los botones
         //correspondientes a la seguridad.
-        rol_user = "Gerente";
-        campo_respuesta.setEditable(true);
-        
+        rol_user = rol;
+         if(rol_user.equals("Director de Estación")){
+        listar_pqr.setEnabled(true);
+        }
 
     }
 
@@ -446,9 +446,8 @@ public class Consulta_pqr extends javax.swing.JFrame {
 
         }
 
-        if (rol_user.equals("Gerente")) {
+        if (rol_user.equals("Director de Estación")) {
             campo_respuesta.setEditable(true);
-            enviar_pqr.setEnabled(true);
         } else {
 
         }
@@ -467,7 +466,8 @@ public class Consulta_pqr extends javax.swing.JFrame {
         // Bd_pqr obj_pqr_listar = new Bd_pqr();
         //lista_pqr = obj_pqr_listar.listar_pqr();
         System.out.println("METODO" + lista_pqr);
-
+        combo_lista.setEnabled(true);
+        
         String[] pqr_combo = new String[lista_pqr.size()];
 
         for (int i = 0; i < lista_pqr.size(); i++) {
