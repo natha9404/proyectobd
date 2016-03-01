@@ -3,13 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/natha9404/Documents/Bases%20de%20Datos/PROYECTO/proyectobd-tarjetas-buses/src/GUI/PQR/Consulta_pqr.java</file>
-            <file>file:/Users/natha9404/Documents/Bases%20de%20Datos/PROYECTO/proyectobd-tarjetas-buses/src/GUI/RUTA/Ventana_Rutas.java</file>
-            <file>file:/Users/natha9404/Documents/Bases%20de%20Datos/PROYECTO/proyectobd-tarjetas-buses/src/GUI/INICIO/I_inicio.java</file>
-            <file>file:/Users/natha9404/Documents/Bases%20de%20Datos/PROYECTO/proyectobd-tarjetas-buses/src/GUI/INICIO/Proyecto_masivo.java</file>
-            <file>file:/Users/natha9404/Documents/Bases%20de%20Datos/PROYECTO/proyectobd-tarjetas-buses/src/GUI/TARJETA/Ventana_tarjetas.java</file>
-            <file>file:/Users/natha9404/Documents/Bases%20de%20Datos/PROYECTO/proyectobd-tarjetas-buses/src/GUI/RUTA/Ventana_insertar_rutas.java</file>
-            <file>file:/Users/natha9404/Documents/Bases%20de%20Datos/PROYECTO/proyectobd-tarjetas-buses/src/GUI/RUTA/Ventana_modificar_rutas.java</file>
+            <file>file:/home/edison/Documentos/univalle/2015-II/BD/proyectobd/src/GUI/TURNO/VentanaTurno.java</file>
+            <file>file:/home/edison/Documentos/univalle/2015-II/BD/proyectobd/src/GUI/BUS/Venta_Buses.java</file>
+            <file>file:/home/edison/Documentos/univalle/2015-II/BD/proyectobd/src/GUI/INICIO/I_inicio.java</file>
+            <file>file:/home/edison/Documentos/univalle/2015-II/BD/proyectobd/src/GUI/EMPLEADOS/Ventana_empleado.java</file>
         </group>
     </open-files>
 </project-private>
