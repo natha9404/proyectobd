@@ -1,6 +1,8 @@
 package GUI.BUS;
 
 import controlador.ControladorBus;
+import controlador.ControladorRutas;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 /*
@@ -21,6 +23,7 @@ public class Anadir_bus extends javax.swing.JFrame {
     public Anadir_bus() {
         initComponents();
         controladorBus=new ControladorBus();
+        listar_rutas();
     }
 
     /**
@@ -39,9 +42,9 @@ public class Anadir_bus extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         campo_placa_bus = new javax.swing.JTextField();
-        campo_ruta = new javax.swing.JTextField();
         campo_tipo = new javax.swing.JComboBox();
         boton_volver = new javax.swing.JButton();
+        campo_ruta = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -71,12 +74,6 @@ public class Anadir_bus extends javax.swing.JFrame {
             }
         });
 
-        campo_ruta.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                campo_rutaActionPerformed(evt);
-            }
-        });
-
         campo_tipo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Articulado", "Padron", "Alimentador" }));
 
         boton_volver.setText("Volver");
@@ -92,7 +89,7 @@ public class Anadir_bus extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addComponent(boton_volver)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 97, Short.MAX_VALUE)
                 .addComponent(jLabel14)
                 .addGap(135, 135, 135))
             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -113,12 +110,11 @@ public class Anadir_bus extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel8)
                                 .addGap(39, 39, 39)))
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(campo_placa_bus, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(campo_ruta)
-                                .addComponent(campo_tipo, 0, 87, Short.MAX_VALUE)))
-                        .addGap(107, 107, 107)))
+                            .addComponent(campo_tipo, 0, 149, Short.MAX_VALUE)
+                            .addComponent(campo_ruta, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(45, 45, 45)))
                 .addGap(71, 71, 71))
         );
         jPanel1Layout.setVerticalGroup(
@@ -141,7 +137,7 @@ public class Anadir_bus extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(campo_ruta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(32, 32, 32)
+                .addGap(30, 30, 30)
                 .addComponent(boton_registrar_bus)
                 .addContainerGap(27, Short.MAX_VALUE))
         );
@@ -172,7 +168,7 @@ public class Anadir_bus extends javax.swing.JFrame {
         String placa_bus,tipo,ruta;
         placa_bus=campo_placa_bus.getText();
         tipo=(String)campo_tipo.getSelectedItem();
-        ruta=campo_ruta.getText();
+        ruta=campo_ruta.getSelectedItem().toString();
         int numFilas = controladorBus.insertarBus(placa_bus, tipo, ruta);
         
         System.out.println ("Filas "+ numFilas);
@@ -190,10 +186,6 @@ public class Anadir_bus extends javax.swing.JFrame {
     private void campo_placa_busActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campo_placa_busActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_campo_placa_busActionPerformed
-
-    private void campo_rutaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campo_rutaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_campo_rutaActionPerformed
 
     private void boton_volverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_volverActionPerformed
         Venta_Buses ventana_buses= new Venta_Buses();
@@ -220,7 +212,7 @@ public class Anadir_bus extends javax.swing.JFrame {
     private javax.swing.JToggleButton boton_registrar_bus;
     private javax.swing.JButton boton_volver;
     private javax.swing.JTextField campo_placa_bus;
-    private javax.swing.JTextField campo_ruta;
+    private javax.swing.JComboBox<String> campo_ruta;
     private javax.swing.JComboBox campo_tipo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -229,4 +221,21 @@ public class Anadir_bus extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
+
+    private void listar_rutas() {
+    
+            ArrayList<String> rutas = new ArrayList();
+            
+            ControladorRutas controlador = new ControladorRutas();
+            
+            rutas = controlador.listarRutas();
+            
+            for (int i =0; i<rutas.size(); i++){
+                
+                campo_ruta.addItem(rutas.get(i));
+            }
+            
+            
+    
+    }
 }

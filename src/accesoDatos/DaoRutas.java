@@ -206,4 +206,35 @@ public class DaoRutas {
             System.out.println(e);
         }
     }
+
+    public ArrayList<String> listarRutas() {
+        
+        String sql_select = "SELECT nombre_ruta FROM Ruta";
+        
+        ArrayList<String> lista = new ArrayList<>();
+        
+        try {
+            Connection conn = fachada.conectar();
+            Statement sentencia = conn.createStatement();
+            ResultSet tabla = sentencia.executeQuery(sql_select);
+            System.out.println("se conecto");
+            //
+            while (tabla.next()) {
+                lista.add(tabla.getString(1));
+                
+            }
+            
+            conn.close();
+            System.out.println("Conexion cerrada");
+            return lista;
+            
+        } catch (SQLException e) {
+            System.out.println(e);
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        return lista;
+    
+    
+    }
 }

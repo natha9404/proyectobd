@@ -119,11 +119,12 @@ CREATE TABLE Turno (
 
 
 CREATE TABLE Aborda (
-	cedula_pasajero VARCHAR(10) NOT NULL,
-	numero_bus VARCHAR(20) NOT NULL,
-	PRIMARY KEY (cedula_pasajero, numero_bus),
-	FOREIGN KEY (cedula_pasajero) REFERENCES Pasajero(cedula_pasajero),
-	FOREIGN KEY (numero_bus) REFERENCES Bus(numero_bus)
+	id_tarjeta VARCHAR(10) NOT NULL,
+	---cambio numero_bus a nombre_ruta
+	nombre_ruta VARCHAR(20) NOT NULL,
+	PRIMARY KEY (id_tarjeta, nombre_ruta),
+	FOREIGN KEY (id_tarjeta) REFERENCES Tarjeta(id_tarjeta),
+	FOREIGN KEY (nombre_ruta) REFERENCES Ruta(nombre_ruta)
 );
 
 

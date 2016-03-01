@@ -66,7 +66,7 @@ public class ControladorRutas {
 
     }
 
-    public int modificarRuta(String nombre_ruta,String descripcion, String ruta_imagen, String ruta_anterior) {
+    public int modificarRuta(String nombre_ruta, String descripcion, String ruta_imagen, String ruta_anterior) {
 
         Ruta ruta = new Ruta();
         ruta.setNombre(nombre_ruta);
@@ -75,35 +75,45 @@ public class ControladorRutas {
 
         System.out.println("Se va  a modificar ruta en controlador");
 
-        int result = daoRutas.modificarRuta(ruta,ruta_anterior);
+        int result = daoRutas.modificarRuta(ruta, ruta_anterior);
 
         System.out.println("Se inserto ruta en controlador");
 
         return result;
 
     }
-    
-    public ArrayList consultar_estaciones(String nombre){
+
+    public ArrayList consultar_estaciones(String nombre) {
         ArrayList<String> lista = new ArrayList<>();
-        
+
         lista = daoRutas.listar_estaciones(nombre);
-        
+
         return lista;
     }
-    
-    public ArrayList estaciones_eliminar(String nombre){
-        ArrayList <String> lista = new ArrayList<>();
-        
+
+    public ArrayList estaciones_eliminar(String nombre) {
+        ArrayList<String> lista = new ArrayList<>();
+
         lista = daoRutas.estaciones_eliminar(nombre);
         return lista;
     }
-    
-    public void eliminar_estaciones (String nombre, ArrayList<String> estaciones){
+
+    public void eliminar_estaciones(String nombre, ArrayList<String> estaciones) {
         int n = estaciones.size();
-        
-        for (int i=0; i<n; i++){
+
+        for (int i = 0; i < n; i++) {
             daoRutas.eliminar_estaciones(nombre, estaciones.get(i));
         }
+    }
+
+    public ArrayList<String> listarRutas() {
+
+        ArrayList<String> rutas = new ArrayList<>();
+        
+        rutas = daoRutas.listarRutas();
+        
+        return rutas;
+
     }
 
 }

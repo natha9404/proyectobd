@@ -340,7 +340,7 @@ public class I_inicio extends javax.swing.JFrame {
                 else if(rol.equals("Servicio al Cliente")){
                     
                    jButton1.setEnabled(true);
-                   jButton1.setEnabled(true);
+                   jButton2.setEnabled(true);
                    jButton8.setEnabled(true);
                     
                 }

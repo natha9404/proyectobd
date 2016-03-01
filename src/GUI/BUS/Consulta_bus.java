@@ -1,7 +1,9 @@
 package GUI.BUS;
 
 import controlador.ControladorBus;
+import controlador.ControladorRutas;
 import java.awt.Color;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import logica.Bus;
@@ -19,13 +21,16 @@ import logica.Bus;
 public class Consulta_bus extends javax.swing.JFrame {
     ControladorBus controladorBus;
     DefaultTableModel modelo;
+    ArrayList<String> rutas = new ArrayList();
     /**
      * Creates new form Consulta_bus
      */
+    
+    
+    
     public Consulta_bus() {
         initComponents();
         controladorBus=new ControladorBus();
-        campo_ruta_bus.setDisabledTextColor(Color.GRAY);
         campo_tipo_bus.setEnabled(false);
         campo_ruta_bus.setEnabled(false);
         
@@ -56,13 +61,13 @@ public class Consulta_bus extends javax.swing.JFrame {
         campo_placa_bus = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
         boton_eliminar_bus = new javax.swing.JButton();
-        campo_ruta_bus = new javax.swing.JTextField();
         boton_modificar_bus = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tabla_buses = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
         boton_consultar_bus = new javax.swing.JButton();
         boton_volver = new javax.swing.JButton();
+        campo_ruta_bus = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -88,6 +93,7 @@ public class Consulta_bus extends javax.swing.JFrame {
         jLabel14.setText("CONSULTA DE BUSES");
 
         boton_eliminar_bus.setText("Eliminar");
+        boton_eliminar_bus.setEnabled(false);
         boton_eliminar_bus.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 boton_eliminar_busActionPerformed(evt);
@@ -95,6 +101,7 @@ public class Consulta_bus extends javax.swing.JFrame {
         });
 
         boton_modificar_bus.setText("Modificar");
+        boton_modificar_bus.setEnabled(false);
         boton_modificar_bus.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 boton_modificar_busActionPerformed(evt);
@@ -135,43 +142,45 @@ public class Consulta_bus extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(boton_modificar_bus)
-                        .addGap(18, 18, 18)
-                        .addComponent(boton_eliminar_bus))
-                    .addComponent(boton_consultar_bus)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel8)
-                            .addComponent(jLabel10))
-                        .addGap(36, 36, 36)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(campo_ruta_bus)
-                            .addComponent(campo_tipo_bus, 0, 103, Short.MAX_VALUE))
-                        .addGap(124, 124, 124)))
-                .addGap(31, 31, 31))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addComponent(boton_volver)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 80, Short.MAX_VALUE)
                 .addComponent(jLabel14)
                 .addGap(113, 113, 113))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                .addContainerGap())
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(41, 41, 41)
                         .addComponent(jLabel13)
                         .addGap(27, 27, 27)
-                        .addComponent(campo_placa_bus, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(campo_placa_bus, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(33, 33, 33)
+                        .addComponent(boton_consultar_bus))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel2)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(52, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel8)
+                                    .addComponent(jLabel10))
+                                .addGap(36, 36, 36)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(campo_ruta_bus, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(campo_tipo_bus, 0, 197, Short.MAX_VALUE)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(boton_modificar_bus)
+                                .addGap(18, 18, 18)
+                                .addComponent(boton_eliminar_bus)))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addContainerGap())))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -183,18 +192,18 @@ public class Consulta_bus extends javax.swing.JFrame {
                     .addComponent(boton_volver))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(boton_consultar_bus)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(campo_placa_bus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(boton_consultar_bus))
-                    .addComponent(jLabel13))
-                .addGap(26, 26, 26)
+                        .addComponent(jLabel13)
+                        .addComponent(campo_placa_bus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(21, 21, 21)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(campo_tipo_bus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel8))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(campo_ruta_bus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel10))
+                    .addComponent(jLabel10)
+                    .addComponent(campo_ruta_bus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(boton_modificar_bus)
@@ -203,7 +212,7 @@ public class Consulta_bus extends javax.swing.JFrame {
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/metrocali11.jpg"))); // NOI18N
@@ -239,7 +248,6 @@ public class Consulta_bus extends javax.swing.JFrame {
         if(confirmacion==0){
             controladorBus.eliminarBus(placa);
             campo_placa_bus.setText("");
-            campo_ruta_bus.setText("");
             
             modelo=controladorBus.listarBuses();
             this.tabla_buses.setModel(modelo);
@@ -257,7 +265,7 @@ public class Consulta_bus extends javax.swing.JFrame {
             String placa,tipo,ruta;
             placa=campo_placa_bus.getText();
             tipo=(String)campo_tipo_bus.getSelectedItem();
-            ruta=campo_ruta_bus.getText();
+            ruta=campo_ruta_bus.getSelectedItem().toString();
         
             Bus b=new Bus(placa,tipo,ruta);
         
@@ -288,9 +296,18 @@ public class Consulta_bus extends javax.swing.JFrame {
         Bus b;
 
         b=controladorBus.consultarBus(placa);
+        listar_rutas();
+        
 
         campo_tipo_bus.setSelectedItem(b.getTipo());
-        campo_ruta_bus.setText(b.getNombre_ruta());
+        
+        campo_ruta_bus.setSelectedItem(b.getNombre_ruta());
+        
+        campo_tipo_bus.setEnabled(true);
+        campo_ruta_bus.setEnabled(true);
+        boton_eliminar_bus.setEnabled(true);
+        boton_modificar_bus.setEnabled(true);
+        
     }//GEN-LAST:event_boton_consultar_busActionPerformed
 
     private void boton_volverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_volverActionPerformed
@@ -300,6 +317,24 @@ public class Consulta_bus extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_boton_volverActionPerformed
 
+    private void listar_rutas() {
+    
+            
+            
+            ControladorRutas controlador = new ControladorRutas();
+            
+            rutas = controlador.listarRutas();
+            
+            for (int i =0; i<rutas.size(); i++){
+                
+                campo_ruta_bus.addItem(rutas.get(i));
+            }
+            
+            
+    
+    }
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -319,7 +354,7 @@ public class Consulta_bus extends javax.swing.JFrame {
     private javax.swing.JButton boton_modificar_bus;
     private javax.swing.JButton boton_volver;
     private javax.swing.JTextField campo_placa_bus;
-    private javax.swing.JTextField campo_ruta_bus;
+    private javax.swing.JComboBox<String> campo_ruta_bus;
     private javax.swing.JComboBox campo_tipo_bus;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
