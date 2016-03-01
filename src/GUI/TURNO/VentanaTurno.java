@@ -5,12 +5,14 @@
  */
 package GUI.TURNO;
 
+import GUI.INICIO.I_inicio;
+
 /**
  *
  * @author edison
  */
 public class VentanaTurno extends javax.swing.JFrame {
-
+    String rol_user;
     /**
      * Creates new form VentanaTurno
      */
@@ -33,6 +35,7 @@ public class VentanaTurno extends javax.swing.JFrame {
         tarjeta_generica = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        volver_principal = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -43,6 +46,7 @@ public class VentanaTurno extends javax.swing.JFrame {
 
         recargar_tarjeta.setBackground(new java.awt.Color(255, 255, 255));
         recargar_tarjeta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/tickets_64.png"))); // NOI18N
+        recargar_tarjeta.setEnabled(false);
         recargar_tarjeta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 recargar_tarjetaActionPerformed(evt);
@@ -51,6 +55,7 @@ public class VentanaTurno extends javax.swing.JFrame {
 
         tarjeta_generica.setBackground(new java.awt.Color(255, 255, 255));
         tarjeta_generica.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/credit_card_128_2.png"))); // NOI18N
+        tarjeta_generica.setEnabled(false);
         tarjeta_generica.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tarjeta_genericaActionPerformed(evt);
@@ -61,22 +66,34 @@ public class VentanaTurno extends javax.swing.JFrame {
 
         jLabel2.setText("Asignar Turno");
 
+        volver_principal.setText("Volver a ventana principal");
+        volver_principal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                volver_principalActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(45, 45, 45)
-                .addComponent(recargar_tarjeta, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(61, 61, 61)
-                .addComponent(tarjeta_generica, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(62, 62, 62)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel2)
                 .addGap(69, 69, 69))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(45, 45, 45)
+                        .addComponent(recargar_tarjeta, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(61, 61, 61)
+                        .addComponent(tarjeta_generica, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(108, 108, 108)
+                        .addComponent(volver_principal)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -89,7 +106,9 @@ public class VentanaTurno extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1)
                     .addComponent(jLabel2))
-                .addContainerGap(41, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(volver_principal)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -125,6 +144,16 @@ public class VentanaTurno extends javax.swing.JFrame {
         asignar.setTitle("Recargar tarjeta");
         this.dispose();
     }//GEN-LAST:event_recargar_tarjetaActionPerformed
+
+    private void volver_principalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volver_principalActionPerformed
+        // TODO add your handling code here:
+        // se devuelve a la ventana anterior
+        I_inicio obj_ventana_principal = new I_inicio();
+        obj_ventana_principal.setVisible(true);
+        obj_ventana_principal.rol(rol_user);
+        //obj_ventana_principal.rol(rol_user);
+        this.dispose();
+    }//GEN-LAST:event_volver_principalActionPerformed
 
     /**
      * @param args the command line arguments
@@ -168,5 +197,13 @@ public class VentanaTurno extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton recargar_tarjeta;
     private javax.swing.JButton tarjeta_generica;
+    private javax.swing.JButton volver_principal;
     // End of variables declaration//GEN-END:variables
+
+    public void rol(String rol) {
+        rol_user = rol;
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    
 }
