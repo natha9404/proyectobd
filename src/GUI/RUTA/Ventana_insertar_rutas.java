@@ -257,11 +257,7 @@ public class Ventana_insertar_rutas extends javax.swing.JFrame {
      /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-        // TODO code application logic here
-        Ventana_insertar_rutas iniciar = new Ventana_insertar_rutas ();
-        iniciar.setVisible(true);
-    }
+   
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton anadir_estacion;
     private javax.swing.JButton boton_imagen_ruta;
