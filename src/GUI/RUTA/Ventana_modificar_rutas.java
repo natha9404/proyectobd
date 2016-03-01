@@ -25,6 +25,10 @@ public class Ventana_modificar_rutas extends javax.swing.JFrame {
      */
     public Ventana_modificar_rutas() {
         initComponents();
+        initComponents();
+         this.setLocationRelativeTo(null);
+         this.setDefaultCloseOperation(this.DO_NOTHING_ON_CLOSE);
+         setResizable(false);
     }
 
     /**

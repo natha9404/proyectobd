@@ -26,10 +26,10 @@ public class Pqr_Ventana extends javax.swing.JFrame {
      * 
      */
     public Pqr_Ventana() {
-        initComponents();
-        this.setLocationRelativeTo(null);
-        this.setDefaultCloseOperation(this.DO_NOTHING_ON_CLOSE);
-        setResizable(false);
+       initComponents();
+         this.setLocationRelativeTo(null);
+         this.setDefaultCloseOperation(this.DO_NOTHING_ON_CLOSE);
+         setResizable(false);
     }
 
     ArrayList<String> datos = new ArrayList<>();

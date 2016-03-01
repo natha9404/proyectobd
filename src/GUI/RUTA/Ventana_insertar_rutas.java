@@ -30,6 +30,9 @@ public class Ventana_insertar_rutas extends javax.swing.JFrame {
      */
     public Ventana_insertar_rutas() {
         initComponents();
+         this.setLocationRelativeTo(null);
+         this.setDefaultCloseOperation(this.DO_NOTHING_ON_CLOSE);
+         setResizable(false);
         llenarEstaciones();
     }
 

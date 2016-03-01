@@ -19,9 +19,9 @@ public class Ventana_pqr extends javax.swing.JFrame {
      */
     public Ventana_pqr() {
         initComponents();
-        this.setLocationRelativeTo(null);
-        this.setDefaultCloseOperation(DISPOSE_ON_CLOSE); 
-        setResizable(false);
+         this.setLocationRelativeTo(null);
+         this.setDefaultCloseOperation(this.DO_NOTHING_ON_CLOSE);
+         setResizable(false);
     }
     String rol_user;
 

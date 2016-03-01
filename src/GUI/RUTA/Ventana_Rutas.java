@@ -21,6 +21,9 @@ public class Ventana_Rutas extends javax.swing.JFrame {
      */
     public Ventana_Rutas() {
         initComponents();
+         this.setLocationRelativeTo(null);
+         this.setDefaultCloseOperation(this.DO_NOTHING_ON_CLOSE);
+         setResizable(false);
     }
 
     /**
@@ -207,7 +210,6 @@ public class Ventana_Rutas extends javax.swing.JFrame {
         asignar.toFront();
         asignar.setVisible(true);
         asignar.setTitle("Crear Ruta");
-        this.dispose();
     }//GEN-LAST:event_crear_rutaActionPerformed
 
     private void anadir_estacionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_anadir_estacionesActionPerformed
@@ -215,7 +217,6 @@ public class Ventana_Rutas extends javax.swing.JFrame {
         crear.toFront();
         crear.setVisible(true);
         crear.setTitle("Añadir Estaciones");
-        this.dispose();
     }//GEN-LAST:event_anadir_estacionesActionPerformed
 
     private void modificar_ruta1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modificar_ruta1ActionPerformed
@@ -224,7 +225,6 @@ public class Ventana_Rutas extends javax.swing.JFrame {
         crear.toFront();
         crear.setVisible(true);
         crear.setTitle("Modificar Ruta");
-        this.dispose();
     }//GEN-LAST:event_modificar_ruta1ActionPerformed
 
     private void anadir_estaciones1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_anadir_estaciones1ActionPerformed
@@ -233,7 +233,6 @@ public class Ventana_Rutas extends javax.swing.JFrame {
         crear.toFront();
         crear.setVisible(true);
         crear.setTitle("Añadir Estaciones");
-        this.dispose();
     }//GEN-LAST:event_anadir_estaciones1ActionPerformed
 
     private void volver_principalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volver_principalActionPerformed
@@ -242,7 +241,6 @@ public class Ventana_Rutas extends javax.swing.JFrame {
         I_inicio obj_ventana_principal = new I_inicio();
         obj_ventana_principal.setVisible(true);
         obj_ventana_principal.rol(rol_user);
-        this.dispose();
     }//GEN-LAST:event_volver_principalActionPerformed
 
     private void consultar_rutaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultar_rutaActionPerformed
@@ -251,7 +249,6 @@ public class Ventana_Rutas extends javax.swing.JFrame {
         crear.toFront();
         crear.setVisible(true);
         crear.setTitle("Añadir Estaciones");
-        this.dispose();
     }//GEN-LAST:event_consultar_rutaActionPerformed
 
     /**

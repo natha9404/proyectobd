@@ -21,6 +21,9 @@ public class Rutas_adicionarEstaciones extends javax.swing.JFrame {
      */
     public Rutas_adicionarEstaciones() {
         initComponents();
+         this.setLocationRelativeTo(null);
+         this.setDefaultCloseOperation(this.DO_NOTHING_ON_CLOSE);
+         setResizable(false);
     }
 
     /**

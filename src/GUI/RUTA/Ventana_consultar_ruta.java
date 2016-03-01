@@ -23,6 +23,9 @@ public class Ventana_consultar_ruta extends javax.swing.JFrame {
      */
     public Ventana_consultar_ruta() {
         initComponents();
+         this.setLocationRelativeTo(null);
+         this.setDefaultCloseOperation(this.DO_NOTHING_ON_CLOSE);
+         setResizable(false);
     }
 
     /**
