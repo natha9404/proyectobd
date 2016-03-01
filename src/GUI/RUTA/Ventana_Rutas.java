@@ -265,7 +265,7 @@ public class Ventana_Rutas extends javax.swing.JFrame {
     rol_user = rol;
     
         
-        if( (rol.equals("admin")) || (rol.equals("Servicio al Cliente")) || (rol.equals("Conductor"))) {
+        if( (rol.equals("admin")) || (rol.equals("Servicio al Cliente")) || (rol.equals("Conductor")) || (rol.equals("user"))) {
             
                     consultar_ruta.setEnabled(true);
             
