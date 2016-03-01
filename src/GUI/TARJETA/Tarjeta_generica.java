@@ -5,8 +5,11 @@
  */
 package GUI.TARJETA;
 
+import controlador.ControladorEstacion;
+import controlador.ControladorRutas;
 import controlador.ControladorTarjeta;
 import java.awt.Toolkit;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import logica.Tarjeta;
 
@@ -16,11 +19,13 @@ import logica.Tarjeta;
  */
 public class Tarjeta_generica extends javax.swing.JFrame {
     ControladorTarjeta controladorTarjeta;
+    
     /**
      * Creates new form tarjeta_generica
      */
     public Tarjeta_generica() {
         initComponents();
+        listarEstaciones();
         controladorTarjeta=new ControladorTarjeta();
     }
 
@@ -44,10 +49,10 @@ public class Tarjeta_generica extends javax.swing.JFrame {
         campo_estado = new javax.swing.JTextField();
         boton_vender_tarjeta = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
-        campo_estacion = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         campo_vendedor = new javax.swing.JTextField();
         boton_volver = new javax.swing.JButton();
+        combo_Estaciones = new javax.swing.JComboBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -99,6 +104,13 @@ public class Tarjeta_generica extends javax.swing.JFrame {
             }
         });
 
+        combo_Estaciones.setModel(new javax.swing.DefaultComboBoxModel(new String[] {  }));
+        combo_Estaciones.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                combo_EstacionesActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -121,13 +133,13 @@ public class Tarjeta_generica extends javax.swing.JFrame {
                             .addComponent(jLabel4)
                             .addComponent(jLabel5)
                             .addComponent(jLabel7))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGap(44, 44, 44)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(campo_saldo, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(campo_estado, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 219, Short.MAX_VALUE)
-                            .addComponent(campo_estacion, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(campo_id_tarjeta)
-                            .addComponent(campo_vendedor))))
+                            .addComponent(campo_vendedor)
+                            .addComponent(combo_Estaciones, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addGap(36, 36, 36))
         );
         jPanel1Layout.setVerticalGroup(
@@ -157,7 +169,7 @@ public class Tarjeta_generica extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(campo_estacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(combo_Estaciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(22, 22, 22)
                 .addComponent(boton_vender_tarjeta)
                 .addGap(21, 21, 21))
@@ -205,7 +217,7 @@ public class Tarjeta_generica extends javax.swing.JFrame {
         
         estado=campo_estado.getText();
         empleado_vendedor=campo_vendedor.getText();
-        nombre_estacion=campo_estacion.getText();
+        nombre_estacion=(String) combo_Estaciones.getSelectedItem();
         
         Tarjeta t =new Tarjeta();
         t.setSaldo(saldo);
@@ -220,7 +232,7 @@ public class Tarjeta_generica extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "La tarjeta ha sido registrada con exito.");
             campo_saldo.setText("");
             campo_vendedor.setText("");
-            campo_estacion.setText("");
+            
         }else{
             JOptionPane.showMessageDialog(null, "Ocurrio un problema al registrar la tarjeta.");
         }
@@ -233,6 +245,10 @@ public class Tarjeta_generica extends javax.swing.JFrame {
         ventana_tarjetas.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_boton_volverActionPerformed
+
+    private void combo_EstacionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combo_EstacionesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_combo_EstacionesActionPerformed
     
     /*public static void main(String args[]) {
 
@@ -247,11 +263,11 @@ public class Tarjeta_generica extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton boton_vender_tarjeta;
     private javax.swing.JButton boton_volver;
-    private javax.swing.JTextField campo_estacion;
     private javax.swing.JTextField campo_estado;
     private javax.swing.JTextField campo_id_tarjeta;
     private javax.swing.JTextField campo_saldo;
     private javax.swing.JTextField campo_vendedor;
+    private javax.swing.JComboBox combo_Estaciones;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -261,4 +277,17 @@ public class Tarjeta_generica extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
+
+    private void listarEstaciones() {
+        ArrayList<String> estaciones = new ArrayList();
+            
+            ControladorEstacion controlador = new ControladorEstacion();
+            
+            estaciones = controlador.listar_estaciones2();
+            
+            for (int i =0; i<estaciones.size(); i++){
+                
+                combo_Estaciones.addItem(estaciones.get(i));
+            }
+    }
 }

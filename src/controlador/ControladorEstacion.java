@@ -105,4 +105,11 @@ public class ControladorEstacion {
     
     
     }
+
+    public ArrayList<String> listar_estaciones2() {
+        ArrayList<String> lista;
+        
+        lista = daoEstacion.listar_estaciones2();
+        return lista;
+    }
 }
