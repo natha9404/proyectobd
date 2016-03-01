@@ -41,6 +41,7 @@ public class VentanaTurno extends javax.swing.JFrame {
 
         recargar_tarjeta.setBackground(new java.awt.Color(255, 255, 255));
         recargar_tarjeta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/tickets_64.png"))); // NOI18N
+        recargar_tarjeta.setEnabled(false);
         recargar_tarjeta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 recargar_tarjetaActionPerformed(evt);
@@ -49,6 +50,7 @@ public class VentanaTurno extends javax.swing.JFrame {
 
         tarjeta_generica.setBackground(new java.awt.Color(255, 255, 255));
         tarjeta_generica.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/credit_card_128_2.png"))); // NOI18N
+        tarjeta_generica.setEnabled(false);
         tarjeta_generica.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tarjeta_genericaActionPerformed(evt);
@@ -168,4 +170,6 @@ public class VentanaTurno extends javax.swing.JFrame {
     private javax.swing.JButton recargar_tarjeta;
     private javax.swing.JButton tarjeta_generica;
     // End of variables declaration//GEN-END:variables
+
+    
 }
