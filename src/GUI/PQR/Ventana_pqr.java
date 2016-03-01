@@ -178,8 +178,9 @@ public class Ventana_pqr extends javax.swing.JFrame {
         //correspondientes a la seguridad.
 
         rol_user = rol;
-        if (rol_user.equals("Secretaria")) {
+        if (rol_user.equals("Servicio al Cliente")) {
 
+            boton_add_pqr.setEnabled(true);
             
             
         }
