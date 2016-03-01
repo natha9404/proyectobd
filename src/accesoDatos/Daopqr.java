@@ -152,7 +152,7 @@ public class Daopqr {
 
         String sql_select;
 
-        sql_select = "SELECT num_ticket,tipo_pqr,fecha,estado,nombre_estacion FROM  SQR WHERE tarjeta="+tarjeta;
+        sql_select = "SELECT numero_ticket,tipo_pqr,fecha,estado,nombre_estacion FROM  SQR WHERE tarjeta="+tarjeta;
 
         try {
             //
@@ -203,7 +203,7 @@ public class Daopqr {
         System.out.println("inicia dao");
         String sql_select;
         ArrayList<ArrayList> pasajeros = new ArrayList<>();
-        sql_select = "SELECT num_ticket,tipo_pqr,fecha,estado,nombre_estacion FROM  SQR WHERE tarjeta="+tarjeta;
+        sql_select = "SELECT numero_ticket,tipo_pqr,fecha,estado,nombre_estacion FROM  SQR WHERE tarjeta="+tarjeta;
 
         try {
             //

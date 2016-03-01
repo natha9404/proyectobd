@@ -6,10 +6,14 @@
 package GUI.REPORTES;
 
 import controlador.Controlador_pqr;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import jdk.nashorn.internal.runtime.arrays.ArrayLikeIterator;
+import logica.Generar_pdf;
 
 /**
  *
@@ -42,7 +46,7 @@ public class Reporte_pqr extends javax.swing.JFrame {
         campo_cedula = new javax.swing.JTextField();
         consultar = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        tabla_pqr = new javax.swing.JTable();
         boton_volver1 = new javax.swing.JButton();
         generar = new javax.swing.JButton();
 
@@ -82,7 +86,7 @@ public class Reporte_pqr extends javax.swing.JFrame {
             }
         });
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        tabla_pqr.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
                 {null, null, null, null, null},
@@ -93,7 +97,7 @@ public class Reporte_pqr extends javax.swing.JFrame {
                 "Numero SQR", "Tipo SQR", "Fecha", "Estado", "Estacion"
             }
         ));
-        jScrollPane2.setViewportView(jTable2);
+        jScrollPane2.setViewportView(tabla_pqr);
 
         boton_volver1.setText("Volver");
         boton_volver1.addActionListener(new java.awt.event.ActionListener() {
@@ -193,6 +197,17 @@ public class Reporte_pqr extends javax.swing.JFrame {
         modelo = controlador.listarPqr(Integer.parseInt(campo_cedula.getText()));
         pqr =   controlador.listarPqr_pdf(Integer.parseInt(campo_cedula.getText()));
         
+        tabla_pqr.setModel(modelo);
+        
+            Generar_pdf pdf = new Generar_pdf();
+            
+            try {
+                pdf.ConvertirPDF_Pqr(pqr.get(0), pqr.get(1), pqr.get(2), pqr.get(3), pqr.get(4));
+            } catch (FileNotFoundException ex) {
+                Logger.getLogger(Reporte_pqr.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        
+        
         
         }
         
@@ -246,6 +261,6 @@ public class Reporte_pqr extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
+    private javax.swing.JTable tabla_pqr;
     // End of variables declaration//GEN-END:variables
 }
