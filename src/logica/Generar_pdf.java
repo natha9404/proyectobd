@@ -21,6 +21,7 @@ import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.PdfWriter;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Date;
 import javax.swing.JOptionPane;
 
 /**
@@ -83,7 +84,51 @@ public class Generar_pdf {
         } catch (DocumentException de) {
             System.out.println("Error...");
         }
+    }
+        
+    /**
+     *
+     * @param ruta
+     * @param respuesta
+     * @param fecha
+     * @throws FileNotFoundException
+     */
+    public void ConvertirPDF_ConteoPasajeros(String ruta, String respuesta, Date fecha) throws FileNotFoundException {
+        String nombre_pdf = "Reporte Conteo Pasajeros por Fecha" + ".pdf";
+        System.out.println(nombre_pdf);
+        try {
+            //Creamos documento indicando el tamaño y margenes
+            Document documento = new Document(PageSize.LETTER, 20, 20, 20, 20);
 
+            //Creamos el PDF y lo instanceamos para poder escribir sobre el
+            PdfWriter.getInstance(documento, new FileOutputStream(nombre_pdf)).setInitialLeading(20);
+
+            //Abrimos el documento
+            documento.open();
+            System.out.println("Documento Abierto");
+            
+
+            //Anexamos el texto a un objeto Pharagraph
+            Paragraph parametro = new Paragraph("Se movilizaron " + respuesta + " pasajeros en la ruta " + ruta + " el dia " + fecha, FontFactory.getFont(FontFactory.TIMES_ROMAN, 14, Font.BOLD, BaseColor.BLACK));
+            parametro.setAlignment(1);
+
+            //Paragraph parametro2 = new Paragraph("Cedula        Nombre                      Telefono      Tarjeta", FontFactory.getFont(FontFactory.TIMES_ROMAN, 12, Font.BOLD, BaseColor.BLACK));
+
+            //Escribimos sobre el
+            documento.add(parametro);
+            // documento.add(parametro17);
+                        
+            //Cerrar documento
+            documento.close();
+
+            //Mensaje de Exito
+            JOptionPane.showMessageDialog(null, "PDF Creado con exito.");
+
+            
+
+        } catch (DocumentException de) {
+            System.out.println("Error..." + de);
+        }
     }
 
 }
