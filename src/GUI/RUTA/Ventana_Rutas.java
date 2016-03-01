@@ -54,7 +54,7 @@ public class Ventana_Rutas extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         crear_ruta.setBackground(new java.awt.Color(255, 255, 255));
-        crear_ruta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/tickets_64.png"))); // NOI18N
+        crear_ruta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/ruta_1.png"))); // NOI18N
         crear_ruta.setEnabled(false);
         crear_ruta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -76,7 +76,7 @@ public class Ventana_Rutas extends javax.swing.JFrame {
         jLabel2.setText("Modificar Ruta");
 
         modificar_ruta1.setBackground(new java.awt.Color(255, 255, 255));
-        modificar_ruta1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/credit_card_128_2.png"))); // NOI18N
+        modificar_ruta1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/ruta_modificar.png"))); // NOI18N
         modificar_ruta1.setEnabled(false);
         modificar_ruta1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -107,7 +107,7 @@ public class Ventana_Rutas extends javax.swing.JFrame {
         jLabel6.setText("Consultar Ruta");
 
         consultar_ruta.setBackground(new java.awt.Color(255, 255, 255));
-        consultar_ruta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/credit_card_128_2.png"))); // NOI18N
+        consultar_ruta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/ruta_consulta.png"))); // NOI18N
         consultar_ruta.setEnabled(false);
         consultar_ruta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
