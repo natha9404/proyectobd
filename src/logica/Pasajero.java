@@ -15,6 +15,7 @@ public class Pasajero {
     String nombre;
     String telefono;
     Tarjeta tarjeta;
+    String tarjeta2;
     
     
     public Pasajero() {
@@ -22,6 +23,18 @@ public class Pasajero {
 
     public void setTarjeta(Tarjeta tarjeta) {
         this.tarjeta = tarjeta;
+    }
+    
+    public void setTarjeta2(String tarjeta){
+        
+        tarjeta2=tarjeta;
+        
+    }
+    
+    public String getTarjeta2(){
+        
+        return tarjeta2;
+        
     }
     
   

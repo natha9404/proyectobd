@@ -6,6 +6,7 @@
 package controlador;
 
 import accesoDatos.DatosPasajero;
+import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
 import logica.Pasajero;
 
@@ -77,6 +78,19 @@ public class ControladorPasajero {
         modelo = daoPasajero.listarPasajero();
         
         return modelo;
+    }
+
+    public ArrayList<ArrayList> listarPasajero_pdf() {
+    
+        ArrayList<ArrayList> pasajeros = new ArrayList<>();
+        
+        pasajeros = daoPasajero.listarPasajero_pdf();
+        
+        
+        
+        return pasajeros;
+            
+    
     }
 
 }

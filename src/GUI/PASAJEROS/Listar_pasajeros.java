@@ -5,7 +5,16 @@
  */
 package GUI.PASAJEROS;
 
+import controlador.ControladorPasajero;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import jdk.nashorn.internal.scripts.JO;
+import logica.Generar_pdf;
+import logica.Pasajero;
 
 /**
  *
@@ -74,6 +83,11 @@ public class Listar_pasajeros extends javax.swing.JFrame {
         jScrollPane1.setViewportView(tablaPasajeros);
 
         jButton1.setText("Generar PDF");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -115,6 +129,26 @@ public class Listar_pasajeros extends javax.swing.JFrame {
        
         this.dispose();
     }//GEN-LAST:event_boton_volverActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        
+        Pasajero pasajero = new Pasajero();
+        
+        ControladorPasajero controlador = new ControladorPasajero();
+        ArrayList<ArrayList> pasajeros = controlador.listarPasajero_pdf();
+        
+        Generar_pdf pdf = new Generar_pdf();
+        try {
+            pdf.ConvertirPDF_Pasajero(pasajeros.get(0), pasajeros.get(1),pasajeros.get(2), pasajeros.get(3));
+            JOptionPane.showMessageDialog(null, "Puede consultar su pdf");
+        } catch (FileNotFoundException ex) {
+            System.out.println(ex);
+        }
+        
+        
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton boton_volver;
