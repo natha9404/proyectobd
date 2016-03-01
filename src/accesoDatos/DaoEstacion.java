@@ -229,7 +229,7 @@ public class DaoEstacion {
         
         String query;
         
-        query = "SELECT cedula_empleado FROM Empleado WHERE cargo = 'Director de Estacion' AND nombre = '" + nombre +"';";
+        query = "SELECT cedula_empleado FROM Empleado WHERE cargo = 'Director de Estación' AND nombre = '" + nombre +"';";
         
         try{
             conexion = fachada.getConnetion();
