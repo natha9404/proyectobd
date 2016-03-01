@@ -241,6 +241,7 @@ public class Ventana_Rutas extends javax.swing.JFrame {
         I_inicio obj_ventana_principal = new I_inicio();
         obj_ventana_principal.setVisible(true);
         obj_ventana_principal.rol(rol_user);
+        this.dispose();
     }//GEN-LAST:event_volver_principalActionPerformed
 
     private void consultar_rutaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultar_rutaActionPerformed

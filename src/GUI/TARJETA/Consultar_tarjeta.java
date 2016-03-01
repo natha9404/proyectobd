@@ -68,7 +68,6 @@ public class Consultar_tarjeta extends javax.swing.JFrame {
         campo_saldo = new javax.swing.JTextField();
         campo_estacion = new javax.swing.JTextField();
         boton_modificar = new javax.swing.JButton();
-        boton_eliminar = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         campo_vendedor = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
@@ -109,6 +108,10 @@ public class Consultar_tarjeta extends javax.swing.JFrame {
 
         combo_estado.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Activa", "Bloqueada" }));
 
+        campo_saldo.setEnabled(false);
+
+        campo_estacion.setEnabled(false);
+
         boton_modificar.setText("Modificar");
         boton_modificar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -116,16 +119,13 @@ public class Consultar_tarjeta extends javax.swing.JFrame {
             }
         });
 
-        boton_eliminar.setText("Eliminar");
-        boton_eliminar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                boton_eliminarActionPerformed(evt);
-            }
-        });
-
         jLabel6.setText("Vendedor:");
 
+        campo_vendedor.setEnabled(false);
+
         jLabel7.setText("Deuda:");
+
+        campo_deuda.setEnabled(false);
 
         tabla_tarjetas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -167,11 +167,21 @@ public class Consultar_tarjeta extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(boton_volver)
+                        .addGap(114, 114, 114)
+                        .addComponent(jLabel43))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel8)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 542, Short.MAX_VALUE)
+                .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(boton_buscar))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                         .addGap(15, 15, 15)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -190,24 +200,11 @@ public class Consultar_tarjeta extends javax.swing.JFrame {
                             .addComponent(campo_vendedor)
                             .addComponent(campo_deuda)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(boton_modificar)
-                        .addGap(18, 18, 18)
-                        .addComponent(boton_eliminar)))
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(boton_modificar)
+                            .addComponent(boton_buscar))))
                 .addGap(36, 36, 36))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(boton_volver)
-                        .addGap(114, 114, 114)
-                        .addComponent(jLabel43))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel8)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 542, Short.MAX_VALUE)
-                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -243,11 +240,9 @@ public class Consultar_tarjeta extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(campo_estacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5))
-                .addGap(11, 11, 11)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(boton_eliminar)
-                    .addComponent(boton_modificar))
-                .addGap(8, 8, 8)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(boton_modificar)
+                .addGap(7, 7, 7)
                 .addComponent(jLabel8)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -299,6 +294,9 @@ public class Consultar_tarjeta extends javax.swing.JFrame {
         campo_vendedor.setText(t.getCedula_empleado());
         campo_estacion.setText(t.getNombre_estacion());
         
+        combo_estado.setEnabled(true);
+        boton_modificar.setEnabled(true);
+        
     }//GEN-LAST:event_boton_buscarActionPerformed
 
     private void boton_modificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_modificarActionPerformed
@@ -345,25 +343,6 @@ public class Consultar_tarjeta extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_boton_modificarActionPerformed
 
-    private void boton_eliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_eliminarActionPerformed
-        int id_tarjeta;
-        id_tarjeta=Integer.parseInt(campo_id_tarjeta.getText());
-        //confirmacion=JOptionPane.showMessageDialog(null, "Esta seguro que desea eleminar el bus "+placa+"");
-        int confirmacion=JOptionPane.showConfirmDialog(this, "Esta seguro que desea eleminar la tarjeta "+id_tarjeta);
-        if(confirmacion==0){
-            controladorTarjeta.eliminarTarjeta(id_tarjeta);
-            campo_id_tarjeta.setText("");
-            campo_saldo.setText("");
-            campo_deuda.setText("");
-            campo_vendedor.setText("");
-            campo_estacion.setText("");
-            
-            modelo=controladorTarjeta.listarTarjetas();
-            this.tabla_tarjetas.setModel(modelo);
-            JOptionPane.showMessageDialog(null, "Se ha eliminado la tarjeta "+id_tarjeta+" exitosamente.");
-        }
-    }//GEN-LAST:event_boton_eliminarActionPerformed
-
     private void boton_volverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_volverActionPerformed
     
         this.dispose();
@@ -385,7 +364,6 @@ public class Consultar_tarjeta extends javax.swing.JFrame {
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton boton_buscar;
-    private javax.swing.JButton boton_eliminar;
     private javax.swing.JButton boton_modificar;
     private javax.swing.JButton boton_volver;
     private javax.swing.JTextField campo_deuda;

@@ -167,6 +167,7 @@ public class Recargar_tarjeta extends javax.swing.JFrame {
         }else{
             JOptionPane.showMessageDialog(null, "Ocurrio un problema con el recarga.");
         }
+        this.dispose();
         
     }//GEN-LAST:event_boton_recargar_tarjetaActionPerformed
 

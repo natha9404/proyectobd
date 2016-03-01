@@ -209,7 +209,6 @@ public class Ventana_tarjetas extends javax.swing.JFrame {
         tarjeta_generica.toFront();
         tarjeta_generica.setVisible(true);
         tarjeta_generica.setTitle("Registrar tarjeta");
-        this.dispose();
     }//GEN-LAST:event_tarjeta_genericaActionPerformed
 
     private void descontar_pasajeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_descontar_pasajeActionPerformed
@@ -217,7 +216,6 @@ public class Ventana_tarjetas extends javax.swing.JFrame {
         descontar_pasaje.toFront();
         descontar_pasaje.setVisible(true);
         descontar_pasaje.setTitle("Descontar Pasaje");
-        this.dispose();
     }//GEN-LAST:event_descontar_pasajeActionPerformed
 
     private void modificar_tarjetaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modificar_tarjetaActionPerformed
@@ -225,7 +223,6 @@ public class Ventana_tarjetas extends javax.swing.JFrame {
         consultar_tarjeta.toFront();
         consultar_tarjeta.setVisible(true);
         consultar_tarjeta.setTitle("Consultar tarjeta");
-        this.dispose();
     }//GEN-LAST:event_modificar_tarjetaActionPerformed
 
     private void tarjeta_personalizadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tarjeta_personalizadaActionPerformed
@@ -233,7 +230,6 @@ public class Ventana_tarjetas extends javax.swing.JFrame {
         personalizar_tarjeta.toFront();
         personalizar_tarjeta.setVisible(true);
         personalizar_tarjeta.setTitle("Personalizar tarjeta");
-        this.dispose();
     }//GEN-LAST:event_tarjeta_personalizadaActionPerformed
 
     private void recargar_tarjetaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_recargar_tarjetaActionPerformed
@@ -241,7 +237,6 @@ public class Ventana_tarjetas extends javax.swing.JFrame {
         recargar_tarjeta.toFront();
         recargar_tarjeta.setVisible(true);
         recargar_tarjeta.setTitle("Recargar tarjeta");
-        this.dispose();
     }//GEN-LAST:event_recargar_tarjetaActionPerformed
 
     private void volver_principalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volver_principalActionPerformed
@@ -250,7 +245,6 @@ public class Ventana_tarjetas extends javax.swing.JFrame {
         I_inicio obj_ventana_principal = new I_inicio();
         obj_ventana_principal.setVisible(true);
         obj_ventana_principal.rol(rol_user);
-        this.dispose();
     }//GEN-LAST:event_volver_principalActionPerformed
     
     /*public static void main(String args[]) {
