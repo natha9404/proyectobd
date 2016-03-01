@@ -33,7 +33,8 @@ public class Consulta_bus extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(DISPOSE_ON_CLOSE); 
-        setResizable(false);initComponents();
+        setResizable(false);
+        
         controladorBus=new ControladorBus();
         campo_tipo_bus.setEnabled(false);
         campo_ruta_bus.setEnabled(false);
@@ -43,7 +44,6 @@ public class Consulta_bus extends javax.swing.JFrame {
         modelo.addColumn("Placa");
         modelo.addColumn("Tipo");
         modelo.addColumn("Ruta");
-        
         modelo=controladorBus.listarBuses();
         this.tabla_buses.setModel(modelo);
     }
@@ -62,7 +62,7 @@ public class Consulta_bus extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         campo_tipo_bus = new javax.swing.JComboBox();
         jLabel13 = new javax.swing.JLabel();
-        campo_placa_bus = new javax.swing.JTextField();
+        placaConsulta = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
         boton_eliminar_bus = new javax.swing.JButton();
         boton_modificar_bus = new javax.swing.JButton();
@@ -87,9 +87,9 @@ public class Consulta_bus extends javax.swing.JFrame {
 
         jLabel13.setText("Placa:");
 
-        campo_placa_bus.addActionListener(new java.awt.event.ActionListener() {
+        placaConsulta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                campo_placa_busActionPerformed(evt);
+                placaConsultaActionPerformed(evt);
             }
         });
 
@@ -156,7 +156,7 @@ public class Consulta_bus extends javax.swing.JFrame {
                         .addGap(41, 41, 41)
                         .addComponent(jLabel13)
                         .addGap(27, 27, 27)
-                        .addComponent(campo_placa_bus, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(placaConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(33, 33, 33)
                         .addComponent(boton_consultar_bus))
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -199,7 +199,7 @@ public class Consulta_bus extends javax.swing.JFrame {
                     .addComponent(boton_consultar_bus)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel13)
-                        .addComponent(campo_placa_bus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(placaConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(21, 21, 21)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(campo_tipo_bus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -240,22 +240,22 @@ public class Consulta_bus extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void campo_placa_busActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campo_placa_busActionPerformed
+    private void placaConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_placaConsultaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_campo_placa_busActionPerformed
+    }//GEN-LAST:event_placaConsultaActionPerformed
 
     private void boton_eliminar_busActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_eliminar_busActionPerformed
-        String placa;
-        placa=campo_placa_bus.getText();
+        String placa_bus = "";
+        placa_bus=placaConsulta.getText();
         //confirmacion=JOptionPane.showMessageDialog(null, "Esta seguro que desea eleminar el bus "+placa+"");
-        int confirmacion=JOptionPane.showConfirmDialog(this, "Esta seguro que desea eleminar el bus "+placa+"");
+        int confirmacion=JOptionPane.showConfirmDialog(this, "Esta seguro que desea eleminar el bus "+placa_bus+"");
         if(confirmacion==0){
-            controladorBus.eliminarBus(placa);
-            campo_placa_bus.setText("");
+            controladorBus.eliminarBus(placa_bus);
+            placaConsulta.setText("");
             
             modelo=controladorBus.listarBuses();
             this.tabla_buses.setModel(modelo);
-            JOptionPane.showMessageDialog(null, "Se ha eliminado el bus "+placa+" exitosamente.");
+            JOptionPane.showMessageDialog(null, "Se ha eliminado el bus "+placa_bus+" exitosamente.");
         }
         
     }//GEN-LAST:event_boton_eliminar_busActionPerformed
@@ -266,12 +266,12 @@ public class Consulta_bus extends javax.swing.JFrame {
             campo_ruta_bus.setEnabled(true);
             boton_modificar_bus.setText("Guardar Cambios");
         }else if(boton_modificar_bus.getText()=="Guardar Cambios"){
-            String placa,tipo,ruta;
-            placa=campo_placa_bus.getText();
+            String placa_bus,tipo,ruta;
+            placa_bus=placaConsulta.getText();
             tipo=(String)campo_tipo_bus.getSelectedItem();
             ruta=campo_ruta_bus.getSelectedItem().toString();
         
-            Bus b=new Bus(placa,tipo,ruta);
+            Bus b=new Bus(placa_bus,tipo,ruta);
         
             int numFilas = controladorBus.modificarBus(b);
         
@@ -293,15 +293,15 @@ public class Consulta_bus extends javax.swing.JFrame {
     }//GEN-LAST:event_boton_modificar_busActionPerformed
 
     private void boton_consultar_busActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_consultar_busActionPerformed
-        String placa;
-        placa= campo_placa_bus.getText();
+        String placa_bus = "";
+        placa_bus += placaConsulta.getText();
         //limpiarComponentes();
 
-        System.out.println("placa principal"+placa);
+        System.out.println("placa principal"+placa_bus);
         
-        Bus b;
+        Bus b = new Bus();
 
-        b=controladorBus.consultarBus(placa);
+        b=controladorBus.consultarBus(placa_bus);
         listar_rutas();
         System.out.println("tipo"+b.getTipo() + "ruta" + b.getNombre_ruta());
         
@@ -358,7 +358,6 @@ public class Consulta_bus extends javax.swing.JFrame {
     private javax.swing.JButton boton_eliminar_bus;
     private javax.swing.JButton boton_modificar_bus;
     private javax.swing.JButton boton_volver;
-    private javax.swing.JTextField campo_placa_bus;
     private javax.swing.JComboBox<String> campo_ruta_bus;
     private javax.swing.JComboBox campo_tipo_bus;
     private javax.swing.JLabel jLabel1;
@@ -369,6 +368,7 @@ public class Consulta_bus extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextField placaConsulta;
     private javax.swing.JTable tabla_buses;
     // End of variables declaration//GEN-END:variables
 
