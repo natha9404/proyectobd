@@ -8,12 +8,15 @@ package GUI.PASAJEROS;
 import GUI.INICIO.*;
 import controlador.ControladorPasajero;
 import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author natha
  */
 public class Ventana_pasajeros extends javax.swing.JFrame {
-    
+
+    String rol_user;
+
     /**
      * Creates new form ventana_pasajeros
      */
@@ -185,13 +188,13 @@ public class Ventana_pasajeros extends javax.swing.JFrame {
         //abre la ventana para consultar usuarios
         Listar_pasajeros obj_listar_pasajeros = new Listar_pasajeros();
         ControladorPasajero controlador = new ControladorPasajero();
-        
+
         DefaultTableModel modelo;
-        
+
         modelo = controlador.listarPasajero();
-        
+
         obj_listar_pasajeros.imprimir(modelo);
-        
+
         obj_listar_pasajeros.setVisible(true);
     }//GEN-LAST:event_listar_pasajeroActionPerformed
 
@@ -208,6 +211,7 @@ public class Ventana_pasajeros extends javax.swing.JFrame {
         // se devuelve a la ventana anterior
         I_inicio obj_ventana_principal = new I_inicio();
         obj_ventana_principal.setVisible(true);
+        obj_ventana_principal.rol(rol_user);
         //obj_ventana_principal.rol(rol_user);
         this.dispose();
     }//GEN-LAST:event_volver_principalActionPerformed
@@ -227,6 +231,8 @@ public class Ventana_pasajeros extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     public void rol(String rol) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
+        rol_user = rol;
+
     }
 }
