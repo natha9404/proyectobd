@@ -9,6 +9,7 @@ package controlador;
 import accesoDatos.DaoReportes;
 import java.util.ArrayList;
 import java.util.Date;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -32,6 +33,20 @@ public class ControladorReportes {
         n = dao.contar(ruta, date);
         
         return n;
+    }
+
+    public DefaultTableModel busesArticulados() {
+        DefaultTableModel modelo;
+        modelo = dao.busesArticulados();
+        return modelo;
+    }
+
+    public ArrayList<ArrayList> tabla() {
+        ArrayList<ArrayList> pdf = new ArrayList<>();
+        
+        pdf = dao.tabla();
+        
+        return pdf;
     }
 
 }

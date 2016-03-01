@@ -13,6 +13,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Date;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -69,6 +70,41 @@ public class DaoReportes {
         }
         
         return n;
+    }
+
+    public DefaultTableModel busesArticulados() {
+        DefaultTableModel modelo = new DefaultTableModel();
+        String sql = "SELECT DISTINCT Conduce.id_turno, Conduce.numero_bus, Empleado.nombre FROM (Conduce INNER JOIN Bus ON Conduce.numero_bus = Bus.numero_bus) AS N INNER JOIN Empleado ON Empleado.cedula_empleado = N.cedula_empleado WHERE N.tipo = 'Articulado'";
+        
+        String [] encabezado = {"turno", "bus", "conductor"};
+        
+        String [] datos = new String[3];
+        
+        modelo = new DefaultTableModel(null, encabezado);
+        
+        try{
+            st = conexion.createStatement();
+            
+            rs = st.executeQuery(sql);
+            
+            while(rs.next()){
+                datos[0] = rs.getString(1);
+                datos[1] = rs.getString(2);
+                datos[2] = rs.getString(3);
+                
+                modelo.addRow(datos);
+            }
+            
+            return modelo;
+        }catch(SQLException ex){
+            JOptionPane.showMessageDialog(null, "Error al consultar en la base de datos");
+        }
+        
+        return modelo;
+    }
+
+    public ArrayList<ArrayList> tabla() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

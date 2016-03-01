@@ -48,7 +48,7 @@ public class Anadir_bus extends javax.swing.JFrame {
         campo_placa_bus = new javax.swing.JTextField();
         campo_tipo = new javax.swing.JComboBox();
         boton_volver = new javax.swing.JButton();
-        campo_ruta = new javax.swing.JComboBox<>();
+        campo_ruta = new javax.swing.JComboBox<String>();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -79,6 +79,11 @@ public class Anadir_bus extends javax.swing.JFrame {
         });
 
         campo_tipo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Articulado", "Padron", "Alimentador" }));
+        campo_tipo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                campo_tipoActionPerformed(evt);
+            }
+        });
 
         boton_volver.setText("Volver");
         boton_volver.addActionListener(new java.awt.event.ActionListener() {
@@ -195,6 +200,10 @@ public class Anadir_bus extends javax.swing.JFrame {
         
         this.dispose();
     }//GEN-LAST:event_boton_volverActionPerformed
+
+    private void campo_tipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campo_tipoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_campo_tipoActionPerformed
 
     /**
      * @param args the command line arguments

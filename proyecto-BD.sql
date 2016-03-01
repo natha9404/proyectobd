@@ -170,3 +170,5 @@ INSERT INTO Tarjeta(saldo,estado,deuda,cedula_empleado,nombre_estacion) VALUES(1
 INSERT INTO Pasajero(cedula_pasajero,nombre,telefono) VALUES('31918451','Laura Perlaza','6655225');
 INSERT INTO Pasajero(cedula_pasajero,nombre,telefono) VALUES('12345','Pedro Perez','3365618');
 INSERT INTO Pasajero(cedula_pasajero,nombre,telefono) VALUES('55555','Juan Valdez','4464817');*/
+
+
