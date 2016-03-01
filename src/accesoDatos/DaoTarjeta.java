@@ -9,6 +9,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import logica.Aborda;
 import logica.Tarjeta;
@@ -320,9 +321,11 @@ public class DaoTarjeta {
         
          String sql_guardar;
         int numFilas=0;
-        
-        sql_guardar= "INSERT INTO Aborda (id_tarjeta,nombre_ruta) VALUES ('"+
-                     aborda.getTarjeta()+"','"+aborda.getNombreRuta()+"')";
+        JOptionPane.showMessageDialog(null, aborda.getTarjeta());
+        JOptionPane.showMessageDialog(null, aborda.getNombreRuta());
+        JOptionPane.showMessageDialog(null, aborda.getFecha());
+        sql_guardar= "INSERT INTO Aborda (id_tarjeta,nombre_ruta, fecha) VALUES ('"+
+                     aborda.getTarjeta()+"','"+aborda.getNombreRuta()+"', '"+ aborda.getFecha() +"')";
         
         try{
             Connection conn= fachada.getConnetion();

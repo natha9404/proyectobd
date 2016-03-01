@@ -58,6 +58,12 @@ public class CrearTurno extends javax.swing.JFrame {
 
         jLabel1.setText("* Fecha: (DD/MM/YYYY)");
 
+        campo_fecha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                campo_fechaActionPerformed(evt);
+            }
+        });
+
         jLabel2.setText("*Hora Inicio");
 
         jLabel4.setText("*Hora Termina");
@@ -176,6 +182,10 @@ public class CrearTurno extends javax.swing.JFrame {
 
         this.dispose();
     }//GEN-LAST:event_boton_volverActionPerformed
+
+    private void campo_fechaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campo_fechaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_campo_fechaActionPerformed
 
     /**
      * @param args the command line arguments

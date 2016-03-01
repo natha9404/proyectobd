@@ -5,6 +5,8 @@
  */
 package logica;
 
+import java.util.Date;
+
 /**
  *
  * @author natha9404
@@ -13,6 +15,7 @@ public class Aborda {
     
     int tarjeta;
     String nombre_ruta;
+    Date fecha;
     
     public Aborda(){
         
@@ -44,11 +47,12 @@ public class Aborda {
         
     }
     
+    public Date getFecha (){
+        return fecha;
+    }    
     
-    
-    
-    
-    
-    
+    public void setFecha (Date fecha){
+        this.fecha = fecha;
+    }
     
 }

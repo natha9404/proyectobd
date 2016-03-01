@@ -8,6 +8,7 @@ package controlador;
 import accesoDatos.DaoTarjeta;
 import java.util.ArrayList;
 import java.util.Vector;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import logica.Aborda;
 import logica.Tarjeta;
@@ -127,7 +128,7 @@ public class ControladorTarjeta {
     }
 
     public int abordar(Aborda aborda) {
-
+        JOptionPane.showMessageDialog(null, aborda.getNombreRuta());
         int num = daoTarjeta.abordar(aborda);
         return num;
 
