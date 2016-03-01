@@ -5,12 +5,21 @@
  */
 package GUI.RUTA;
 
+import controlador.ControladorRutas;
+import java.awt.Image;
+import java.io.File;
+import javax.swing.*;
+import javax.swing.filechooser.FileNameExtensionFilter;
+import logica.Ruta;
+
 /**
  *
  * @author edison
  */
 public class Ventana_modificar_rutas extends javax.swing.JFrame {
 
+    private File fichero;
+    String descripcion;
     /**
      * Creates new form Ventana_modificar_rutas
      */
@@ -32,18 +41,53 @@ public class Ventana_modificar_rutas extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         campo_modificar_nombre_ruta = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
+        foto_ruta = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        boton_imagen_ruta = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        boton_volver = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/metrocali11.jpg"))); // NOI18N
         jLabel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jLabel2.setText("*Nombre");
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel2.setText("*Nombre Ruta");
 
         jButton1.setText("Consultar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
+            }
+        });
+
+        foto_ruta.setText("                                  FOTO");
+        foto_ruta.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        jLabel4.setText("Imagen");
+
+        boton_imagen_ruta.setText("Escoger Imagen");
+        boton_imagen_ruta.setEnabled(false);
+        boton_imagen_ruta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boton_imagen_rutaActionPerformed(evt);
+            }
+        });
+
+        jButton2.setText("Modificar");
+        jButton2.setEnabled(false);
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        boton_volver.setText("Volver");
+        boton_volver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boton_volverActionPerformed(evt);
             }
         });
 
@@ -56,30 +100,58 @@ public class Ventana_modificar_rutas extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel2)
-                        .addGap(69, 69, 69)
-                        .addComponent(campo_modificar_nombre_ruta))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(campo_modificar_nombre_ruta, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(37, 37, 37))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(9, 9, 9)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(boton_imagen_ruta)
+                                        .addGap(53, 53, 53)
+                                        .addComponent(jButton2))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel4)
+                                        .addGap(388, 388, 388))))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(178, 178, 178)
+                                .addComponent(foto_ruta, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(boton_volver))
+                        .addGap(0, 29, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(17, Short.MAX_VALUE)
+                .addComponent(boton_volver)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(campo_modificar_nombre_ruta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton1)
-                .addContainerGap(266, Short.MAX_VALUE))
+                .addGap(40, 40, 40)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel4)
+                        .addGap(141, 141, 141))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(foto_ruta, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(32, 32, 32)))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(boton_imagen_ruta)
+                    .addComponent(jButton2))
+                .addGap(32, 32, 32))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 537, Short.MAX_VALUE)
+            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
@@ -87,8 +159,7 @@ public class Ventana_modificar_rutas extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -96,7 +167,119 @@ public class Ventana_modificar_rutas extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        
+        String nombre_ruta;
+        nombre_ruta =campo_modificar_nombre_ruta.getText();
+        
+        Ruta ruta = new Ruta();
+        ControladorRutas controlador = new ControladorRutas();
+        
+        
+        try {
+
+            /**
+             * obj_consultar : objeto para acceder a la interfaz buscar_usuario
+             * datos : se realiza el llamado al metodo consultar_usuario el cual
+             * recibe un entero cedula, con dicha cedula realiza la busqueda en
+             * la base de datos y retorna en el ArrayList<String>
+             * cada uno de los datos del usuario solicitado, y se imprimen en
+             * los campos.
+             */
+            // Bd_pqr obj_consultarbd = new Bd_pqr();
+            System.out.println("Conecto el objeto");
+
+            if (campo_modificar_nombre_ruta.getText().trim().length() != 0) {
+                ruta = controlador.consultar_ruta(nombre_ruta);
+
+                campo_modificar_nombre_ruta.setEditable(false);
+                
+                
+                
+                 ImageIcon imagen = new ImageIcon(ruta.getImagen());
+                
+                Icon icono = new ImageIcon (imagen.getImage().getScaledInstance(foto_ruta.getWidth(), foto_ruta.getHeight(), Image.SCALE_DEFAULT));
+                
+                foto_ruta.setText(null);
+                descripcion = ruta.getDescripcion();
+                foto_ruta.setIcon(icono);
+                boton_imagen_ruta.setEnabled(true);
+                jButton2.setEnabled(true);
+
+                
+
+            }
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "El usuario que intenta consultar no existe");
+
+        }
+        
+        
+        
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void boton_imagen_rutaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_imagen_rutaActionPerformed
+        // TODO add your handling code here:
+        int resultado;
+
+        File_Chooser escoger = new File_Chooser();
+        FileNameExtensionFilter filtro = new FileNameExtensionFilter ("JPG y PNG", "jpg", "png");
+
+        escoger.chooser.setFileFilter(filtro);
+
+        resultado = escoger.chooser.showOpenDialog(null);
+
+        if (JFileChooser.APPROVE_OPTION == resultado){
+            fichero = escoger.chooser.getSelectedFile();
+
+            try {
+                ImageIcon imagen = new ImageIcon(fichero.toString());
+
+                Icon icono = new ImageIcon (imagen.getImage().getScaledInstance(foto_ruta.getWidth(), foto_ruta.getHeight(), Image.SCALE_DEFAULT));
+
+                foto_ruta.setText(null);
+
+                foto_ruta.setIcon(icono);
+
+
+            }catch(Exception e){
+                JOptionPane.showMessageDialog(null, "Error al abrir la imagen: " + e);
+            }
+        }
+
+    }//GEN-LAST:event_boton_imagen_rutaActionPerformed
+
+    private void boton_volverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_volverActionPerformed
+
+        this.dispose();
+    }//GEN-LAST:event_boton_volverActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        
+        
+        String nombre_ruta;
+        String ruta_imagen;
+        
+        if((campo_modificar_nombre_ruta.getText().trim().length() !=0))
+        {
+            nombre_ruta = campo_modificar_nombre_ruta.getText();
+            System.out.println(fichero);
+            ruta_imagen = fichero.toString();
+            ControladorRutas controlador = new ControladorRutas();
+            int num = controlador.modificarRuta(nombre_ruta,descripcion,ruta_imagen, campo_modificar_nombre_ruta.getText());
+            
+            JOptionPane.showMessageDialog(null, "Ruta Modificada");
+            
+            
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Por favor ingrese todos los datos y su respectiva imagen");
+            
+        }
+        
+        
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -134,10 +317,15 @@ public class Ventana_modificar_rutas extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton boton_imagen_ruta;
+    private javax.swing.JButton boton_volver;
     private javax.swing.JTextField campo_modificar_nombre_ruta;
+    private javax.swing.JLabel foto_ruta;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

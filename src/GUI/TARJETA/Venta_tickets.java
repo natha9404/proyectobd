@@ -9,6 +9,7 @@ import javax.swing.JOptionPane;
 import controlador.ControladorTarjeta;
 import java.awt.Color;
 import java.util.ArrayList;
+import logica.Aborda;
 import logica.Tarjeta;
 
 /**
@@ -67,6 +68,7 @@ public class Venta_tickets extends javax.swing.JFrame {
         jLabel14.setText("VENTA DE TICKET");
 
         boton_descontar_pasaje.setText("Descontar Pasaje");
+        boton_descontar_pasaje.setEnabled(false);
         boton_descontar_pasaje.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 boton_descontar_pasajeActionPerformed(evt);
@@ -104,28 +106,25 @@ public class Venta_tickets extends javax.swing.JFrame {
                 .addComponent(boton_volver)
                 .addGap(68, 68, 68)
                 .addComponent(jLabel14)
-                .addContainerGap(204, Short.MAX_VALUE))
+                .addContainerGap(213, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(boton_descontar_pasaje, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel10)
-                                    .addComponent(jLabel13)
-                                    .addComponent(jLabel2))
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(campo_id_tarjeta, javax.swing.GroupLayout.DEFAULT_SIZE, 209, Short.MAX_VALUE)
-                                        .addComponent(campo_nuevo_saldo))
-                                    .addComponent(combo_Estaciones, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(54, 54, 54))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(boton_listarRutas)
-                        .addGap(62, 62, 62))))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(boton_listarRutas)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel2)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel13)
+                                .addComponent(jLabel10))
+                            .addGap(18, 18, 18)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(campo_id_tarjeta, javax.swing.GroupLayout.DEFAULT_SIZE, 209, Short.MAX_VALUE)
+                                    .addComponent(campo_nuevo_saldo))
+                                .addComponent(combo_Estaciones, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(boton_descontar_pasaje)))))
+                .addGap(54, 54, 54))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -139,19 +138,20 @@ public class Venta_tickets extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(campo_id_tarjeta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel13))
-                .addGap(18, 18, 18)
-                .addComponent(boton_descontar_pasaje)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel10)
-                    .addComponent(campo_nuevo_saldo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(boton_listarRutas)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(combo_Estaciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(39, 39, 39))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(combo_Estaciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel2))
+                        .addGap(18, 18, 18)
+                        .addComponent(boton_descontar_pasaje)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(campo_nuevo_saldo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addGap(60, 60, 60))
         );
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/metrocali11.jpg"))); // NOI18N
@@ -161,7 +161,7 @@ public class Venta_tickets extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 460, Short.MAX_VALUE)
+            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 497, Short.MAX_VALUE)
             .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
@@ -169,8 +169,7 @@ public class Venta_tickets extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 272, Short.MAX_VALUE))
         );
 
         pack();
@@ -181,11 +180,17 @@ public class Venta_tickets extends javax.swing.JFrame {
     }//GEN-LAST:event_campo_id_tarjetaActionPerformed
 
     private void boton_descontar_pasajeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_descontar_pasajeActionPerformed
-        int id_tarjeta;
+        Aborda aborda = new Aborda();
+        
+        String id_tarjeta;
         double valor_recarga= -1800;
-        id_tarjeta=Integer.parseInt(campo_id_tarjeta.getText());
+        id_tarjeta=campo_id_tarjeta.getText();
         //valor_recarga=(double)Integer.parseInt(campo_id.getText());
-        int resultado=controladorTarjeta.recargarTarjeta(id_tarjeta, valor_recarga);
+        
+        aborda.setTarjeta(Integer.parseInt(id_tarjeta));
+        aborda.setNombre_ruta(combo_Estaciones.getSelectedItem().toString());
+        int num = controladorTarjeta.abordar(aborda);
+        int resultado=controladorTarjeta.recargarTarjeta(Integer.parseInt(id_tarjeta), valor_recarga);
         if(resultado==1){
             JOptionPane.showMessageDialog(null, "El descuento del pasaje ha sido exitosa.");
         }else{
@@ -194,9 +199,14 @@ public class Venta_tickets extends javax.swing.JFrame {
         
         Tarjeta t;
 
-        t=controladorTarjeta.consultarTarjeta(id_tarjeta);
+        t=controladorTarjeta.consultarTarjeta(Integer.parseInt(id_tarjeta));
         
         campo_nuevo_saldo.setText(Double.toString(t.getSaldo()));
+        
+        
+        
+        
+        
     }//GEN-LAST:event_boton_descontar_pasajeActionPerformed
 
     private void boton_volverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_volverActionPerformed
@@ -220,6 +230,11 @@ public class Venta_tickets extends javax.swing.JFrame {
         for (int i =0; i<n; i++){
             combo_Estaciones.addItem(estaciones.get(i));
         }
+        
+        
+        boton_descontar_pasaje.setEnabled(true);
+        
+        
     }//GEN-LAST:event_boton_listarRutasActionPerformed
 
     /**

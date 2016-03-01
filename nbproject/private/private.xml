@@ -3,6 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/home/edison/Documentos/univalle/2015-II/BD/proyectobd/src/accesoDatos/DaoTurno.java</file>
             <file>file:/home/edison/Documentos/univalle/2015-II/BD/proyectobd/src/GUI/TURNO/VentanaTurno.java</file>
             <file>file:/home/edison/Documentos/univalle/2015-II/BD/proyectobd/src/GUI/TURNO/AsignarTurno.java</file>
@@ -10,6 +11,26 @@
             <file>file:/home/edison/Documentos/univalle/2015-II/BD/proyectobd/src/GUI/TURNO/CrearTurno.java</file>
             <file>file:/home/edison/Documentos/univalle/2015-II/BD/proyectobd/src/controlador/ControladorTurno.java</file>
             <file>file:/home/edison/Documentos/univalle/2015-II/BD/proyectobd/src/GUI/TARJETA/Ventana_tarjetas.java</file>
+=======
+            <file>file:/Users/natha9404/Documents/Bases%20de%20Datos/PROYECTO/proyectobd-tarjetas-buses/src/accesoDatos/Daopqr.java</file>
+            <file>file:/Users/natha9404/Documents/Bases%20de%20Datos/PROYECTO/proyectobd-tarjetas-buses/src/controlador/ControladorRutas.java</file>
+            <file>file:/Users/natha9404/Documents/Bases%20de%20Datos/PROYECTO/proyectobd-tarjetas-buses/src/logica/Ruta.java</file>
+            <file>file:/Users/natha9404/Documents/Bases%20de%20Datos/PROYECTO/proyectobd-tarjetas-buses/src/GUI/PASAJEROS/Buscar_pasajero.java</file>
+            <file>file:/Users/natha9404/Documents/Bases%20de%20Datos/PROYECTO/proyectobd-tarjetas-buses/src/GUI/EMPLEADOS/Buscar_empleado.java</file>
+            <file>file:/Users/natha9404/Documents/Bases%20de%20Datos/PROYECTO/proyectobd-tarjetas-buses/src/GUI/INICIO/I_inicio.java</file>
+            <file>file:/Users/natha9404/Documents/Bases%20de%20Datos/PROYECTO/proyectobd-tarjetas-buses/src/controlador/ControladorPasajero.java</file>
+            <file>file:/Users/natha9404/Documents/Bases%20de%20Datos/PROYECTO/proyectobd-tarjetas-buses/src/accesoDatos/DaoRutas.java</file>
+            <file>file:/Users/natha9404/Documents/Bases%20de%20Datos/PROYECTO/proyectobd-tarjetas-buses/src/accesoDatos/DaoBus.java</file>
+            <file>file:/Users/natha9404/Documents/Bases%20de%20Datos/PROYECTO/proyectobd-tarjetas-buses/src/GUI/RUTA/Ventana_modificar_rutas.java</file>
+            <file>file:/Users/natha9404/Documents/Bases%20de%20Datos/PROYECTO/proyectobd-tarjetas-buses/src/GUI/PASAJEROS/Modificar_pasajero.java</file>
+            <file>file:/Users/natha9404/Documents/Bases%20de%20Datos/PROYECTO/proyectobd-tarjetas-buses/src/accesoDatos/DatosPasajero.java</file>
+            <file>file:/Users/natha9404/Documents/Bases%20de%20Datos/PROYECTO/proyectobd-tarjetas-buses/src/logica/RutaEstacion.java</file>
+            <file>file:/Users/natha9404/Documents/Bases%20de%20Datos/PROYECTO/proyectobd-tarjetas-buses/src/GUI/EMPLEADOS/Registrar_empleado.java</file>
+            <file>file:/Users/natha9404/Documents/Bases%20de%20Datos/PROYECTO/proyectobd-tarjetas-buses/src/logica/Pasajero.java</file>
+            <file>file:/Users/natha9404/Documents/Bases%20de%20Datos/PROYECTO/proyectobd-tarjetas-buses/src/GUI/RUTA/Ventana_insertar_rutas.java</file>
+            <file>file:/Users/natha9404/Documents/Bases%20de%20Datos/PROYECTO/proyectobd-tarjetas-buses/src/GUI/PASAJEROS/Registrar_pasajero.java</file>
+            <file>file:/Users/natha9404/Documents/Bases%20de%20Datos/PROYECTO/proyectobd-tarjetas-buses/src/GUI/INICIO/Login.java</file>
+>>>>>>> 03b09ebd050fe21acb70a0846ec09a2af527c53e
         </group>
     </open-files>
 </project-private>

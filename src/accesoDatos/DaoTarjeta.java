@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.table.DefaultTableModel;
+import logica.Aborda;
 import logica.Tarjeta;
 
 /**
@@ -311,5 +312,35 @@ public class DaoTarjeta {
             System.out.println(e);
         }
         return lista;
+    }
+
+    public int abordar(Aborda aborda) {
+        
+        
+        
+         String sql_guardar;
+        int numFilas=0;
+        
+        sql_guardar= "INSERT INTO Aborda (id_tarjeta,nombre_ruta) VALUES ('"+
+                     aborda.getTarjeta()+"','"+aborda.getNombreRuta()+"')";
+        
+        try{
+            Connection conn= fachada.getConnetion();
+            Statement sentencia = conn.createStatement();
+
+            numFilas = sentencia.executeUpdate(sql_guardar);            
+            System.out.println("up " + numFilas);
+            return numFilas;
+            
+        }
+        catch(SQLException e){
+            System.out.println(e); 
+            }
+        catch(Exception e){ 
+            System.out.println(e);
+        }
+        return -1;
+        
+        
     }
 }
