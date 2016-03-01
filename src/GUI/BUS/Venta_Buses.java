@@ -19,6 +19,9 @@ public class Venta_Buses extends javax.swing.JFrame {
      */
     public Venta_Buses() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        this.setDefaultCloseOperation(DISPOSE_ON_CLOSE); 
+        setResizable(false);
     }
 
     /**

@@ -18,6 +18,9 @@ public class Listar_empleados extends javax.swing.JFrame {
      */
     public Listar_empleados() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        this.setDefaultCloseOperation(DISPOSE_ON_CLOSE); 
+        setResizable(false);
     }
     
     public void imprimir (DefaultTableModel modelo){

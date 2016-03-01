@@ -20,6 +20,9 @@ public class Ventana_empleado extends javax.swing.JFrame {
      */
     public Ventana_empleado() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        this.setDefaultCloseOperation(DISPOSE_ON_CLOSE); 
+        setResizable(false);
     }
 
     /**

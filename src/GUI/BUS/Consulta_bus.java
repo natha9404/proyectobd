@@ -31,6 +31,9 @@ public class Consulta_bus extends javax.swing.JFrame {
     
     public Consulta_bus() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        this.setDefaultCloseOperation(DISPOSE_ON_CLOSE); 
+        setResizable(false);initComponents();
         controladorBus=new ControladorBus();
         campo_tipo_bus.setEnabled(false);
         campo_ruta_bus.setEnabled(false);

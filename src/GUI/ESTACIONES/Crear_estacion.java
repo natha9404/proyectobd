@@ -21,6 +21,9 @@ public class Crear_estacion extends javax.swing.JFrame {
      */
     public Crear_estacion() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        this.setDefaultCloseOperation(DISPOSE_ON_CLOSE); 
+        setResizable(false);
     }
 
     /**

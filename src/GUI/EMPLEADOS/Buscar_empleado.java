@@ -22,6 +22,9 @@ public class Buscar_empleado extends javax.swing.JFrame {
      */
     public Buscar_empleado() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        this.setDefaultCloseOperation(DISPOSE_ON_CLOSE); 
+        setResizable(false);
     }
 
     /**

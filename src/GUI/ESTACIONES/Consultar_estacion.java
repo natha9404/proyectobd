@@ -19,6 +19,9 @@ public class Consultar_estacion extends javax.swing.JFrame {
      */
     public Consultar_estacion() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        this.setDefaultCloseOperation(DISPOSE_ON_CLOSE); 
+        setResizable(false);
     }
 
     /**

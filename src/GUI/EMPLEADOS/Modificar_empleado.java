@@ -23,6 +23,9 @@ public class Modificar_empleado extends javax.swing.JFrame {
      */
     public Modificar_empleado() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        this.setDefaultCloseOperation(DISPOSE_ON_CLOSE); 
+        setResizable(false);
     }
 
     /**

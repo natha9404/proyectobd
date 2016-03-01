@@ -20,6 +20,9 @@ public class Ventana_estacion extends javax.swing.JFrame {
      */
     public Ventana_estacion() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        this.setDefaultCloseOperation(DISPOSE_ON_CLOSE); 
+        setResizable(false);
     }
 
     /**

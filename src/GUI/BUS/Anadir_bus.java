@@ -22,8 +22,12 @@ public class Anadir_bus extends javax.swing.JFrame {
      */
     public Anadir_bus() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        this.setDefaultCloseOperation(DISPOSE_ON_CLOSE); 
+        setResizable(false);
         controladorBus=new ControladorBus();
         listar_rutas();
+        
     }
 
     /**

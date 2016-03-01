@@ -20,6 +20,9 @@ public class Modificar_estacion extends javax.swing.JFrame {
      */
     public Modificar_estacion() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        this.setDefaultCloseOperation(DISPOSE_ON_CLOSE); 
+        setResizable(false);
     }
 
     /**

@@ -19,6 +19,9 @@ public class Listar_estaciones extends javax.swing.JFrame {
      */
     public Listar_estaciones() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        this.setDefaultCloseOperation(DISPOSE_ON_CLOSE); 
+        setResizable(false);
     }
     
     public void imprimir (DefaultTableModel modelo){
