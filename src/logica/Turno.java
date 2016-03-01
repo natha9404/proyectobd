@@ -16,6 +16,7 @@ public class Turno {
     Date fecha;
     String hora_inicio;
     String hora_final;
+    String id_turno;
     
     public Turno(){}
     
@@ -27,6 +28,17 @@ public class Turno {
     
     public Date getFecha(){
         return fecha;
+    }
+    
+    public void setIdTurno(String id_turno){
+        this.id_turno=id_turno;
+        
+    }
+    
+    public  String getTurno(){
+        
+        return id_turno;
+        
     }
     
     public void setFecha(Date fecha){

@@ -116,8 +116,8 @@ public class DaoTurno {
         } 
     }
     
-    public void conduce (String bus, String ruta, String cedula){
-        String sql = "INSERT INTO Conduce VALUES ('" + bus + "', '" + ruta + "', '"+ cedula +"')";
+    public void conduce (String bus, String ruta, String cedula,String turno){
+        String sql = "INSERT INTO Conduce VALUES ('" + bus + "', '" + ruta + "', '"+ cedula +"' , '"+ turno +"')";
         try{
             conexion = fachada.getConnetion();
             st = conexion.createStatement();
