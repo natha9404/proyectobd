@@ -27,6 +27,9 @@ public class I_inicio extends javax.swing.JFrame {
      */
     public I_inicio() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        setResizable(false);
+        this.setDefaultCloseOperation(this.DO_NOTHING_ON_CLOSE);
     }
 
     /**
