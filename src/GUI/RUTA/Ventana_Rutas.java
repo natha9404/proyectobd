@@ -63,7 +63,7 @@ public class Ventana_Rutas extends javax.swing.JFrame {
         });
 
         anadir_estaciones.setBackground(new java.awt.Color(255, 255, 255));
-        anadir_estaciones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/credit_card_128_2.png"))); // NOI18N
+        anadir_estaciones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/editar_estacion.png"))); // NOI18N
         anadir_estaciones.setEnabled(false);
         anadir_estaciones.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -87,7 +87,7 @@ public class Ventana_Rutas extends javax.swing.JFrame {
         jLabel4.setText("Añadir Estaciones a Ruta");
 
         anadir_estaciones1.setBackground(new java.awt.Color(255, 255, 255));
-        anadir_estaciones1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/credit_card_128_2.png"))); // NOI18N
+        anadir_estaciones1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/agregar_estacion.png"))); // NOI18N
         anadir_estaciones1.setEnabled(false);
         anadir_estaciones1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
