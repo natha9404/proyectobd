@@ -247,6 +247,11 @@ public class Ventana_Rutas extends javax.swing.JFrame {
 
     private void consultar_rutaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultar_rutaActionPerformed
         // TODO add your handling code here:
+        Ventana_consultar_ruta crear = new Ventana_consultar_ruta();
+        crear.toFront();
+        crear.setVisible(true);
+        crear.setTitle("Añadir Estaciones");
+        this.dispose();
     }//GEN-LAST:event_consultar_rutaActionPerformed
 
     /**
