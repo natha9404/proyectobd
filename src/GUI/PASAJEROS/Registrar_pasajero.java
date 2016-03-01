@@ -20,6 +20,9 @@ public class Registrar_pasajero extends javax.swing.JFrame {
      */
     public Registrar_pasajero() {
         initComponents();
+         this.setLocationRelativeTo(null);
+         this.setDefaultCloseOperation(this.DO_NOTHING_ON_CLOSE);
+         setResizable(false);
     }
 
     /**
@@ -68,6 +71,7 @@ public class Registrar_pasajero extends javax.swing.JFrame {
         jLabel42 = new javax.swing.JLabel();
         boton_registrar_usuarios5 = new javax.swing.JToggleButton();
         jLabel43 = new javax.swing.JLabel();
+        boton_volver2 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
@@ -373,6 +377,13 @@ public class Registrar_pasajero extends javax.swing.JFrame {
         jLabel43.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel43.setText("REGISTRO DE PASAJEROS");
 
+        boton_volver2.setText("Volver");
+        boton_volver2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boton_volver2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
@@ -397,15 +408,19 @@ public class Registrar_pasajero extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(campo_registro_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGap(161, 161, 161)
+                        .addComponent(boton_volver2)
+                        .addGap(78, 78, 78)
                         .addComponent(jLabel43)))
                 .addContainerGap(71, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addComponent(jLabel43)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGap(17, 17, 17)
+                        .addComponent(jLabel43))
+                    .addComponent(boton_volver2))
                 .addGap(36, 36, 36)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel38)
@@ -590,6 +605,11 @@ public class Registrar_pasajero extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_campo_registro_cedulaActionPerformed
 
+    private void boton_volver2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_volver2ActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_boton_volver2ActionPerformed
+
     
    
     
@@ -601,6 +621,7 @@ public class Registrar_pasajero extends javax.swing.JFrame {
     private javax.swing.JToggleButton boton_registrar_usuarios3;
     private javax.swing.JToggleButton boton_registrar_usuarios4;
     private javax.swing.JToggleButton boton_registrar_usuarios5;
+    private javax.swing.JButton boton_volver2;
     private javax.swing.JTextField campo_registro_cedula;
     private javax.swing.JTextField campo_registro_cedula3;
     private javax.swing.JTextField campo_registro_cedula4;

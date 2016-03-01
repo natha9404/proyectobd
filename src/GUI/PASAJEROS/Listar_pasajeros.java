@@ -18,6 +18,9 @@ public class Listar_pasajeros extends javax.swing.JFrame {
      */
     public Listar_pasajeros() {
         initComponents();
+         this.setLocationRelativeTo(null);
+         this.setDefaultCloseOperation(this.DO_NOTHING_ON_CLOSE);
+         setResizable(false);
     }
     
     public void imprimir (DefaultTableModel modelo){
@@ -98,9 +101,7 @@ public class Listar_pasajeros extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void boton_volverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_volverActionPerformed
-        Ventana_pasajeros ventana_pasajeros= new Ventana_pasajeros();
-        ventana_pasajeros.toFront();
-        ventana_pasajeros.setVisible(true);
+       
         this.dispose();
     }//GEN-LAST:event_boton_volverActionPerformed
 

@@ -22,7 +22,10 @@ public class Venta_tickets extends javax.swing.JFrame {
      * Creates new form Venta_tickets
      */
     public Venta_tickets() {
-        initComponents();
+     initComponents();
+         this.setLocationRelativeTo(null);
+         this.setDefaultCloseOperation(this.DO_NOTHING_ON_CLOSE);
+         setResizable(false);
         controladorTarjeta=new ControladorTarjeta();
         campo_nuevo_saldo.setEnabled(false);
     }
@@ -210,9 +213,7 @@ public class Venta_tickets extends javax.swing.JFrame {
     }//GEN-LAST:event_boton_descontar_pasajeActionPerformed
 
     private void boton_volverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_volverActionPerformed
-        Ventana_tarjetas ventana_tarjetas= new Ventana_tarjetas();
-        ventana_tarjetas.toFront();
-        ventana_tarjetas.setVisible(true);
+       
         this.dispose();
     }//GEN-LAST:event_boton_volverActionPerformed
 

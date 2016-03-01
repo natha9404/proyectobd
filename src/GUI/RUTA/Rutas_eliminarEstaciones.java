@@ -21,6 +21,9 @@ public class Rutas_eliminarEstaciones extends javax.swing.JFrame {
      */
     public Rutas_eliminarEstaciones() {
         initComponents();
+         this.setLocationRelativeTo(null);
+         this.setDefaultCloseOperation(this.DO_NOTHING_ON_CLOSE);
+         setResizable(false);
     }
 
     /**
@@ -63,6 +66,11 @@ public class Rutas_eliminarEstaciones extends javax.swing.JFrame {
         });
 
         boton_volver.setText("Volver");
+        boton_volver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boton_volverActionPerformed(evt);
+            }
+        });
 
         jLabel3.setText("Estaciones");
 
@@ -242,6 +250,11 @@ public class Rutas_eliminarEstaciones extends javax.swing.JFrame {
 
         }
     }//GEN-LAST:event_boton_registrar_rutaActionPerformed
+
+    private void boton_volverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_volverActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_boton_volverActionPerformed
 
     /**
      * @param args the command line arguments

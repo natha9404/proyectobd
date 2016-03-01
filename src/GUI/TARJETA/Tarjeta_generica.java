@@ -24,8 +24,15 @@ public class Tarjeta_generica extends javax.swing.JFrame {
      * Creates new form tarjeta_generica
      */
     public Tarjeta_generica() {
+<<<<<<< HEAD
         initComponents();
         listarEstaciones();
+=======
+      initComponents();
+         this.setLocationRelativeTo(null);
+         this.setDefaultCloseOperation(this.DO_NOTHING_ON_CLOSE);
+         setResizable(false);
+>>>>>>> ec8b70edf9a508651f0e8d41b456109c04d5bc9f
         controladorTarjeta=new ControladorTarjeta();
     }
 
@@ -240,9 +247,7 @@ public class Tarjeta_generica extends javax.swing.JFrame {
     }//GEN-LAST:event_boton_vender_tarjetaActionPerformed
 
     private void boton_volverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_volverActionPerformed
-        Ventana_tarjetas ventana_tarjetas= new Ventana_tarjetas();
-        ventana_tarjetas.toFront();
-        ventana_tarjetas.setVisible(true);
+       
         this.dispose();
     }//GEN-LAST:event_boton_volverActionPerformed
 

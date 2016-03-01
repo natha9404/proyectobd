@@ -21,6 +21,9 @@ public class Ventana_Rutas extends javax.swing.JFrame {
      */
     public Ventana_Rutas() {
         initComponents();
+         this.setLocationRelativeTo(null);
+         this.setDefaultCloseOperation(this.DO_NOTHING_ON_CLOSE);
+         setResizable(false);
     }
 
     /**
@@ -203,27 +206,33 @@ public class Ventana_Rutas extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void crear_rutaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crear_rutaActionPerformed
-        AsignarTurno asignar= new AsignarTurno();
+        Ventana_insertar_rutas asignar= new Ventana_insertar_rutas();
         asignar.toFront();
         asignar.setVisible(true);
-        asignar.setTitle("Recargar tarjeta");
-        this.dispose();
+        asignar.setTitle("Crear Ruta");
     }//GEN-LAST:event_crear_rutaActionPerformed
 
     private void anadir_estacionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_anadir_estacionesActionPerformed
-        CrearTurno crear= new CrearTurno();
+        Rutas_eliminarEstaciones crear= new Rutas_eliminarEstaciones();
         crear.toFront();
         crear.setVisible(true);
-        crear.setTitle("Registrar tarjeta");
-        this.dispose();
+        crear.setTitle("Añadir Estaciones");
     }//GEN-LAST:event_anadir_estacionesActionPerformed
 
     private void modificar_ruta1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modificar_ruta1ActionPerformed
         // TODO add your handling code here:
+        Ventana_modificar_rutas crear = new Ventana_modificar_rutas();
+        crear.toFront();
+        crear.setVisible(true);
+        crear.setTitle("Modificar Ruta");
     }//GEN-LAST:event_modificar_ruta1ActionPerformed
 
     private void anadir_estaciones1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_anadir_estaciones1ActionPerformed
         // TODO add your handling code here:
+         Rutas_adicionarEstaciones crear= new Rutas_adicionarEstaciones();
+        crear.toFront();
+        crear.setVisible(true);
+        crear.setTitle("Añadir Estaciones");
     }//GEN-LAST:event_anadir_estaciones1ActionPerformed
 
     private void volver_principalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volver_principalActionPerformed
@@ -232,11 +241,14 @@ public class Ventana_Rutas extends javax.swing.JFrame {
         I_inicio obj_ventana_principal = new I_inicio();
         obj_ventana_principal.setVisible(true);
         obj_ventana_principal.rol(rol_user);
-        this.dispose();
     }//GEN-LAST:event_volver_principalActionPerformed
 
     private void consultar_rutaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultar_rutaActionPerformed
         // TODO add your handling code here:
+        Ventana_consultar_ruta crear = new Ventana_consultar_ruta();
+        crear.toFront();
+        crear.setVisible(true);
+        crear.setTitle("Añadir Estaciones");
     }//GEN-LAST:event_consultar_rutaActionPerformed
 
     /**

@@ -30,6 +30,9 @@ public class Ventana_insertar_rutas extends javax.swing.JFrame {
      */
     public Ventana_insertar_rutas() {
         initComponents();
+         this.setLocationRelativeTo(null);
+         this.setDefaultCloseOperation(this.DO_NOTHING_ON_CLOSE);
+         setResizable(false);
         llenarEstaciones();
     }
 
@@ -54,6 +57,7 @@ public class Ventana_insertar_rutas extends javax.swing.JFrame {
         foto_ruta = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox();
         anadir_estacion = new javax.swing.JToggleButton();
+        boton_volver = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -98,6 +102,13 @@ public class Ventana_insertar_rutas extends javax.swing.JFrame {
             }
         });
 
+        boton_volver.setText("Volver");
+        boton_volver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boton_volverActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -125,11 +136,15 @@ public class Ventana_insertar_rutas extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(anadir_estacion)))))
                 .addContainerGap(34, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(boton_volver)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(22, 22, 22)
+                .addComponent(boton_volver)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(campo_nombre_ruta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -147,7 +162,7 @@ public class Ventana_insertar_rutas extends javax.swing.JFrame {
                         .addGap(20, 20, 20)
                         .addComponent(texto_descipcion_ruta, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(foto_ruta, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE)
+                        .addComponent(foto_ruta, javax.swing.GroupLayout.DEFAULT_SIZE, 132, Short.MAX_VALUE)
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(boton_imagen_ruta)
@@ -254,6 +269,11 @@ public class Ventana_insertar_rutas extends javax.swing.JFrame {
         
     }//GEN-LAST:event_anadir_estacionActionPerformed
 
+    private void boton_volverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_volverActionPerformed
+
+        this.dispose();
+    }//GEN-LAST:event_boton_volverActionPerformed
+
      /**
      * @param args the command line arguments
      */
@@ -262,6 +282,7 @@ public class Ventana_insertar_rutas extends javax.swing.JFrame {
     private javax.swing.JToggleButton anadir_estacion;
     private javax.swing.JButton boton_imagen_ruta;
     private javax.swing.JButton boton_registrar_ruta;
+    private javax.swing.JButton boton_volver;
     private javax.swing.JTextField campo_nombre_ruta;
     private javax.swing.JLabel foto_ruta;
     private javax.swing.JComboBox jComboBox1;

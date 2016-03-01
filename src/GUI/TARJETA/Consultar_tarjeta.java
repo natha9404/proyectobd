@@ -24,6 +24,9 @@ public class Consultar_tarjeta extends javax.swing.JFrame {
      */
     public Consultar_tarjeta() {
         initComponents();
+         this.setLocationRelativeTo(null);
+         this.setDefaultCloseOperation(this.DO_NOTHING_ON_CLOSE);
+         setResizable(false);
         controladorTarjeta=new ControladorTarjeta();
         campo_saldo.setEnabled(false);
         combo_estado.setEnabled(false);
@@ -362,9 +365,7 @@ public class Consultar_tarjeta extends javax.swing.JFrame {
     }//GEN-LAST:event_boton_eliminarActionPerformed
 
     private void boton_volverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_volverActionPerformed
-        Ventana_tarjetas ventana_tarjetas= new Ventana_tarjetas();
-        ventana_tarjetas.toFront();
-        ventana_tarjetas.setVisible(true);
+    
         this.dispose();
     }//GEN-LAST:event_boton_volverActionPerformed
 

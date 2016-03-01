@@ -27,6 +27,9 @@ public class I_inicio extends javax.swing.JFrame {
      */
     public I_inicio() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        setResizable(false);
+        this.setDefaultCloseOperation(this.DO_NOTHING_ON_CLOSE);
     }
 
     /**
@@ -60,6 +63,7 @@ public class I_inicio extends javax.swing.JFrame {
         boton_turnos = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
+        boton_volver = new javax.swing.JButton();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -177,6 +181,13 @@ public class I_inicio extends javax.swing.JFrame {
 
         jLabel10.setText("Reportes");
 
+        boton_volver.setText("Cerrar Sesion");
+        boton_volver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boton_volverActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -228,11 +239,17 @@ public class I_inicio extends javax.swing.JFrame {
                         .addComponent(jLabel6)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addGap(86, 86, 86))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(boton_volver)
+                .addGap(21, 21, 21))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(60, 60, 60)
+                .addContainerGap()
+                .addComponent(boton_volver)
+                .addGap(25, 25, 25)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
@@ -313,6 +330,10 @@ public class I_inicio extends javax.swing.JFrame {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
+        Ventana_Rutas obj = new Ventana_Rutas();
+        obj.setVisible(true);
+        this.setVisible(false); 
+        obj.rol(rol);
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
@@ -354,10 +375,18 @@ public class I_inicio extends javax.swing.JFrame {
         
     }//GEN-LAST:event_boton_turnosActionPerformed
 
+    private void boton_volverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_volverActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+        Login obj = new Login();
+        obj.setVisible(true);
+    }//GEN-LAST:event_boton_volverActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton boton_reportes;
     private javax.swing.JButton boton_turnos;
+    private javax.swing.JButton boton_volver;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
