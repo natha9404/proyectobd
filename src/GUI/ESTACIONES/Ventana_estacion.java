@@ -14,6 +14,7 @@ import controlador.ControladorEstacion;
  */
 public class Ventana_estacion extends javax.swing.JFrame {
 
+    String rol_user;
     /**
      * Creates new form Ventana_estacion
      */
@@ -207,7 +208,7 @@ public class Ventana_estacion extends javax.swing.JFrame {
         // se devuelve a la ventana anterior
         I_inicio obj_ventana_principal = new I_inicio();
         obj_ventana_principal.setVisible(true);
-        //obj_ventana_principal.rol(rol_user);
+        obj_ventana_principal.rol(rol_user);
         this.dispose();
     }//GEN-LAST:event_volver_principalActionPerformed
 
@@ -238,6 +239,7 @@ public class Ventana_estacion extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     public void rol(String rol) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        rol_user = rol;
+    
     }
 }

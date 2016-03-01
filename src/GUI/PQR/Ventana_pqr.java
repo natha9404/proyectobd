@@ -5,6 +5,7 @@
  */
 package GUI.PQR;
 
+import GUI.INICIO.I_inicio;
 import GUI.PQR.Consulta_pqr;
 
 /**
@@ -148,16 +149,16 @@ public class Ventana_pqr extends javax.swing.JFrame {
         //Abre la ventana modificar usuario
        Consulta_pqr obj_con = new Consulta_pqr();
         obj_con.setVisible(true);
-        obj_con.rol("Gerente");
+        obj_con.rol(rol_user);
     }//GEN-LAST:event_boton_consultar_pqrActionPerformed
 
     private void volver_principalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volver_principalActionPerformed
         // TODO add your handling code here:
         // se devuelve a la ventana anterior
-      /*  First_window obj_ventana_principal = new First_window();
+        I_inicio obj_ventana_principal = new I_inicio();
         obj_ventana_principal.setVisible(true);
         obj_ventana_principal.rol(rol_user);
-        this.dispose();*/
+        this.dispose();
     }//GEN-LAST:event_volver_principalActionPerformed
 
 
@@ -179,6 +180,8 @@ public class Ventana_pqr extends javax.swing.JFrame {
         rol_user = rol;
         if (rol_user.equals("Secretaria")) {
 
+            
+            
         }
         else{
             
