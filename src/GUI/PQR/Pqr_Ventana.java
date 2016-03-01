@@ -5,6 +5,7 @@
  */
 package GUI.PQR;
 
+import controlador.ControladorEstacion;
 import java.awt.Toolkit;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -349,6 +350,17 @@ if ((texto_pqr.getText().trim().length() != 0) && (campo_pqr_nombre.getText().tr
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
+        ArrayList<String> estaciones = new ArrayList();
+            
+            ControladorEstacion controlador = new ControladorEstacion();
+            
+            estaciones = controlador.listar_estaciones2();
+            
+            for (int i =0; i<estaciones.size(); i++){
+                
+                combo_estacion.addItem(estaciones.get(i));
+            
+    }
         
         enviar_pqr.setEnabled(true);
 
