@@ -14,7 +14,7 @@ import javax.swing.table.DefaultTableModel;
  * @author natha
  */
 public class Ventana_empleado extends javax.swing.JFrame {
-
+    String rol_user;
     /**
      * Creates new form ventana_empleado
      */
@@ -101,6 +101,7 @@ public class Ventana_empleado extends javax.swing.JFrame {
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         boton_adduser1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/add_user.png"))); // NOI18N
+        boton_adduser1.setEnabled(false);
         boton_adduser1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 boton_adduser1ActionPerformed(evt);
@@ -108,6 +109,7 @@ public class Ventana_empleado extends javax.swing.JFrame {
         });
 
         boton_modificarusuario1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/modificar_usuario.png"))); // NOI18N
+        boton_modificarusuario1.setEnabled(false);
         boton_modificarusuario1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 boton_modificarusuario1ActionPerformed(evt);
@@ -122,6 +124,7 @@ public class Ventana_empleado extends javax.swing.JFrame {
         });
 
         boton_buscarempleado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/buscar_usuario.png"))); // NOI18N
+        boton_buscarempleado.setEnabled(false);
         boton_buscarempleado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 boton_buscarempleadoActionPerformed(evt);
@@ -298,6 +301,7 @@ public class Ventana_empleado extends javax.swing.JFrame {
         I_inicio obj_ventana_principal = new I_inicio();
         obj_ventana_principal.setVisible(true);
         //obj_ventana_principal.rol(rol_user);
+        obj_ventana_principal.rol(rol_user);
         this.dispose();
     }//GEN-LAST:event_volver_principal1ActionPerformed
 
@@ -325,6 +329,13 @@ public class Ventana_empleado extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     public void rol(String rol) {
+        rol_user = rol;
+        
+        if(rol_user.equals("Director Estación")){
+            boton_modificarusuario1.setEnabled(true);
+            boton_adduser1.setEnabled(true);
+            boton_buscarempleado.setEnabled(true);
+        }
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

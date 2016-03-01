@@ -45,6 +45,7 @@ public class Venta_Buses extends javax.swing.JFrame {
 
         boton_consultar_bus.setBackground(new java.awt.Color(255, 255, 255));
         boton_consultar_bus.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/gas_station_64.png"))); // NOI18N
+        boton_consultar_bus.setEnabled(false);
         boton_consultar_bus.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 boton_consultar_busActionPerformed(evt);
@@ -69,6 +70,7 @@ public class Venta_Buses extends javax.swing.JFrame {
 
         boton_add_bus.setBackground(new java.awt.Color(255, 255, 255));
         boton_add_bus.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/bus_128.png"))); // NOI18N
+        boton_add_bus.setEnabled(false);
         boton_add_bus.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 boton_add_busActionPerformed(evt);
