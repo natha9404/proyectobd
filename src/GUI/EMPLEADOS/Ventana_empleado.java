@@ -339,6 +339,5 @@ public class Ventana_empleado extends javax.swing.JFrame {
             boton_adduser1.setEnabled(true);
             boton_buscarempleado.setEnabled(true);
         }
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+        }
 }

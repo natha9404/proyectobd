@@ -235,7 +235,7 @@ public class AsignarTurno extends javax.swing.JFrame {
         String ruta = controlador.ruta(bus);
         
         controlador.asignar(cedula, turno);
-        controlador.conduce(bus, ruta, cedula);
+        controlador.conduce(bus, ruta, cedula,turno);
         JOptionPane.showMessageDialog(null, "Se ha asignado el turno correctamente");
     }//GEN-LAST:event_boton_asignarActionPerformed
 

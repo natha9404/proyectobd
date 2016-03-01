@@ -50,8 +50,8 @@ public class ControladorTurno {
         return resultado;
     }
     
-    public void conduce (String bus, String ruta, String cedula){
-        daoTurno.conduce(bus, ruta, cedula);
+    public void conduce (String bus, String ruta, String cedula, String turno){
+        daoTurno.conduce(bus, ruta, cedula,turno);
     }
     
     public String cond (String cedula){

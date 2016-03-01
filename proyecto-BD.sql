@@ -144,7 +144,11 @@ CREATE TABLE Conduce (
 	cedula_empleado VARCHAR(10) NOT NULL,
 	id_turno INTEGER NOT NULL,
 	PRIMARY KEY (numero_bus, nombre_ruta, cedula_empleado, id_turno),
+<<<<<<< HEAD
 	FOREIGN KEY (id_turno) REFERENCES Turno(id_turno),
+=======
+	FOREIGN KEY (id_turno) REFERENCES Turno(id_turno)
+>>>>>>> a7ff33b8d2f79a84fa8b2b83ab46d87d92b9dea5
 	FOREIGN KEY (numero_bus) REFERENCES Bus(numero_bus),
 	FOREIGN KEY (nombre_ruta) REFERENCES Ruta(nombre_ruta),
 	FOREIGN KEY (cedula_empleado) REFERENCES Empleado(cedula_empleado)
