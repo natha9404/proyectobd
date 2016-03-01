@@ -315,10 +315,7 @@ public class Consulta_bus extends javax.swing.JFrame {
     }//GEN-LAST:event_boton_consultar_busActionPerformed
 
     private void boton_volverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_volverActionPerformed
-        Venta_Buses ventana_buses= new Venta_Buses();
-        ventana_buses.toFront();
-        ventana_buses.setVisible(true);
-        ventana_buses.rol(rol_user);
+        
         this.dispose();
     }//GEN-LAST:event_boton_volverActionPerformed
 

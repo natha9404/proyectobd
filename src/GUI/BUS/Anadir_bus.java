@@ -192,9 +192,7 @@ public class Anadir_bus extends javax.swing.JFrame {
     }//GEN-LAST:event_campo_placa_busActionPerformed
 
     private void boton_volverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_volverActionPerformed
-        Venta_Buses ventana_buses= new Venta_Buses();
-        ventana_buses.toFront();
-        ventana_buses.setVisible(true);
+        
         this.dispose();
     }//GEN-LAST:event_boton_volverActionPerformed
 

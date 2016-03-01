@@ -157,9 +157,6 @@ public class Modificar_estacion extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void boton_volverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_volverActionPerformed
-        Ventana_estacion ventana_estacion= new Ventana_estacion();
-        ventana_estacion.toFront();
-        ventana_estacion.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_boton_volverActionPerformed
 
