@@ -6,7 +6,10 @@
 package GUI.REPORTES;
 
 import controlador.ControladorReportes;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.table.DefaultTableModel;
 import logica.Generar_pdf;
 
@@ -145,5 +148,11 @@ public class ReporteMayorDemanda extends javax.swing.JFrame {
         ArrayList<ArrayList> imprimir = new ArrayList<>();
         
         imprimir = controlador.imprimir();
+        
+        try {
+            pdf.ConvertirPDF_MayorDemanda(imprimir.get(0), imprimir.get(1));
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(ReporteMayorDemanda.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 }
