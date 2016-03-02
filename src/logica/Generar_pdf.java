@@ -43,7 +43,6 @@ public class Generar_pdf {
             //Abrimos el documento
             documento.open();
             System.out.println("Documento Abierto");
-            
 
             //Anexamos el texto a un objeto Pharagraph
             Paragraph parametro = new Paragraph("Listado de Pasajeros con sus tarjetas ", FontFactory.getFont(FontFactory.TIMES_ROMAN, 14, Font.BOLD, BaseColor.BLACK));
@@ -54,21 +53,17 @@ public class Generar_pdf {
             //Escribimos sobre el
             documento.add(parametro);
             // documento.add(parametro17);
-            
+
             Paragraph parametro3;
-            
-            
-            
-            
+
             for (int i = 0; i < cedula.size(); i++) {
 
                 String tar = "No tiene";
-                
-                parametro3 = new Paragraph("Cedula: " + cedula.get(i)+ "    Nombre: " + nombre.get(i)+ "    Telefono: " + telefono.get(i)+ "    Tarjeta No.: " + tarjeta.get(i), FontFactory.getFont(FontFactory.TIMES_ROMAN, 12, Font.NORMAL, BaseColor.BLACK));
-                
-                
-                System.out.println("Cedula: " + cedula.get(i)+ "    Nombre: " + nombre.get(i)+ "    Telefono: " + telefono.get(i)+ "    Tarjeta No.: " + tarjeta.get(i));
-                
+
+                parametro3 = new Paragraph("Cedula: " + cedula.get(i) + "    Nombre: " + nombre.get(i) + "    Telefono: " + telefono.get(i) + "    Tarjeta No.: " + tarjeta.get(i), FontFactory.getFont(FontFactory.TIMES_ROMAN, 12, Font.NORMAL, BaseColor.BLACK));
+
+                System.out.println("Cedula: " + cedula.get(i) + "    Nombre: " + nombre.get(i) + "    Telefono: " + telefono.get(i) + "    Tarjeta No.: " + tarjeta.get(i));
+
                 documento.add(parametro3);
 
             }
@@ -79,13 +74,11 @@ public class Generar_pdf {
             //Mensaje de Exito
             JOptionPane.showMessageDialog(null, "PDF Creado con exito.");
 
-            
-
         } catch (DocumentException de) {
             System.out.println("Error...");
         }
     }
-        
+
     /**
      *
      * @param ruta
@@ -106,25 +99,21 @@ public class Generar_pdf {
             //Abrimos el documento
             documento.open();
             System.out.println("Documento Abierto");
-            
 
             //Anexamos el texto a un objeto Pharagraph
             Paragraph parametro = new Paragraph("Se movilizaron " + respuesta + " pasajeros en la ruta " + ruta + " el dia " + fecha, FontFactory.getFont(FontFactory.TIMES_ROMAN, 14, Font.BOLD, BaseColor.BLACK));
             parametro.setAlignment(1);
 
             //Paragraph parametro2 = new Paragraph("Cedula        Nombre                      Telefono      Tarjeta", FontFactory.getFont(FontFactory.TIMES_ROMAN, 12, Font.BOLD, BaseColor.BLACK));
-
             //Escribimos sobre el
             documento.add(parametro);
             // documento.add(parametro17);
-                        
+
             //Cerrar documento
             documento.close();
 
             //Mensaje de Exito
             JOptionPane.showMessageDialog(null, "PDF Creado con exito.");
-
-            
 
         } catch (DocumentException de) {
             System.out.println("Error..." + de);
@@ -132,8 +121,115 @@ public class Generar_pdf {
     }
 
     public void ConvertirPDF_Pqr(ArrayList num_ticket, ArrayList tipo_pqr, ArrayList fecha, ArrayList estado, ArrayList nombre_estacion) throws FileNotFoundException {
+
+        String nombre_pdf = "Reporte PQR" + ".pdf";
+        System.out.println(nombre_pdf);
+        try {
+            //Creamos documento indicando el tamaño y margenes
+            Document documento = new Document(PageSize.LETTER, 20, 20, 20, 20);
+
+            //Creamos el PDF y lo instanceamos para poder escribir sobre el
+            PdfWriter.getInstance(documento, new FileOutputStream(nombre_pdf)).setInitialLeading(20);
+
+            //Abrimos el documento
+            documento.open();
+            System.out.println("Documento Abierto");
+
+            //Anexamos el texto a un objeto Pharagraph
+            Paragraph parametro = new Paragraph("Listado de Pasajeros con sus tarjetas ", FontFactory.getFont(FontFactory.TIMES_ROMAN, 14, Font.BOLD, BaseColor.BLACK));
+            parametro.setAlignment(1);
+
+            Paragraph parametro2 = new Paragraph("Cedula        Nombre                      Telefono      Tarjeta", FontFactory.getFont(FontFactory.TIMES_ROMAN, 12, Font.BOLD, BaseColor.BLACK));
+
+            //Escribimos sobre el
+            documento.add(parametro);
+            // documento.add(parametro17);
+
+            Paragraph parametro3;
+
+            for (int i = 0; i < num_ticket.size(); i++) {
+
+                String tar = "No tiene";
+
+                parametro3 = new Paragraph("Num Ticket: " + num_ticket.get(i) + "    Tipo SQR: " + tipo_pqr.get(i) + "    Fecha: " + fecha.get(i) + "    Estado: " + estado.get(i) + "     Estacion:" + nombre_estacion.get(i), FontFactory.getFont(FontFactory.TIMES_ROMAN, 12, Font.NORMAL, BaseColor.BLACK));
+
+                documento.add(parametro3);
+
+            }
+
+            //Cerrar documento
+            documento.close();
+
+            //Mensaje de Exito
+            JOptionPane.showMessageDialog(null, "PDF Creado con exito.");
+
+        } catch (DocumentException de) {
+            System.out.println("Error...");
+        }
+
+    }
+
+    public void ConvertirPDF_estacionesRutas(ArrayList<String> estaciones, ArrayList<String> rutas) throws FileNotFoundException {
+
+        String nombre_pdf = "Reporte Estaciones y Rutas" + ".pdf";
+        System.out.println(nombre_pdf);
+        try {
+            //Creamos documento indicando el tamaño y margenes
+            Document documento = new Document(PageSize.LETTER, 20, 20, 20, 20);
+
+            //Creamos el PDF y lo instanceamos para poder escribir sobre el
+            PdfWriter.getInstance(documento, new FileOutputStream(nombre_pdf)).setInitialLeading(20);
+
+            //Abrimos el documento
+            documento.open();
+            System.out.println("Documento Abierto");
+
+            //Anexamos el texto a un objeto Pharagraph
+            Paragraph parametro = new Paragraph("Listado de Estaciones y Rutas ", FontFactory.getFont(FontFactory.TIMES_ROMAN, 14, Font.BOLD, BaseColor.BLACK));
+            parametro.setAlignment(1);
+
+            //Escribimos sobre el
+            documento.add(parametro);
+
+            Paragraph parametro3;
+
+            Paragraph parametro4;
+            parametro4 = new Paragraph("Estaciones:", FontFactory.getFont(FontFactory.TIMES_ROMAN, 12, Font.NORMAL, BaseColor.BLACK));
+            documento.add(parametro4);
+            for (int i = 0; i < estaciones.size(); i++) {
+
+                parametro3 = new Paragraph(i+1 + ". " + estaciones.get(i), FontFactory.getFont(FontFactory.TIMES_ROMAN, 12, Font.NORMAL, BaseColor.BLACK));
+
+                documento.add(parametro3);
+
+            }
+            Paragraph parametro5;
+            parametro5 = new Paragraph("Rutas:", FontFactory.getFont(FontFactory.TIMES_ROMAN, 12, Font.NORMAL, BaseColor.BLACK));
+            documento.add(parametro4);
+            Paragraph parametro6;
+
+            for (int i = 0; i < rutas.size(); i++) {
+
+               parametro6 = new Paragraph(i+1 + ". " + rutas.get(i), FontFactory.getFont(FontFactory.TIMES_ROMAN, 12, Font.NORMAL, BaseColor.BLACK));
+
+                documento.add(parametro6);
+
+            }
+            //Cerrar documento
+            documento.close();
+
+            //Mensaje de Exito
+            JOptionPane.showMessageDialog(null, "PDF Creado con exito.");
+
+        } catch (DocumentException de) {
+            System.out.println("Error...");
+        }
+
+    }
+    
+    public void ConvertirPDF_BusesConductores(ArrayList turnos, ArrayList buses, ArrayList conductores) throws FileNotFoundException {
         
-     String nombre_pdf = "Reporte PQR" + ".pdf";
+     String nombre_pdf = "Reporte Articulados Conductores" + ".pdf";
         System.out.println(nombre_pdf);
         try {
             //Creamos documento indicando el tamaño y margenes
@@ -148,10 +244,10 @@ public class Generar_pdf {
             
 
             //Anexamos el texto a un objeto Pharagraph
-            Paragraph parametro = new Paragraph("Listado de Pasajeros con sus tarjetas ", FontFactory.getFont(FontFactory.TIMES_ROMAN, 14, Font.BOLD, BaseColor.BLACK));
+            Paragraph parametro = new Paragraph("Listado de Conductores de buses articulados", FontFactory.getFont(FontFactory.TIMES_ROMAN, 14, Font.BOLD, BaseColor.BLACK));
             parametro.setAlignment(1);
 
-            Paragraph parametro2 = new Paragraph("Cedula        Nombre                      Telefono      Tarjeta", FontFactory.getFont(FontFactory.TIMES_ROMAN, 12, Font.BOLD, BaseColor.BLACK));
+            //Paragraph parametro2 = new Paragraph("Cedula        Nombre                      Telefono      Tarjeta", FontFactory.getFont(FontFactory.TIMES_ROMAN, 12, Font.BOLD, BaseColor.BLACK));
 
             //Escribimos sobre el
             documento.add(parametro);
@@ -162,11 +258,11 @@ public class Generar_pdf {
             
             
             
-            for (int i = 0; i < num_ticket.size(); i++) {
+            for (int i = 0; i < turnos.size(); i++) {
 
                 String tar = "No tiene";
                 
-                parametro3 = new Paragraph("Num Ticket: " + num_ticket.get(i)+ "    Tipo SQR: " + tipo_pqr.get(i)+ "    Fecha: " + fecha.get(i)+ "    Estado: " + estado.get(i)+ "     Estacion:"+ nombre_estacion.get(i), FontFactory.getFont(FontFactory.TIMES_ROMAN, 12, Font.NORMAL, BaseColor.BLACK));
+                parametro3 = new Paragraph("Turnso: " + turnos.get(i)+ "    Bus: " + buses.get(i)+ "    Conductor: " + conductores.get(i), FontFactory.getFont(FontFactory.TIMES_ROMAN, 12, Font.NORMAL, BaseColor.BLACK));
                 
                 
                 
@@ -188,5 +284,4 @@ public class Generar_pdf {
         
     
     }
-
 }

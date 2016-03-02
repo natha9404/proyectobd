@@ -172,3 +172,4 @@ INSERT INTO Pasajero(cedula_pasajero,nombre,telefono) VALUES('12345','Pedro Pere
 INSERT INTO Pasajero(cedula_pasajero,nombre,telefono) VALUES('55555','Juan Valdez','4464817');*/
 
 
+SELECT MAX(count), nombre_ruta FROM (SELECT COUNT(id_tarjeta), nombre_ruta FROM Aborda GROUP BY nombre_ruta) AS N GROUP BY nombre_ruta;

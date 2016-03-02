@@ -74,7 +74,7 @@ public class DaoReportes {
 
     public DefaultTableModel busesArticulados() {
         DefaultTableModel modelo = new DefaultTableModel();
-        String sql = "SELECT DISTINCT Conduce.id_turno, Conduce.numero_bus, Empleado.nombre FROM (Conduce INNER JOIN Bus ON Conduce.numero_bus = Bus.numero_bus) AS N INNER JOIN Empleado ON Empleado.cedula_empleado = N.cedula_empleado WHERE N.tipo = 'Articulado'";
+        String sql = "SELECT DISTINCT N.id_turno, Bus.numero_bus, N.nombre FROM (Conduce INNER JOIN Empleado ON Conduce.cedula_empleado = Empleado.cedula_empleado) AS N INNER JOIN Bus ON Bus.numero_bus = N.numero_bus WHERE Bus.tipo = 'Articulado'";
         
         String [] encabezado = {"turno", "bus", "conductor"};
         
@@ -104,7 +104,33 @@ public class DaoReportes {
     }
 
     public ArrayList<ArrayList> tabla() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        ArrayList<ArrayList> pdf = new ArrayList<>();
+        ArrayList<String> turnos = new ArrayList<>();
+        ArrayList<String> buses = new ArrayList<>();
+        ArrayList<String> empleados = new ArrayList<>();
+        
+        String sql = "SELECT DISTINCT N.id_turno, Bus.numero_bus, N.nombre FROM (Conduce INNER JOIN Empleado ON Conduce.cedula_empleado = Empleado.cedula_empleado) AS N INNER JOIN Bus ON Bus.numero_bus = N.numero_bus WHERE Bus.tipo = 'Articulado'";
+        
+        try{
+            st = conexion.createStatement();
+            
+            rs = st.executeQuery(sql);
+            
+            while(rs.next()){
+                turnos.add(rs.getString(1));
+                buses.add(rs.getString(2));
+                empleados.add(rs.getString(3));
+            }
+            
+            pdf.add(turnos);
+            pdf.add(buses);
+            pdf.add(empleados);
+            return pdf;
+        }catch(SQLException ex){
+            JOptionPane.showMessageDialog(null, "Error al consultar en la base de datos"+ex);
+        }
+        
+        return pdf;
     }
 
 }
