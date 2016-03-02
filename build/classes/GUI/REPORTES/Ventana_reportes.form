@@ -33,7 +33,7 @@
               <Component id="jLabel3" min="-2" pref="122" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -63,36 +63,37 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <Component id="listado_pasajeros_tarjetas" min="-2" pref="130" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="1" attributes="0">
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="listado_rutas_estaciones" alignment="0" pref="130" max="32767" attributes="0"/>
-                              <Component id="rutas_demanda" max="32767" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
-                      </Group>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Component id="listado_rutas_estaciones" alignment="0" pref="133" max="32767" attributes="0"/>
+                      <Component id="rutas_demanda" max="32767" attributes="0"/>
                   </Group>
+                  <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" max="-2" attributes="0">
                       <Component id="listado_articulados_conductores" pref="132" max="32767" attributes="0"/>
-                      <Component id="totalPasajeros" alignment="0" max="32767" attributes="0"/>
                       <Component id="pqr" alignment="0" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
+              </Group>
+              <Group type="102" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="110" max="-2" attributes="0"/>
+                          <Component id="volver_principal" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="143" max="-2" attributes="0"/>
+                          <Component id="totalPasajeros" min="-2" pref="132" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="1" attributes="0">
-                      <Component id="listado_pasajeros_tarjetas" min="-2" pref="74" max="-2" attributes="0"/>
-                      <Component id="totalPasajeros" min="-2" pref="73" max="-2" attributes="0"/>
-                  </Group>
+                  <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
+                  <Component id="totalPasajeros" min="-2" pref="73" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Component id="rutas_demanda" pref="70" max="32767" attributes="0"/>
@@ -103,23 +104,46 @@
                       <Component id="listado_articulados_conductores" pref="64" max="32767" attributes="0"/>
                       <Component id="listado_rutas_estaciones" max="32767" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="45" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                  <Component id="volver_principal" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="69" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JButton" name="listado_pasajeros_tarjetas">
-        </Component>
         <Component class="javax.swing.JButton" name="totalPasajeros">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="totalPasajerosActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="listado_articulados_conductores">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="listado_articulados_conductoresActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="listado_rutas_estaciones">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="listado_rutas_estacionesActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="rutas_demanda">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rutas_demandaActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="pqr">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="pqrActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="volver_principal">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Volver a ventana principal"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="volver_principalActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

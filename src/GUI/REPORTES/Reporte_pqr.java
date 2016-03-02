@@ -76,7 +76,7 @@ public class Reporte_pqr extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel1.setText("Ingrese No. de Cedula:");
+        jLabel1.setText("Ingrese No. de Tarjeta:");
 
         consultar.setText("Consultar SQR");
         consultar.addActionListener(new java.awt.event.ActionListener() {
