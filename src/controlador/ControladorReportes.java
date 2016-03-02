@@ -49,4 +49,18 @@ public class ControladorReportes {
         return pdf;
     }
 
+    public DefaultTableModel mayorDemanda() {
+        DefaultTableModel modelo = new DefaultTableModel();
+        modelo = dao.mayorDemanda();
+        return modelo;
+    }
+
+    public ArrayList<ArrayList> imprimir() {
+        ArrayList<ArrayList> pdf = new ArrayList<>();
+        
+        pdf = dao.imprimir();
+        
+        return pdf;
+    }
+
 }
