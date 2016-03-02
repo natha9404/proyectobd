@@ -3,12 +3,22 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/edison/Documentos/univalle/2015-II/BD/proyectobd/src/logica/Generar_pdf.java</file>
-            <file>file:/home/edison/Documentos/univalle/2015-II/BD/proyectobd/src/GUI/RUTA/Ventana_consultar_ruta.java</file>
-            <file>file:/home/edison/Documentos/univalle/2015-II/BD/proyectobd/src/controlador/ControladorReportes.java</file>
-            <file>file:/home/edison/Documentos/univalle/2015-II/BD/proyectobd/src/accesoDatos/DaoReportes.java</file>
-            <file>file:/home/edison/Documentos/univalle/2015-II/BD/proyectobd/src/GUI/REPORTES/ReporteMayorDemanda.java</file>
-            <file>file:/home/edison/Documentos/univalle/2015-II/BD/proyectobd/src/accesoDatos/FachadaBD.java</file>
+            <file>file:/Users/natha9404/Documents/Bases%20de%20Datos/PROYECTO/proyectobd-tarjetas-buses/src/controlador/ControladorEstacion.java</file>
+            <file>file:/Users/natha9404/Documents/Bases%20de%20Datos/PROYECTO/proyectobd-tarjetas-buses/src/GUI/REPORTES/Reporte_pqr.java</file>
+            <file>file:/Users/natha9404/Documents/Bases%20de%20Datos/PROYECTO/proyectobd-tarjetas-buses/src/accesoDatos/Daopqr.java</file>
+            <file>file:/Users/natha9404/Documents/Bases%20de%20Datos/PROYECTO/proyectobd-tarjetas-buses/src/logica/Generar_pdf.java</file>
+            <file>file:/Users/natha9404/Documents/Bases%20de%20Datos/PROYECTO/proyectobd-tarjetas-buses/src/GUI/REPORTES/Reporte_estacionesRutas.java</file>
+            <file>file:/Users/natha9404/Documents/Bases%20de%20Datos/PROYECTO/proyectobd-tarjetas-buses/src/controlador/ControladorPasajero.java</file>
+            <file>file:/Users/natha9404/Documents/Bases%20de%20Datos/PROYECTO/proyectobd-tarjetas-buses/src/GUI/PQR/Pqr_Ventana.java</file>
+            <file>file:/Users/natha9404/Documents/Bases%20de%20Datos/PROYECTO/proyectobd-tarjetas-buses/src/accesoDatos/DaoRutas.java</file>
+            <file>file:/Users/natha9404/Documents/Bases%20de%20Datos/PROYECTO/proyectobd-tarjetas-buses/src/controlador/Controlador_pqr.java</file>
+            <file>file:/Users/natha9404/Documents/Bases%20de%20Datos/PROYECTO/proyectobd-tarjetas-buses/src/GUI/REPORTES/ReporteMayorDemanda.java</file>
+            <file>file:/Users/natha9404/Documents/Bases%20de%20Datos/PROYECTO/proyectobd-tarjetas-buses/src/GUI/PASAJEROS/Ventana_pasajeros.java</file>
+            <file>file:/Users/natha9404/Documents/Bases%20de%20Datos/PROYECTO/proyectobd-tarjetas-buses/src/GUI/REPORTES/ReporteBusesArticulados.java</file>
+            <file>file:/Users/natha9404/Documents/Bases%20de%20Datos/PROYECTO/proyectobd-tarjetas-buses/src/accesoDatos/DaoEstacion.java</file>
+            <file>file:/Users/natha9404/Documents/Bases%20de%20Datos/PROYECTO/proyectobd-tarjetas-buses/src/logica/Pasajero.java</file>
+            <file>file:/Users/natha9404/Documents/Bases%20de%20Datos/PROYECTO/proyectobd-tarjetas-buses/src/GUI/REPORTES/TotalPasajeros.java</file>
+            <file>file:/Users/natha9404/Documents/Bases%20de%20Datos/PROYECTO/proyectobd-tarjetas-buses/src/GUI/REPORTES/Ventana_reportes.java</file>
         </group>
     </open-files>
 </project-private>

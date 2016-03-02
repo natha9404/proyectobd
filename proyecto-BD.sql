@@ -119,11 +119,10 @@ CREATE TABLE Turno (
 
 
 CREATE TABLE Aborda (
-	id_tarjeta INTEGER NOT NULL,
+	id_tarjeta VARCHAR(10) NOT NULL,
 	---cambio numero_bus a nombre_ruta
 	nombre_ruta VARCHAR(20) NOT NULL,
-	fecha DATE NOT NULL,
-	PRIMARY KEY (id_tarjeta, nombre_ruta, fecha),
+	PRIMARY KEY (id_tarjeta, nombre_ruta),
 	FOREIGN KEY (id_tarjeta) REFERENCES Tarjeta(id_tarjeta),
 	FOREIGN KEY (nombre_ruta) REFERENCES Ruta(nombre_ruta)
 );
@@ -170,6 +169,3 @@ INSERT INTO Tarjeta(saldo,estado,deuda,cedula_empleado,nombre_estacion) VALUES(1
 INSERT INTO Pasajero(cedula_pasajero,nombre,telefono) VALUES('31918451','Laura Perlaza','6655225');
 INSERT INTO Pasajero(cedula_pasajero,nombre,telefono) VALUES('12345','Pedro Perez','3365618');
 INSERT INTO Pasajero(cedula_pasajero,nombre,telefono) VALUES('55555','Juan Valdez','4464817');*/
-
-
-SELECT MAX(count), nombre_ruta FROM (SELECT COUNT(id_tarjeta), nombre_ruta FROM Aborda GROUP BY nombre_ruta) AS N GROUP BY nombre_ruta;
