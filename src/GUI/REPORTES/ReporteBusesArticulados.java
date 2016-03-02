@@ -6,9 +6,13 @@
 package GUI.REPORTES;
 
 import controlador.ControladorReportes;
+import java.io.FileNotFoundException;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.table.DefaultTableModel;
+import logica.Generar_pdf;
 
 /**
  *
@@ -20,7 +24,7 @@ public class ReporteBusesArticulados extends javax.swing.JFrame {
     /**
      * Creates new form ReporteBusesArticulados
      */
-    public ReporteBusesArticulados() {
+    public ReporteBusesArticulados() throws FileNotFoundException {
         initComponents();
         imprimir();
     }
@@ -122,7 +126,11 @@ public class ReporteBusesArticulados extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ReporteBusesArticulados().setVisible(true);
+                try {
+                    new ReporteBusesArticulados().setVisible(true);
+                } catch (FileNotFoundException ex) {
+                    Logger.getLogger(ReporteBusesArticulados.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }
@@ -134,7 +142,7 @@ public class ReporteBusesArticulados extends javax.swing.JFrame {
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 
-    private void imprimir() {
+    private void imprimir() throws FileNotFoundException {
         DefaultTableModel modelo = new DefaultTableModel();
         
         modelo = controlador.busesArticulados();
@@ -143,5 +151,9 @@ public class ReporteBusesArticulados extends javax.swing.JFrame {
         
         ArrayList<ArrayList> pdf = new ArrayList<>();
         pdf = controlador.tabla();
+        
+        Generar_pdf generar = new Generar_pdf();
+        
+        generar.ConvertirPDF_BusesConductores(pdf.get(0), pdf.get(1), pdf.get(2));
     }
 }

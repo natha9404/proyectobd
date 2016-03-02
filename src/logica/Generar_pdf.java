@@ -188,5 +188,62 @@ public class Generar_pdf {
         
     
     }
+    
+    public void ConvertirPDF_BusesConductores(ArrayList turnos, ArrayList buses, ArrayList conductores) throws FileNotFoundException {
+        
+     String nombre_pdf = "Reporte Articulados Conductores" + ".pdf";
+        System.out.println(nombre_pdf);
+        try {
+            //Creamos documento indicando el tamaño y margenes
+            Document documento = new Document(PageSize.LETTER, 20, 20, 20, 20);
 
+            //Creamos el PDF y lo instanceamos para poder escribir sobre el
+            PdfWriter.getInstance(documento, new FileOutputStream(nombre_pdf)).setInitialLeading(20);
+
+            //Abrimos el documento
+            documento.open();
+            System.out.println("Documento Abierto");
+            
+
+            //Anexamos el texto a un objeto Pharagraph
+            Paragraph parametro = new Paragraph("Listado de Conductores de buses articulados", FontFactory.getFont(FontFactory.TIMES_ROMAN, 14, Font.BOLD, BaseColor.BLACK));
+            parametro.setAlignment(1);
+
+            //Paragraph parametro2 = new Paragraph("Cedula        Nombre                      Telefono      Tarjeta", FontFactory.getFont(FontFactory.TIMES_ROMAN, 12, Font.BOLD, BaseColor.BLACK));
+
+            //Escribimos sobre el
+            documento.add(parametro);
+            // documento.add(parametro17);
+            
+            Paragraph parametro3;
+            
+            
+            
+            
+            for (int i = 0; i < turnos.size(); i++) {
+
+                String tar = "No tiene";
+                
+                parametro3 = new Paragraph("Turnso: " + turnos.get(i)+ "    Bus: " + buses.get(i)+ "    Conductor: " + conductores.get(i), FontFactory.getFont(FontFactory.TIMES_ROMAN, 12, Font.NORMAL, BaseColor.BLACK));
+                
+                
+                
+                documento.add(parametro3);
+
+            }
+
+            //Cerrar documento
+            documento.close();
+
+            //Mensaje de Exito
+            JOptionPane.showMessageDialog(null, "PDF Creado con exito.");
+
+            
+
+        } catch (DocumentException de) {
+            System.out.println("Error...");
+        }
+        
+    
+    }
 }
