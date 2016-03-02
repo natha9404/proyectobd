@@ -161,7 +161,7 @@ public class I_inicio extends javax.swing.JFrame {
 
         jLabel9.setText("Quejas y Reclamos");
 
-        boton_reportes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/pilot_male_light_48.png"))); // NOI18N
+        boton_reportes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/reportes.jpg"))); // NOI18N
         boton_reportes.setEnabled(false);
         boton_reportes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -281,7 +281,7 @@ public class I_inicio extends javax.swing.JFrame {
                     .addComponent(jLabel9)
                     .addComponent(jLabel8)
                     .addComponent(jLabel10))
-                .addContainerGap(33, Short.MAX_VALUE))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
