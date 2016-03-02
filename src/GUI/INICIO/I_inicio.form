@@ -347,7 +347,7 @@
         <Component class="javax.swing.JButton" name="boton_turnos">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/recursos/pilot_male_light_48.png"/>
+              <Image iconType="3" name="/recursos/turno.jpg"/>
             </Property>
             <Property name="enabled" type="boolean" value="false"/>
           </Properties>

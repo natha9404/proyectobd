@@ -10,6 +10,7 @@ import GUI.EMPLEADOS.*;
 import GUI.ESTACIONES.*;
 import GUI.PASAJEROS.*;
 import GUI.PQR.*;
+import GUI.REPORTES.Ventana_reportes;
 import GUI.RUTA.*;
 import GUI.TARJETA.*;
 import GUI.TURNO.*;
@@ -169,7 +170,7 @@ public class I_inicio extends javax.swing.JFrame {
             }
         });
 
-        boton_turnos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/pilot_male_light_48.png"))); // NOI18N
+        boton_turnos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/turno.jpg"))); // NOI18N
         boton_turnos.setEnabled(false);
         boton_turnos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -368,10 +369,10 @@ public class I_inicio extends javax.swing.JFrame {
 
     private void boton_turnosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_turnosActionPerformed
         // TODO add your handling code here:
-        VentanaTurno tur = new VentanaTurno();
-        tur.setVisible(true);
+        Ventana_reportes reportes = new Ventana_reportes();
+        reportes.setVisible(true);
         this.setVisible(false);
-        tur.rol(rol);
+        //reportes.rol(rol);
         
     }//GEN-LAST:event_boton_turnosActionPerformed
 
